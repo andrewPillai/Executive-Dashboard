@@ -1,0 +1,13 @@
+DATABASE HANDOFF
+
+Both complete SQLite files are inside northstar-handoff-2026-10-05.zip in this release. They contain data, not empty schemas. Business database: application/data/northstar.sqlite. Saved human workflow state: application/backend/workflow.sqlite.
+
+DATABASE_CATALOG.json records exact table and column definitions, row counts, foreign keys, indexes, database sizes, SHA-256 hashes and integrity checks. The two SQL files contain exported CREATE statements, indexes and any triggers/views; they are schema references, not data dumps.
+
+Business semantics and limitations: application/data/README.txt in the main ZIP. Generator: application/tools/generate_data.py. Run from application with python tools/generate_data.py only when intentionally replacing the fixture; no regeneration is needed to run the bundled data. API semantics and metric calculations live in backend/. Dependency locks and setup steps are included in START_HERE.txt.
+
+Business data is synthetic; historical organization research is separate. Shared tables support eight audiences. Manufacturer and supplier masters are distinct. Three direct-shipment cases are seeded. Money uses integer cents where documented; dates and as-of assumptions are detailed in data/README.txt. Workflow writes are separate from read-only business facts. No live SAP or AI credentials/connections exist.
+
+Integrity checks at packaging passed for both databases. Do not reset saved workflow state unless intentionally discarding demo decisions.
+
+GitHub handoff: andrewPillai/Executive-Dashboard, private. Source commit a63ae19b2a902dae453692aaa24239a1ba027f0a. The earlier LLM_HANDOFF note that the original workspace had no Git repository describes the local workspace before this GitHub upload.
