@@ -1,0 +1,51 @@
+OPERATIONS DEMO — TECHNOLOGY DECISION
+Decision date: October 5, 2026
+
+The target application stack is React and TypeScript, built with Vite and rendered on the client; React Router; TanStack Query and Table; Radix Primitives with custom CSS design tokens; Apache ECharts; FastAPI and Pydantic; and PostgreSQL. Organize the backend as a modular monolith with a constrained AI interface. This settles the application direction while leaving model provider, hosting, identity deployment, and exact dependency versions open. No package installation or application build is represented by this decision.
+
+FRONTEND AND RENDERING
+
+React provides reusable department views, evidence panels, exception queues, and approval interactions. TypeScript makes shared request and response contracts explicit. Vite supplies the development/build tooling and supports React and TypeScript [1–3]. Use client-side rendering because this is an authenticated, interactive operational workspace; public search indexing is not a requirement. Server-side rendering would add a rendering runtime and hydration concerns without resolving the central requirements: trustworthy data, drill-downs, and cross-department coordination. Revisit it if measured loading performance or a future public website requires it.
+
+React Router manages navigable department, entity, and scenario views, preserving filters in URLs where useful [4]. TanStack Query manages server-state fetching, cache invalidation, loading, and error states [5]. Its cache keys must include tenant, authorized scope, scenario, snapshot, and filters. It must never reuse privileged results across personas. TanStack Table provides headless table behavior [6]; paginate, filter, and sort large datasets on the server. A requirement for 100,000 records does not mean rendering 100,000 rows in the browser.
+
+Radix Primitives supplies interaction building blocks, while CSS tokens define spacing, typography, color, density, and states [7]. Accessibility still requires keyboard, focus, contrast, and screen-reader verification in the assembled application. Apache ECharts supplies the chart layer [8]. Charts receive reconciled aggregates and provide accessible textual summaries and underlying data, rather than becoming another place where metric formulas diverge.
+
+BACKEND AND SHARED BUSINESS DATA
+
+FastAPI exposes the domain API; Pydantic validates request and response structures [9–10]. Organize clear modules for business entities, metrics, exceptions, scenarios, evidence, and action plans within one backend deployment. This keeps cross-module workflows understandable without introducing distributed transactions and service orchestration prematurely.
+
+PostgreSQL is the target shared database for canonical entities, transactional facts, governed metric views, assignments, and audit records [11]. Customers, products, orders, inventory, shipments, and invoices form one connected business model. Eight audiences read different authorized views of that model. Executive views aggregate the same underlying records rather than creating separate executive transactions.
+
+Calculate financial and operational measures deterministically in versioned SQL or domain services. Keep order-line grain and delivery-date definitions explicit: CRD and OCCD OTIF measures remain separate. Booked sales, invoiced sales, recognized revenue, backlog, and revenue exposure must not be interchangeable. Deduplicate exposure when several exceptions affect the same order line. Responses carry snapshot, simulated time, metric version, currency/unit, freshness, coverage, and evidence references.
+
+AI AND HUMAN APPROVAL
+
+The AI may read governed metrics, inspect exceptions and timelines, compare supported scenarios, explain evidence, recommend responses, and draft action plans. It does not calculate authoritative totals from prose, run arbitrary SQL, change source records, or approve its own plans. Model provider and model deployment remain unspecified; a provider adapter preserves that choice. Open-source application libraries do not determine the license or terms of any future model.
+
+Assignment approval is a separate server-authorized human action. Check the expected plan version, approver scope, and an idempotency key before recording it. Editing a plan requires renewed approval. A simulated approved assignment changes the demo workflow only. The demo has no SAP integration, production writeback, customer messaging, or other external operational effects. Evidence is resolved under current permissions, including when reached through an AI answer.
+
+REVIEW ARTIFACTS AND PRODUCTION EVOLUTION
+
+A generated SQLite fixture is a portable synthetic-data deliverable for inspection and repeatable demonstrations. It is not a replacement for the PostgreSQL application decision. A standalone HTML mockup is a review artifact that demonstrates screens and interactions; it is not a completed React application or evidence that FastAPI, PostgreSQL, or a live AI service is running. Label synthetic data, simulated time, and any scripted AI responses visibly.
+
+Production work will add selected enterprise identity, tested tenant isolation, backups and recovery, monitoring, deployment operations, and approved integration adapters. PostgreSQL row security can add protection, but owners and privileged roles can bypass it; application roles and direct authorization tests must reflect that [12]. Add queues, durable workflow infrastructure, or separate analytics storage when measured requirements justify them. No Kafka, graph database, or lakehouse is required to prove the initial experience.
+
+DEPENDENCY AND LICENSE RECORD
+
+Official repositories identify React, Vite, React Router, TanStack Query/Table, Radix Primitives, FastAPI, and Pydantic under MIT; TypeScript and ECharts under Apache-2.0; PostgreSQL under the PostgreSQL License [1–11]. These projects expose documentation and contribution channels; that is not a purchased support agreement. At implementation, select compatible supported releases, lock exact versions, retain notices, generate an SBOM, review transitive dependencies, and run vulnerability and license checks. No versions have been installed or audited here.
+
+OFFICIAL SOURCES
+
+[1] React repository and license: https://github.com/react/react
+[2] TypeScript repository and license: https://github.com/microsoft/TypeScript
+[3] Vite features and license: https://vite.dev/guide/features.html
+[4] React Router repository: https://github.com/remix-run/react-router
+[5] TanStack Query repository: https://github.com/TanStack/query
+[6] TanStack Table repository: https://github.com/TanStack/table
+[7] Radix Primitives repository: https://github.com/radix-ui/primitives
+[8] Apache ECharts repository: https://github.com/apache/echarts
+[9] FastAPI repository: https://github.com/fastapi/fastapi
+[10] Pydantic repository: https://github.com/pydantic/pydantic
+[11] PostgreSQL license: https://www.postgresql.org/about/licence/
+[12] PostgreSQL row security: https://www.postgresql.org/docs/current/ddl-rowsecurity.html

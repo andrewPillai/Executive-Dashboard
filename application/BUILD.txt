@@ -1,0 +1,86 @@
+NORTHSTAR SCIENTIFIC — FIRST APPLICATION BUILD
+
+Start the installed local build
+  ./run-demo.sh
+  Open http://127.0.0.1:8000
+
+This runs a real React/TypeScript CSR frontend and a FastAPI API on the same local origin. The API queries the synthetic SQLite dataset for order search, pagination and case evidence. Drafts and human-approved assignments persist in a separate workflow database. Eight audience views share the business facts.
+
+Current boundaries
+The backend uses the portable SQLite fixture for this local build. PostgreSQL remains the selected target; a PostgreSQL migration/adapter is not implemented yet. Insights and plan text remain scripted. No model provider, enterprise login, SAP integration or outbound notifications are connected. Role selection changes the perspective and is not an authorization system. Bind the local demo to loopback only.
+
+First-time setup on another machine
+Use Python 3.12 or compatible and Node 24 with pnpm.
+  python3 -m venv .venv
+  .venv/bin/python -m pip install -r python-requirements.lock
+  cd frontend
+  pnpm install --frozen-lockfile
+  pnpm build
+  cd ..
+  ./run-demo.sh
+
+Data is already generated. To regenerate synthetic data deliberately:
+  .venv/bin/python tools/generate_data.py
+This replaces the generated business fixture and summaries. The supplied seed makes the data repeatable. Restart the API and reset workflow state after replacing business data.
+
+Checks
+  .venv/bin/python -m pytest backend/test_api.py -q
+  .venv/bin/python tools/verify_delivery.py
+  cd frontend && pnpm build
+
+Workflow
+Open a case, inspect the evidence, save a draft, review the exact proposed owner and steps, then approve. Drafting does not create an assignment. The API rejects stale plan versions and duplicate approvals do not create duplicate assignments. Browser refresh preserves saved workflow state. The demo reset affects only the separate workflow database and starts a new run.
+
+Design
+See ux-design-rules.txt for the seven UX principles and acceptance criteria. See technology-decision.txt for the target architecture. The original HTML mockup is retained under mockup/ as a design reference.
+
+Installed workspace build note
+The dependencies in this workspace are already installed and their build passed.
+The bundled pnpm runtime attempts to reinstall them before running scripts because
+of its environment configuration. To build the existing installation explicitly:
+  pnpm --config.verify-deps-before-run=false build
+Use ordinary pnpm install --frozen-lockfile on a fresh machine before building.
+
+Connected-record increment
+Every audience now has three SQL-derived measures with definitions and a bounded
+department work queue. Customer, product and manufacturer pages show scoped
+metrics, related records and scenarios. Products include inventory by facility.
+Order search and pagination retain entity filters in the URL. Returning from an
+entity opened through a case reopens the originating case.
+Seven API tests and the production build pass. Browser checks verified customer
+49986 -> product 99972 -> manufacturer 472, scoped manufacturer pagination and
+return to page 2, and STOCK-003 -> product 99995 (0 versus 500 stock) -> same case.
+
+Department decision-support increment
+Complete department cohorts now preserve filters and specialized evidence columns
+through pagination/search. Sales includes undelivered quantities. Finance shows
+invoice-versus-POD cost differences; Commercial shows margin and pricing floors.
+Source explorers expose quotes, service events and purchase lines with oldest/
+newest ordering and applicable open-status filters. Planning matches candidate
+purchase supply to product AND facility; no allocation or available-stock claim.
+
+Invoice-date reports have period/region controls, reconciled totals/monthly values
+and comparable prior periods. Requested-date OTIF trends show numerator and
+denominator on a separately explained basis. Report controls apply to the report,
+not to the fixed-snapshot workbench or headline cards.
+
+Drafts can be revised or discarded; unsaved edits block approval. Saved proposed
+tasks are visible before approval. Approved tasks support In progress, Waiting,
+Completed, prerequisite enforcement and reviewer evidence notes. A separate human
+review marks simulated resolution. Source shipment/inventory/invoice records are
+unchanged. This is not independently verified recovery or an enterprise audit log.
+
+Verification: 13 backend tests pass; TypeScript/Vite production build passes.
+Browser acceptance covered pricing/finance evidence, cohort filtering, report
+period/region and OTIF definitions, oldest open service events, draft revision,
+dirty-edit approval gate, three dependent task completions and separate simulated
+resolution. Workflow browser checks used disposable state on port 8001.
+For repeatable isolated review: .venv/bin/python tools/serve_review.py
+Main demo remains ./run-demo.sh on port 8000 with saved workflow data preserved.
+
+Boundary before connections
+Live AI, SAP and other enterprise connections remain unconfigured. This is a
+credible synthetic demo, not a production operating platform: targets, forecast,
+true available-to-promise/stock reservations/transfer scheduling, AR/AP/GL,
+enterprise identity and authorization, and PostgreSQL migration remain outside
+the current local demonstration. See reviews/demo-readiness.txt for role gaps.

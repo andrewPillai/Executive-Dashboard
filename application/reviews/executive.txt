@@ -1,0 +1,32 @@
+EXECUTIVE / VP — SYNTHETIC END-USER REVIEW
+Reviewed: App.tsx, BusinessDetails.tsx, backend/depth.py, data/dashboard.json.
+Method: read-only implementation review; no browser usability test. Business needs below are role-play hypotheses, not verified Avantor requirements.
+
+VERDICT
+Useful connected-data demonstration, but not yet sufficient for a VP's daily operating review. I can inspect six examples and approve a department assignment. I cannot yet reliably answer: what changed, where are we off plan, what requires my decision today, and whether our response is working.
+
+TOP FIVE GAPS
+1. P1 — Add decision context to executive performance.
+   Briefing shows invoiced sales, open order value, product gross profit and inventory; executive workbench repeats sales/open value and adds customers in seeded cases. No target, prior-period variance, forecast, regional/business-segment scope or materiality threshold is implemented. One historical sales chart is insufficient to interpret an operating condition. Show a defined comparison period, target and variance for the chosen executive measures; label unavailable targets rather than infer them. Add region/segment drilldowns that preserve scope.
+
+2. P1 — Make priority ordering reflect a decision, not seed position.
+   sortedCases returns the original array for executives; Attention required takes cases.slice(0,3). Thus supplier delay, margin erosion and inventory imbalance remain the top three even after assignment, while direct cases never reach that area. The workbench sorts ten tagged lines by order date, not business urgency. Add explicit due date, impact type, decision required, owner and ranking rationale; distinguish unreviewed, awaiting executive approval and assigned-but-overdue cases. Do not combine non-additive exposure amounts into one risk total.
+
+3. P1 — Carry coordinated responses beyond one department assignment.
+   CaseDialog offers a single accountable department and due date. Approval records an assignment, but no team dependencies, named decision maker, next checkpoint, escalation or execution outcome. For an executive, an approved response is not recovered revenue or a protected commitment. Retain the honest current Assigned label and add per-department actions and milestones with evidence of completion, while requiring human approval for assignments.
+
+4. P2 — Put KPI period and calculation context beside the executive cards.
+   Backend defines executive invoiced sales as the entire dataset including simulation day; the chart excludes that day and spans October 2025–September 2026. The prominent sales card only says Through simulated October 1. Delivery health says eligible due lines without the requested-date denominator definition available in the analytics API. Show start/end period, as-of date, denominator and inclusion rules at the point of use; explicitly identify line-level OTIF and avoid implying invoice totals are policy-compliant recognized revenue. Keep current gross-profit cost exclusions visible.
+
+5. P2 — Preserve executive investigation context through the drilldown.
+   DepartmentWorkbench's Open order explorer link goes to unfiltered /orders, losing its scenario predicate; queue has no overdue age, requested date or responsible owner. Entity metrics are lifetime totals with sampled related entities. Provide a scoped View all matching records link, a clear active-filter breadcrumb, promised/requested/actual dates and remaining quantities. Executive decisions also need customer importance and affected business slice, with those fields explicitly synthetic until validated.
+
+USEFUL EXISTING ELEMENTS
+- Shared customer/product/manufacturer links and scoped entity order exploration support tracing a business problem to underlying records.
+- Explicit synthetic snapshot, scripted-insight labels and non-additive exposure warning reduce false confidence.
+- Human review before assignment, persisted draft state and unfinished-work banner support accountability.
+- Direct shipment evidence includes supplier confirmation, delivered quantity and invoice discrepancy, giving cross-department stories substance.
+- Metric definitions in the workbench appropriately distinguish open value, invoiced sales and modeled cost; bring that clarity to the executive summary.
+
+CONCRETE ACCEPTANCE SCENARIO
+As VP, I open the October 1 briefing for a selected region. Within 60 seconds I identify the largest material customer-commitment exception requiring my decision, see its due-date urgency and why it outranks other issues, and distinguish current open value from an estimated loss. I open the affected customer and order lines without losing scope, inspect supplier/direct-shipment or warehouse evidence, and review a response with Planning, Operations and Customer Service actions, one accountable owner and checkpoints. After approval, the briefing shows assigned work awaiting execution; it does not imply resolution. An overdue checkpoint returns to my attention queue, and eventual recovery is supported by delivery evidence.

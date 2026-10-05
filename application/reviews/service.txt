@@ -1,0 +1,36 @@
+CUSTOMER SERVICE — SYNTHETIC DEPARTMENT-HEAD REVIEW
+Review basis: source inspection of frontend/src/App.tsx and BusinessDetails.tsx, backend/depth.py, dashboard.json, and read-only SQLite queries. No browser usability session or actual employee interview. These are role hypotheses for the fictional business, not verified Avantor procedures.
+
+VERDICT
+Useful for explaining connected order exceptions and demonstrating human approval. Not yet sufficient as the department head's daily service operating view: it cannot tell me which customer follow-up is most urgent, who is handling it, or what commitment I can communicate now.
+
+WHAT IS USEFUL
+- Service metrics explicitly distinguish events from customers and incomplete delivery from shipment; this avoids treating event volume as unique cases.
+- Customer/product/manufacturer links support navigation from a seeded case to its commercial context.
+- Direct cases correctly separate manufacturer fulfillment from warehouse stock. DIRECT-005 exposes 68 ordered, 34 delivered and 34 remaining, with original promise, confirmation and POD evidence.
+- Saved drafts, explicit approval and Assigned status are useful coordination primitives; the UI does not claim that assignment resolves the operational issue.
+- Requested-date delivery OTIF and past-due incomplete delivery lines are relevant service-health signals, with definitions.
+
+TOP FIVE GAPS, IN PRIORITY ORDER
+1. P1 — Make the service queue an actual follow-up queue.
+   Evidence: depth.py selects lines with an open service event but orders by order_date descending and returns only ten. BusinessDetails Queue displays order/customer/product/mode/value/scenario, omitting event date, category, status and age. The dataset has 33,333 open events, ranging from October 3, 2025 to October 1, 2026; each of four categories contributes about 8,333. Recent order dates cannot expose the oldest unresolved complaint.
+   Acceptance: show event ID, category, opened date/age and customer; provide category/age filters, sorting and pagination with the same predicate preserved in the full explorer. Use event counts honestly until a unique-case model exists. Label overdue follow-up only if a defined service target exists; do not invent an SLA.
+
+2. P1 — Put remaining delivery and customer promise in the working view.
+   Evidence: the queue emphasizes unshipped value and hides quantities and promise dates. Customer service needs delivery completion; there are 240 past-due incomplete delivery lines. Direct case detail has strong evidence but ordinary queue rows do not surface it. The explorer's combined 'In transit / partial' status collapses materially different states.
+   Acceptance: show ordered/shipped/delivered/remaining quantities, requested and original committed dates, latest confirmed delivery where available, and explicitly Unknown when the remainder has no confirmation. Distinguish partial delivery from fully shipped but in transit. DIRECT-005 must show 34 remaining and must not present the first delivery's confirmation as a confirmed date for the remainder.
+
+3. P1 — Make ownership and follow-up survive beyond assignment approval.
+   Evidence: App.tsx lets the user choose one accountable department and due date; the flow ends at saved assignment. There is no service owner, next customer update, waiting-on-supplier status, escalation history or completed-action evidence.
+   Acceptance: each service issue shows accountable department, named synthetic assignee, next action/due date, dependency and last update; an approved action can move to In progress, Waiting on supplier/customer, and Completed. Business resolution remains separate and requires evidence. No real messages need be sent in the demo.
+
+4. P2 — Add service context to customer detail.
+   Evidence: customer detail provides generic order/bookings/invoice metrics, shared attributes and order samples. Customer master fields are only id/name/region/segment; service-event history and customer contacts are absent. A head cannot see repeat complaints or communication context.
+   Acceptance: the customer page shows open events by category, dated event history, incomplete and late deliveries, related active assignments, and clearly fictional contact/preferences data if added. A seeded repeat-contact scenario should show two events attached to the same issue without overstating unique customer problems.
+
+5. P2 — Replace generic priority presentation with service performance and service-owned scenario breadth.
+   Evidence: top cases are ordered by department membership rather than urgency; five of six seeded cases involve Service but only DIRECT-005 is owned by Service. The briefing retains a revenue chart, while no backlog-aging, category trend or response performance is available. 'Open service events' appears both in the briefing metrics and department workbench.
+   Acceptance: add aging buckets and category breakdown from existing dated events; choose relevant priorities with transparent urgency rules, show overdue customer promises separately from old inquiries, and remove duplicate KPI presentation. Seed at least complaint/repeat-contact and documentation-request scenarios, each with evidence, owner and a usable draft response. Only add response/resolution-time KPIs after suitable event timestamps exist.
+
+CONCRETE ACCEPTANCE WALKTHROUGH
+Select Customer Service. Find the oldest open complaint and explain why it needs attention. Open the customer and see earlier contact history. Inspect a related delivery and distinguish outstanding delivery from unshipped stock. Open DIRECT-005 and state '34 delivered; 34 outstanding; remainder date unconfirmed' unless new supporting evidence is introduced. Draft a supplier follow-up and a customer communication task, review and approve them, refresh, and see the owner, dependency and next update still present. Complete an action without automatically resolving the delivery issue. Finally reconcile event totals with filtered queue results and confirm all facts are labeled synthetic.

@@ -1,0 +1,27 @@
+NEXT BOUNDARY: LIVE AI AND SAP
+
+Current app state
+The local scripted demo now has connected business records, department-specific
+evidence, complete scoped queues, source record exploration, reconciled reporting,
+human draft review, coordinated task progress and simulated resolution.
+No enterprise data was fetched or transmitted by this implementation increment.
+
+Live AI decisions before connection
+- Select approved model/provider and execution environment.
+- Define which data may leave the local environment and how credentials are kept.
+- Keep retrieval/read tools grounded in the API's scoped facts and definitions.
+- Evaluate factual correctness, uncertainty, citations to business records, refusal
+  to invent commitments and separation of proposals from approved actions.
+- Keep workflow mutations behind explicit human review, version checks and audit.
+
+SAP decisions before connection
+- Identify approved ECC read interfaces and the future S/4HANA interface contract.
+- Map customer/product/vendor/order/delivery/stock/PO/invoice keys and units.
+- Agree read-only demo permissions, refresh cadence, reconciliation and data owners.
+- Treat OpenText content separately from transactional SAP records; do not assume
+  Stibo or Salesforce is an active global dependency.
+- Define identity/authorization and migration from local SQLite before production.
+
+No model subscription, credential setup, SAP access, writeback, messaging or
+production deployment has been performed. These are the next connection steps,
+not claims that all enterprise planning/financial capabilities are implemented.

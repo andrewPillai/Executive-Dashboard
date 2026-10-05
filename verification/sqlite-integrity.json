@@ -1,0 +1,12 @@
+{
+  "application/backend/workflow.sqlite": [
+    [
+      "ok"
+    ]
+  ],
+  "application/data/northstar.sqlite": [
+    [
+      "ok"
+    ]
+  ]
+}

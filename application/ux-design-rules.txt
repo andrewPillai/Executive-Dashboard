@@ -1,0 +1,28 @@
+Operations demo: UX acceptance rules
+
+Purpose
+Help eight leadership audiences move from business performance to a material issue, supporting evidence, a draft response, and a human-approved assignment. The seven principles below are design heuristics, not guarantees about behavior. Validate them through the actual workflow; do not impose an arbitrary seven-item limit.
+
+1. Fitts: make the intended action easy to reach
+Place the primary action next to the case or plan it affects. Use generous, labeled click targets and sufficient spacing, including in dense tables. The whole case title can open its detail; tiny icons cannot be the only entry. Acceptance: users can open a case, inspect evidence, and review a plan without precision pointing. Keyboard focus is visible and follows the same sequence.
+
+2. Hick: reveal decisions at the appropriate time
+The overview presents a ranked issue queue and a small set of meaningful filters. Case details reveal response options; approval controls appear in the plan review. Acceptance: each stage has an obvious next action, while secondary actions remain discoverable. Hiding needed information behind excessive menus is not a successful reduction in choices.
+
+3. Zeigarnik: make unfinished work visible
+Cases and plans show truthful states: investigating, draft, awaiting review, assigned, and resolved. Show owner, next step, and blocked dependencies. Acceptance: returning to a case reveals what remains unfinished without relying on memory. Do not manufacture urgency or use notification badges for completed work.
+
+4. Jakob: use familiar enterprise behavior
+Keep navigation, labeled filters, sortable table headings, search, breadcrumbs, and back behavior consistent. Clickable controls look interactive. Acceptance: all eight audience views share these conventions; role switching retains compatible scope, reporting period, and selected case. Unsupported filters are explained rather than silently discarded. A presentation persona does not itself grant authorization.
+
+5. Goal-gradient: show genuine progress toward resolution
+The case journey shows completed and remaining stages, plus concrete plan tasks. Acceptance: progress derives from actual recorded steps, not a decorative percentage. Approval creates an assignment only after an explicit review; it does not mean the business issue is resolved. Reopening or blocking a task updates its state honestly.
+
+6. Von Restorff: reserve emphasis for what matters
+Use one clear primary action per task region. Material exceptions receive distinct emphasis with text and icons, not color alone. Acceptance: a viewer can distinguish urgent business impact, selected navigation, and ordinary metrics. If every card is brightly colored or animated, revise the hierarchy. Live updates do not move a target while someone is interacting with it.
+
+7. Miller: reduce memory demands through meaningful grouping
+Group information into performance, impact, evidence, and action. Keep scope, units, comparison period, and freshness visible. Acceptance: a user can compare options and review assignments without memorizing another screen. Long inventories remain searchable and paginated; seven is not a universal capacity constraint.
+
+Cross-cutting checks
+Keep the synthetic-data label and simulated clock visible. Provide distinct loading, unavailable, empty, stale, and error states. Preserve context after retries. Tables and charts reconcile to the same snapshot, with text alternatives and accessible controls. No screen loads an entire departmental dataset. Draft AI explanations distinguish evidence from inference. Dashboard exploration continues if AI is unavailable. Verify keyboard operation, contrast, readable zoom, and focus return from dialogs. Review the full executive-to-case-to-approved-assignment journey, not only isolated screens.

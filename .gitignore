@@ -1,0 +1,15 @@
+.venv/
+node_modules/
+.pnpm-store/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.tsbuildinfo
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+application/frontend/dist/
+.env
+.env.*
+!.env.example
+.DS_Store

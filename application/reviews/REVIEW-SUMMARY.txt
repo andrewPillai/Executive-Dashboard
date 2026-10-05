@@ -1,0 +1,88 @@
+NORTHSTAR — EIGHT END-USER PERSPECTIVE REVIEWS
+October 5, 2026
+
+Method and limits
+Eight separate agents reviewed the implemented screens, API calculations and
+synthetic evidence as Executive/VP, Sales, Commercial Excellence, Customer Service,
+Operations, Planning & Sourcing, Finance, and Business Operations & Analytics.
+These are simulated role reviews, not interviews or approval by actual Avantor
+employees. Role requirements are hypotheses to validate with business owners.
+The agents inspected source/data; root separately exercised the connected-record
+navigation in the browser. This is not a completed end-user usability study.
+
+Shared verdict
+The information is relevant to investigating connected business exceptions.
+The app is not yet sufficient for each department's daily decision making.
+The main deficiency is role-specific decision context, not record volume.
+
+Strengths to retain
+- Shared customer, product, manufacturer and order evidence.
+- Credible warehouse and direct-shipment examples.
+- Explicit synthetic data, scripted insights and calculation definitions.
+- Human approval before assignments; assignment is not represented as resolution.
+- Persisted drafts and links that support returning to an investigation.
+
+Department findings
+Executive/VP: Needs what changed, target/variance, region/segment scope and an
+  urgency/impact-ranked decision queue. Current top three are fixed seed order.
+Sales: Needs account ownership, remaining delivery, promise/recovery dates,
+  account scope, targets, and a quote-line follow-up view.
+Commercial Excellence: Needs net price, applicable floor/list, modeled cost,
+  margin and authorization context. Unshipped value is zero for all six fulfilled
+  pricing exceptions and is not a useful primary commercial measure.
+Customer Service: Needs event age/category, customer history, remaining delivery
+  promises, next customer update, service ownership and escalation state.
+Operations: Needs facility, units, due dates, backlog age, available stock,
+  transfer feasibility and capacity context. On-hand stock alone is insufficient.
+Planning & Sourcing: Needs PO/supplier detail and demand matched to supply by
+  location, dates and quantity. The current product-only relation identifies
+  candidate supply, not a confirmed allocation or recovery commitment.
+Finance: Needs financial exception amounts and references, comparable periods,
+  reconciliation and resolution evidence. Cash, AR/AP and GL are not modeled.
+Business Operations & Analytics: Needs cohort-preserving drilldowns, OTIF and
+  exception trends, segment drivers, metric lineage and outcome measurement.
+
+Recommended next implementation order
+1. Replace the shared queue columns with department-specific evidence. Preserve
+   a small consistent set of identity/navigation columns. Show pricing/margin
+   differences for Commercial, invoice/POD variance for Finance, event age for
+   Service and requested/actual dates and days late for Analytics. Operations and
+   Sales need remaining quantities, facility and promise dates.
+2. Preserve every workbench predicate in the full explorer. A count and its
+   complete record population must reconcile through search, sorting and paging.
+3. Align period and scope across KPI, trend and detail views. Add visible bridges
+   when flow totals and point-in-time snapshots intentionally differ. Add targets
+   only as explicitly synthetic data with defined periods and owners.
+4. Make prioritization explicit: urgency, impact type, accountable owner and
+   reason. Do not add unlike exposure values into a single risk total.
+5. Extend approved assignments into coordinated tasks, dependencies, progress,
+   next checkpoints and evidence-backed resolution. Keep approval separate from
+   both execution and business recovery.
+6. Add missing domain records where decisions require them: service histories,
+   quote follow-up, purchase-order detail, stock reservations/availability and
+   transfer timing. Do not invent confirmed dates or imply data exists.
+
+Concrete evidence found
+- Commercial's six exceptions: $44,439.26 versus list, $7,406.18 versus floor,
+  approximately 2.91% modeled gross margin. These are different concepts.
+- DIRECT-005: 68 ordered, 34 delivered, 34 outstanding. Remainder recovery date
+  must be unknown unless new confirmation evidence is modeled.
+- STOCK-003: six lines, 255 units, $130,596.22 unshipped value; one product has
+  Houston zero on hand and Miami 500. That does not prove transfer availability.
+- DIRECT-006: 78 supplier-invoiced versus 76 POD units; modeled discrepancy
+  $1,043.74. No payment hold or invoice correction is implied.
+- KPI invoiced sales includes $22,302,443.86 on the simulation day beyond the
+  October 2025–September 2026 chart. Existing labels disclose different scopes,
+  but users need a common period or reconciliation bridge.
+- Analytics OTIF reconciles to 268,986 / 295,900 eligible lines (90.9% rounded).
+  Its 26,674 late-completed lines need delay evidence, not unshipped value.
+
+Individual reports and acceptance walkthroughs
+executive.txt | sales.txt | commercial.txt | service.txt | operations.txt |
+planning.txt | finance.txt | analytics.txt
+
+Disposition
+Review findings are recorded for the next implementation iteration. The review
+agents did not alter the app. Seven API tests and the connected-record production
+build passed before this review; passing technical tests does not establish
+business-user acceptance.

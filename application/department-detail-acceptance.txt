@@ -1,0 +1,29 @@
+DEPARTMENT AND CONNECTED RECORDS — ACCEPTANCE PATHS
+
+Purpose
+Make the next demo increment useful for investigation: select an audience, identify
+work needing attention, open a related business record, and inspect scoped orders.
+These are synthetic business views, not authorization boundaries or live AI.
+
+Expected paths
+1. Switch among eight audiences. Each workbench names its queue and defines its
+   metrics using the same fixed synthetic business snapshot.
+2. Follow a customer/product/manufacturer link from an order or case. Show identity
+   and scope clearly; do not present company totals as entity-specific metrics.
+3. From customer 49986, find DIRECT-004 and DIRECT-005. Product 99972 and manufacturer
+   472 connect to DIRECT-005. Related links must keep the selected entity context.
+4. Open all orders for an entity. Search and pagination keep the entity filter until
+   the user explicitly clears it. Browser back returns to the prior investigation.
+5. Unknown entities produce an understandable not-found state with a return path.
+6. Existing case drafting and human approval remain separate and functional.
+
+Design checks
+Use familiar pages and links, generous keyboard-operable targets, grouped metrics,
+optional definitions, a bounded first queue, explicit next steps and restrained
+emphasis. Retain the existing unfinished-draft and approval-progress behavior.
+
+Data checks
+Reconcile entity metrics with source SQL without duplicating invoices through joins.
+All entity order rows must match the filter. Direct shipments bypass warehouses.
+Label unshipped order value separately from undelivered quantities; do not infer
+payment status or company performance targets that the fixture does not contain.

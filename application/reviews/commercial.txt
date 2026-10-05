@@ -1,0 +1,38 @@
+Commercial Excellence department-head review
+Review date: 2026-10-05
+Method: synthetic end-user role review of implemented frontend App.tsx and BusinessDetails.tsx, backend/depth.py, dashboard.json, and read-only SQLite queries. No browser review, employee interview, or verified Avantor operating procedure is claimed. Role needs below are inferred for a commercial distribution business.
+
+Verdict: relevant starting point, but not yet sufficient to make and defend a pricing decision. The view identifies six below-floor lines and provides a useful connected pricing case. It does not put the pricing evidence needed to judge those exceptions in the working queue.
+
+Useful today
+- Separate below-floor line count, discount versus list, and invoiced gross margin. Definitions correctly say discount is neither lost profit nor realized revenue, and margin excludes freight/overhead.
+- MARGIN-002 correctly describes six fulfilled lines priced 3% above modeled cost, with Sales and Finance involved.
+- Customer/product/manufacturer links establish shared business context, and a saved draft plus human-approved assignment demonstrates accountable coordination.
+- Fixed synthetic snapshot and scripted insight labels make the demonstration's limits visible.
+
+Top five prioritized gaps and acceptance criteria
+
+1. P1 — Show pricing evidence where a pricing decision is made.
+Evidence: BusinessDetails.Queue uses the same columns for every department: order/line, customer, product, fulfillment, unshipped value, and scenario. All six pricing exceptions are fulfilled, so this queue shows $0 unshipped value for the very rows requiring action. Price, list, floor, cost, margin and quantity are absent. Entity pages give raw product attributes but no joined order-date pricing context; the case's raw lines lack the pricing floor.
+Acceptance: Commercial queue shows ordered/invoiced quantities, unit net price, applicable floor/list, modeled unit cost, gross margin %, below-floor dollars, and customer/product. Monetary units and metric basis are explicit. A fulfilled pricing exception remains financially interpretable without opening raw records.
+
+2. P1 — Distinguish policy exceptions from justified negotiated prices.
+Evidence: below_floor is a price comparison against the single demo product floor. pricing_records has effective_date but the comparison does not select pricing by order date. No contract price, approval identifier, exception reason, approver, or customer agreement is modeled.
+Acceptance: Add clearly synthetic examples of approved contract pricing and unauthorized discounts. Show price-rule validity date, agreement/authorization status, reason and approving owner. Approved exceptions are visible but not conflated with unresolved policy breaches. Until modeled, label these as below-floor candidates requiring review, not unauthorized pricing.
+
+3. P1 — Preserve exception scope and offer a complete work queue.
+Evidence: departmental queue returns at most ten lines ordered by date; Open order explorer links to /orders without retaining the below-floor predicate. The generic explorer has no price-exception filter or commercial columns. Only scenario-tagged rows have a scenario action.
+Acceptance: Open complete pricing queue retains below-floor scope and matching count through search and pagination. Sort by below-floor dollar difference or margin severity; permit creating a review draft for a selected non-seeded exception as scenarios expand. Customer/product links return to the same scoped queue.
+
+4. P2 — Explain profitability changes, not only totals.
+Evidence: commercial headline is 'Understand what is moving profitability' and copy references product mix/cost to serve, but the chart is companywide invoiced sales, metrics are dataset totals, and no margin trend, target, comparison, segment or cost-to-serve analysis is supplied.
+Acceptance: Provide explicit period/comparison filters and revenue-weighted gross margin trend, with customer/category/region drill-down. Separate price, mix and modeled cost explanations or narrow the copy to what is actually measured. Freight/rebates/overhead must remain excluded and labeled until modeled. A manager can identify the largest contributing segment and its underlying lines.
+
+5. P2 — Make the response commercial-specific and distinguish assignment from remediation.
+Evidence: MARGIN-002 recommends checking authorization and future quotes, but workflow captures a department and due date, then generic draft/assignment. No proposed future price, rationale, affected quote/customer scope, approval reason, follow-up measurement, or resolution exists.
+Acceptance: A pricing review draft records proposed future quote treatment, owner, Sales/Finance dependencies, reason and customer impact; a human can revise or reject it before approval. Assignment does not imply prices changed or financial recovery. A subsequent status records review outcome and follow-up evidence.
+
+Concrete acceptance scenario
+Select Commercial Excellence and open the six MARGIN-002 exceptions. SQL independently confirms these lines have $108,980.32 ordered value, $105,807.82 modeled cost, $3,172.50 modeled gross profit (about 2.91% margin), $44,439.26 difference versus list, $7,406.18 difference versus floor, and $0 unshipped value. These figures represent different concepts and must not be labeled recoverable loss. The manager should see them together, inspect the applicable price rule and approval context, follow an affected customer/product, return to the same queue, then draft a future-quote review for Sales/Finance and approve an assignment without any claim that the fulfilled invoices were corrected.
+
+Recommended demo pass criterion: independently reconstruct all displayed pricing numbers from the six evidence lines and complete the above decision flow without relying on unlabeled raw fields or external spreadsheets.

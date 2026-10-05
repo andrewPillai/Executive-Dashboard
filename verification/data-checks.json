@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "checks": {
+    "customers_100k": true,
+    "products_100k": true,
+    "warehouse_US_20": true,
+    "warehouse_EU_7": true,
+    "all_audiences_100k": true,
+    "six_cases": true,
+    "three_direct_cases": true,
+    "twelve_historical_months": true,
+    "invoice_total_matches_summary": true,
+    "foreign_keys": true,
+    "service_chronology": true,
+    "invoice_month_2025-10": true,
+    "invoice_month_2025-11": true,
+    "invoice_month_2025-12": true,
+    "invoice_month_2026-01": true,
+    "invoice_month_2026-02": true,
+    "invoice_month_2026-03": true,
+    "invoice_month_2026-04": true,
+    "invoice_month_2026-05": true,
+    "invoice_month_2026-06": true,
+    "invoice_month_2026-07": true,
+    "invoice_month_2026-08": true,
+    "invoice_month_2026-09": true
+  },
+  "record_total": 1851581,
+  "database_bytes": 106876928
+}

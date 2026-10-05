@@ -1,0 +1,5 @@
+Packaging-time staged application: 13 passed, 1 warning in 6.33s.
+Run from application directory: python -m pytest backend -q
+Used original installed locked Python environment.
+Warning: Starlette deprecates httpx in its TestClient.
+An initial invocation from workspace root failed imports; rerunning from the documented application directory passed.

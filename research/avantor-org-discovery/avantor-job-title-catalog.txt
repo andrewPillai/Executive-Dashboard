@@ -1,0 +1,1868 @@
+AVANTOR JOB-TITLE CATALOG — ALL LEVELS
+Prepared: 5 October 2026
+
+SCOPE AND EVIDENCE
+Includes individual contributors, supervisors, managers, directors, VP, SVP, EVP and C-suite.
+Primary source: Avantor Job Categories - 11202023.xlsx, CareerSite20 / Phenom People / 02 Prework.
+Source link: https://avantorsciences.sharepoint.com/teams/CareerSite20/_layouts/15/Doc.aspx?sourcedoc=%7B6709AAD1-1CAE-4690-B51C-C678E7364DB5%7D&file=Avantor+Job+Categories+-+11202023.xlsx&action=default&mobileredirect=true&web=1
+The workbook labels its job-family and job-profile fields as Workday exports. Filename date: 20 November 2023. SharePoint modified: 26 December 2023.
+This is a historical profile catalog, NOT a verified roster of current occupied positions, a headcount report, or a reporting-line hierarchy. An available job profile does not prove someone holds it today.
+
+COVERAGE
+1,467 source profile entries; 1,409 distinct exact title strings; 97 source family/group rows; 24 consolidated discipline groups.
+Counts include temporary, contingent and acquisition placeholders. Repeated titles at different profile levels are retained. Unique title counts within disciplines must not be summed to obtain enterprise unique titles.
+The two source rows with missing job-family-group values are consolidated under Information Technology Group because that is their source family label. Other group and family assignments are preserved, including apparent anomalies.
+One reversed code/title entry (DE00713) is parsed without changing its title. One Customer Service manager entry has no code. Source spelling is preserved.
+No title-to-person assignments or reporting relationships have been inferred.
+
+DISCIPLINE INDEX
+General Management Group: 4 profile entries; 2 distinct titles
+  Families: General Management
+Administrative Services Group: 20 profile entries; 20 distinct titles
+  Families: Administrative Services; General Support Services
+Business Operations Group: 55 profile entries; 52 distinct titles
+  Families: Business Insights & Analytics; Business Operations; Business Process Management
+Communications & Brand Group: 51 profile entries; 50 distinct titles
+  Families: Brand; Communications; Marketing Communications; Multi-Media & Content
+Executive Group: 12 profile entries; 12 distinct titles
+  Families: Executive
+Finance Group: 109 profile entries; 103 distinct titles
+  Families: Accounting & Controllership; Audit; Credit & Collection; Corporate Strategy; Financial Planning & Analysis; Tax; Treasury
+Human Resources Group: 114 profile entries; 111 distinct titles
+  Families: HR Business Partnership; HR Operations & Analytics; HR Systems; Payroll; Talent Acquisition; Talent Development; Total Rewards
+Information Technology Group: 154 profile entries; 139 distinct titles
+  Families: Applications Development; Applications Support; Business Relationship Management; Enterprise Data Management & Analytics; Help Desk / Site Support; Information Security; IT Engineering; IT Project & Vendor Management; Information Technology Group
+Legal Group: 21 profile entries; 21 distinct titles
+  Families: Contracts & Legal Support; Corporate Counsel
+Marketing & Strategy Group: 62 profile entries; 58 distinct titles
+  Families: Business Development, Strategy & Planning; Market/Segment Development; Marketing; Product & Portfolio Management
+Customer Service Group: 39 profile entries; 39 distinct titles
+  Families: Customer Service; Customer Support & Operations
+Services Group: 134 profile entries; 132 distinct titles
+  Families: Equipment & Instrument Services; Inventory Management Services; Lab Furniture Services; General Lab & Scientific Services; Services Management; Technical Services
+Temporary / Limited Services: 8 profile entries; 7 distinct titles
+  Families: Acquisition; USA Intern - Temporary; Intern - Temporary; Trainee; Apprentice
+Operations Group: 157 profile entries; 152 distinct titles
+  Families: Cleanroom Operations; Clinical Operations; Contract Manufacturing; Distribution & Warehouse Operations; Facilities Management; Maintenance & Reliability; Manufacturing Operations; Transportation & Logistics
+Program Management Group: 18 profile entries; 18 distinct titles
+  Families: Program Management; Project Management
+Research & Development Group: 60 profile entries; 57 distinct titles
+  Families: R&D Engineering; R&D Projects & Portfolio; Research Applications & Development; Research Science; Research Science Support
+Commercial Excellence Group: 77 profile entries; 75 distinct titles
+  Families: Commercial Ops & Enablement; Pricing & Quotes; Technical Support
+Sales Group: 117 profile entries; 112 distinct titles
+  Families: Account Management; Channel Sales; Export Sales; Sales; Sales - Application & Technical; Strategic Partners; Sales - General
+EHS, Security & Sustainability Group: 17 profile entries; 16 distinct titles
+  Families: Environmental, Health & Safety
+Engineering Group: 56 profile entries; 56 distinct titles
+  Families: Automation & Process Control Engineering; Chemical Engineering; Facilities Engineering; Mechanical Engineering; Process Engineering; Project Engineering; Quality Engineering; Reliability & Equipment Engineering
+Quality Group: 53 profile entries; 52 distinct titles
+  Families: Quality Assurance & Quality Systems; Quality Control & Validation
+Regulatory Affairs Group: 57 profile entries; 56 distinct titles
+  Families: Product Compliance; Regulatory Operations; Trade Compliance
+Contingent: 4 profile entries; 4 distinct titles
+  Families: Contingent Workers
+Planning & Sourcing Group: 68 profile entries; 66 distinct titles
+  Families: Inventory Management; Planning; Scheduling; Sourcing
+
+COMPLETE HISTORICAL CATALOG
+Each entry shows source code and exact title. All levels are included.
+
+===========================================================================
+GENERAL MANAGEMENT GROUP
+===========================================================================
+
+General Management
+  E20.GMG | Vice President, General Manager
+  E21.GMG | Vice President, General Manager
+  M18.GMG | General Manager
+  M19.GMG | General Manager
+
+===========================================================================
+ADMINISTRATIVE SERVICES GROUP
+===========================================================================
+
+Administrative Services
+  DE00713 | Administration 2nd Level Support Team
+  B10.ADM | Administrative Support Associate
+  B10.ADM | Receptionist
+  B11.ADM | Administrative Assistant
+  B11.ADM | Administrative Support Sr. Associate
+  B12.ADM | Sr. Administrative Assistant
+  B13.ADM | Administrative Support Specialist
+  DE00118 | Carpool & Travel Management / Teamleader Infrastructure & Facility
+  DE00209 | Sales Assistant
+  DE00286 | Assistant General Management
+  DE00433 | Administrative Tasks
+  M14.ADM | Supervisor I, Administrative Services
+  M15.ADM | Supervisor II, Administrative Services
+  P14.ADM | Administrative Services Specialist
+  P15.ADM | Administrative Services Sr. Specialist
+  P15.ADM | Executive Assistant
+
+General Support Services
+  B10.ADM | General Support Associate
+  B11.ADM | General Support Sr. Associate
+  B15.ADM | Works Council
+  DE00251 | Work Council
+
+===========================================================================
+BUSINESS OPERATIONS GROUP
+===========================================================================
+
+Business Insights & Analytics
+  B10.BOG | Business Analytics Associate
+  B11.BOG | Business Analytics Sr. Associate
+  B12.BOG | Business Analytics Specialist
+  B13.BOG | Business Analytics Sr. Specialist
+  B14.BOG | Business Analytics Lead Specialist
+  E20.BOG | Vice President, Business Analytics
+  E21.BOG | Vice President, Business Analytics
+  M16.BOG | Manager I, Business Analytics
+  M17.BOG | Manager II, Business Analytics
+  M18.BOG | Director I, Business Analytics
+  M19.BOG | Director II, Business Analytics
+  P14.BOG | Business Analytics Analyst I
+  P15.BOG | Business Analytics Analyst II
+  P16.BOG | Business Analytics Manager I
+  P17.BOG | Business Analytics Manager II
+  P18.BOG | Business Analytics Director I
+
+Business Operations
+  B10.BOG | Business Operations Associate
+  B11.BOG | Business Operations Sr. Associate
+  B12.BOG | Business Operations Specialist
+  B13.BOG | Business Operations Sr. Specialist
+  B14.BOG | Business Operations Lead Specialist
+  E20.BOG | Vice President, Business Operations
+  E21.BOG | Vice President, Business Operations
+  M14.BOG | Supervisor I, Business Operations
+  M15.BOG | Supervisor II, Business Operations
+  M16.BOG | Manager I, Business Operations
+  M17.BOG | Manager II, Business Operations
+  M18.BOG | Director I, Business Operations
+  M19.BOG | Director II, Business Operations
+  P14.BOG | Business Operations Analyst I
+  P15.BOG | Business Operations Analyst II
+  P16.BOG | Business Operations Manager I
+  P17.BOG | Business Operations Manager II
+  P18.BOG | Business Operations Director I
+
+Business Process Management
+  B10.BOG | Business Process Associate
+  B11.BOG | Business Process Sr. Associate
+  B12.BOG | Business Process Specialist
+  B13.BOG | Business Process Sr. Specialist
+  B14.BOG | Business Process Lead Specialist
+  DE00274 | Technical Service Projects Europe
+  DE00490 | Process Improvement Manager
+  DE00689 | Sales & Project Support
+  E20.BOG | Vice President, Business Systems
+  E21.BOG | Vice President, Business Systems
+  M15.BOG | Supervisor II, Business Systems
+  M16.BOG | Manager I, Business Systems
+  M17.BOG | Manager II, Business Systems
+  M18.BOG | Director I, Business Systems
+  M19.BOG | Director II, Business Systems
+  P14.BOG | Business Process Improvement Analyst I
+  P15.BOG | Business Process Improvement Analyst II
+  P16.BOG | Business Process Improvement Manager I
+  P17.BOG | Business Process Improvement Manager II
+  P18.BOG | Business Systems Director I
+  P19.BOG | Business Systems Director II
+
+===========================================================================
+COMMUNICATIONS & BRAND GROUP
+===========================================================================
+
+Brand
+  M16.COM | Manager I, Brand
+  M17.COM | Manager II, Brand
+  M18.COM | Director I, Brand
+
+Communications
+  B11.COM | Communications Associate
+  B12.COM | Communications Sr. Associate
+  B13.COM | Communications Specialist
+  B14.COM | Communications Sr. Specialist
+  E20.COM | Vice President, Communications
+  E21.COM | Vice President, Communications
+  E22.COM | SVP, Communications & Branding
+  M16.COM | Manager I, Communications
+  M17.COM | Manager II, Communications
+  M18.COM | Director I, Communications
+  M19.COM | Director II, Communications
+  P14.COM | Communications Analyst I
+  P15.COM | Communications Analyst II
+  P16.COM | Communications Manager I
+  P17.COM | Communications Manager II
+  P18.COM | Communications Director I
+
+Marketing Communications
+  B11.COM | Marketing Communications Associate
+  B12.COM | Marketing Communications Sr. Associate
+  B13.COM | Marketing Communications Specialist
+  B14.COM | Marketing Communications Sr. Specialist
+  DE00482 | Manager Marketing Communication Europe
+  DE00707 | Mgr- Marketing Events
+  DE00708 | Marketing Communications Specialist (DE)
+  E20.COM | Vice President, Marketing Communications
+  M14.COM | Supervisor I, Marketing Communications
+  M15.COM | Supervisor II, Marketing Communications
+  M16.COM | Manager I, Marketing Communications
+  M17.COM | Manager II, Marketing Communications
+  M18.COM | Director I, Marketing Communications
+  M19.COM | Director II, Marketing Communications
+  P14.SLS | Associate Account Representative
+  P15.COM | Marketing Communications Analyst II
+  P16.COM | Marketing Communications Manager I
+  P17.COM | Marketing Communications Manager II
+
+Multi-Media & Content
+  B11.COM | Multimedia Content Associate
+  B12.COM | Graphic Designer
+  B12.COM | Multimedia Content Sr. Associate
+  B13.COM | Multimedia Content Specialist
+  B13.COM | Sr. Graphic Designer
+  B14.COM | Multimedia Content Sr. Specialist
+  M14.COM | Supervisor I, Graphic Design
+  M15.COM | Supervisor II, Graphic Design
+  M16.COM | Manager I, Digital Content
+  M17.COM | Manager II, Digital Content
+  P14.COM | Digital Content Analyst I
+  P15.COM | Digital Content Analyst II
+  P16.COM | Digital Content Manager I
+  P17.COM | Digital Content Manager II
+
+===========================================================================
+EXECUTIVE GROUP
+===========================================================================
+
+Executive
+  E23.EXE | EVP, Americas and Europe
+  E23.EXE | EVP, APAC
+  E23.EXE | EVP, Biomaterials and Advanced Technologies
+  E23.EXE | EVP, Biopharma Production
+  E23.EXE | EVP, Chief Financial Officer
+  E23.EXE | EVP, Chief Human Resources Officer
+  E23.EXE | EVP, Chief Information Officer
+  E23.EXE | EVP, General Counsel
+  E23.EXE | EVP, Global Operations and Supply Chain
+  E23.EXE | EVP, Services & Strategic Partners
+  E23.EXE | EVP, Strategy & Corporate Development
+  E24.EXE | Chief Executive Officer
+
+===========================================================================
+FINANCE GROUP
+===========================================================================
+
+Accounting & Controllership
+  B11.FIN | Accounting Associate
+  B12.FIN | Accounting Sr. Associate
+  B13.FIN | Accounting Specialist
+  B14.FIN | Accounting Sr. Specialist
+  DE00115 | Contoller Logistic
+  DE00116 | Controlling
+  DE00290 | Assistant GL
+  DE00410 | Controller Logistics & Supply Chain Europe
+  DE00506 | Teamleader Finance
+  DE00672 | Chief Accountant
+  DE00677 | Controller Contract Complance
+  E20.FIN | Vice President, Accounting
+  E21.FIN | Vice President, Accounting
+  E22.FIN | SVP, Corporate Controller
+  M14.FIN | Supervisor I, Accounting
+  M15.FIN | Supervisor II, Accounting
+  M16.FIN | Manager I, Accounting
+  M17.FIN | Controller
+  M18.FIN | Business Controller
+  M19.FIN | Director II, Accounting
+  P14.FIN | Accounting Analyst I
+  P15.FIN | Accounting Analyst II
+  P16.FIN | Accountant I
+  P17.FIN | Accountant II
+
+Audit
+  E20.FIN | Vice President, Audit
+  E21.FIN | Vice President, Audit
+  M14.FIN | Supervisor I, Audit
+  M15.FIN | Supervisor II, Audit
+  M16.FIN | Manager I, Audit
+  M17.FIN | Manager II, Audit
+  M18.FIN | Director I, Audit
+  M19.FIN | Director II, Audit
+  P14.FIN | Audit Analyst I
+  P15.FIN | Audit Analyst II
+  P16.FIN | Auditor I
+  P17.FIN | Auditor II
+
+Credit & Collection
+  B10.FIN | AP/AR Associate
+  B11.FIN | AP/AR Sr. Associate
+  B12.FIN | AP/AR Specialist
+  B13.FIN | AP/AR Sr. Specialist
+  B14.FIN | AP/AR Lead Specialist
+  DE00149 | Finance Admin
+  M14.FIN | Supervisor I, AP/AR
+  M15.FIN | Supervisor II, AP/AR
+  M16.FIN | Manager I, Credit & Collection
+  P14.FIN | Credit Analyst I
+  P15.FIN | Credit Analyst II
+  P16.FIN | Credit Manager I
+
+Corporate Strategy
+  E20.FIN | Vice President, Corporate Development & Strategy
+  E20.FIN | Vice President, Investor Relations
+  E21.FIN | Vice President, Corporate Development & Strategy
+  E21.FIN | Vice President, Investor Relations
+  M18.FIN | Director I, Corporate Strategy
+  M19.FIN | Director II, Corporate Strategy
+  P16.FIN | Corporate Strategy Manager I
+  P17.FIN | Corporate Strategy Manager II
+  P18.FIN | Corporate Strategy Director I
+
+Financial Planning & Analysis
+  B11.FIN | Finance Associate
+  B12.FIN | Finance Sr. Associate
+  B13.FIN | Finance Specialist
+  B14.FIN | Finance Sr. Specialist
+  DE00117 | FP&A Business Analyst
+  DE00268 | Teamleader Controlling
+  E20.FIN | Vice President, Finance
+  E21.FIN | Vice President, Finance
+  E22.FIN | SVP, Finance
+  M14.FIN | Supervisor I, Finance
+  M15.FIN | Supervisor II, Finance
+  M16.FIN | Manager I, Finance
+  M17.FIN | Manager II, Finance
+  M18.FIN | Director I, Finance
+  M19.FIN | Director II, Finance
+  P14.FIN | Finance Analyst I
+  P15.FIN | Finance Analyst II
+  P16.FIN | Finance Manager I
+  P17.FIN | Finance Manager II
+  P18.FIN | Finance Director I
+
+Tax
+  B11.FIN | Tax Associate
+  B12.FIN | Tax Sr. Associate
+  B13.FIN | Tax Specialist
+  B14.FIN | Tax Sr. Specialist
+  E20.FIN | Vice President, Tax
+  E21.FIN | Vice President, Tax
+  E22.FIN | SVP, Tax
+  M14.FIN | Supervisor I, Tax
+  M15.FIN | Supervisor II, Tax
+  M16.FIN | Manager I, Tax
+  M17.FIN | Manager II, Tax
+  M18.FIN | Director I, Tax
+  M19.FIN | Director II, Tax
+  P14.FIN | Tax Analyst I
+  P15.FIN | Tax Analyst II
+  P16.FIN | Tax Manager I
+  P17.FIN | Tax Manager II
+  P18.FIN | Tax Director I
+
+Treasury
+  B11.FIN | Treasury Associate
+  B12.FIN | Treasury Sr. Associate
+  B13.FIN | Treasury Specialist
+  B14.FIN | Treasury Sr. Specialist
+  M14.FIN | Supervisor I, Treasury
+  M15.FIN | Supervisor II, Treasury
+  M16.FIN | Manager I, Treasury
+  M17.FIN | Manager II, Treasury
+  M18.FIN | Director I, Treasury
+  M19.FIN | Director II, Treasury
+  P14.FIN | Treasury Analyst I
+  P15.FIN | Treasury Analyst II
+  P16.FIN | Treasury Manager I
+  P17.FIN | Treasury Manager II
+
+===========================================================================
+HUMAN RESOURCES GROUP
+===========================================================================
+
+HR Business Partnership
+  B11.HRG | HR Associate
+  B12.HRG | HR Sr. Associate
+  B13.HRG | HR Specialist
+  B14.HRG | HR Sr. Specialist
+  DE00163 | HR Business Partner
+  DE00227 | Teamleader Human Resources
+  DE00317 | Human Resources Manager
+  E20.HRG | Vice President, Human Resources
+  E21.HRG | Vice President, Human Resources
+  E22.HRG | SVP, Human Resources
+  M14.HRG | Supervisor I, Human Resources
+  M15.HRG | Supervisor II, Human Resources
+  M16.HRG | Manager I, Human Resources
+  M17.HRG | Manager II, Human Resources
+  M18.HRG | Director I, Human Resources
+  M19.HRG | Director II, Human Resources
+  P14.HRG | HR Generalist
+  P15.HRG | Sr. HR Generalist
+  P16.HRG | HR Manager I
+  P17.HRG | HR Manager II
+  P18.HRG | HR Director I
+
+HR Operations & Analytics
+  B11.HRG | HR Operations Associate
+  B12.HRG | HR Operations Sr. Associate
+  B13.HRG | HR Operations Specialist
+  B14.HRG | HR Operations Sr. Specialist
+  M15.HRG | Supervisor II, HR Operations
+  M16.HRG | Manager I, HR Operations
+  M17.HRG | Manager II, HR Operations
+  M18.HRG | Director I, HR Operations
+  M19.HRG | Director II, HR Operations
+  P14.HRG | HR Operations Analyst I
+  P15.HRG | HR Operations Analyst II
+  P16.HRG | HR Operations Manager I
+  P17.HRG | HR Operations Manager II
+  P18.HRG | HR Operations Director I
+
+HR Systems
+  B10.HRG | HR Systems Associate
+  B11.HRG | HR Systems Sr. Associate
+  B12.HRG | HR Systems Specialist
+  B13.HRG | HR Systems Sr. Specialist
+  B14.HRG | HR Systems Lead Specialist
+  M14.HRG | Supervisor I, HR Systems
+  M15.HRG | Supervisor II, HR Systems
+  M16.HRG | Manager I, HR Systems
+  M17.HRG | Manager II, HR Systems
+  M18.HRG | Director I, HR Systems
+  M19.HRG | Director II, HR Systems
+  P14.HRG | HR Systems Analyst I
+  P15.HRG | HR Systems Analyst II
+  P16.HRG | HR Systems Manager I
+  P17.HRG | HR Systems Manager II
+  P18.HRG | HR Systems Director I
+
+Payroll
+  B10.HRG | Payroll Associate
+  B11.HRG | Payroll Sr. Associate
+  B12.HRG | Payroll Specialist
+  B13.HRG | Payroll Sr. Specialist
+  B14.HRG | Payroll Lead Specialist
+  DE00208 | HR Payroll & Admin
+  M14.HRG | Supervisor I, Payroll
+  M15.HRG | Supervisor II, Payroll
+  M16.HRG | Manager I, Payroll
+  M17.HRG | Manager II, Payroll
+  M18.HRG | Director I, Payroll
+  P14.HRG | Payroll Analyst I
+  P15.HRG | Payroll Analyst II
+
+Talent Acquisition
+  B11.HRG | Talent Acquisition Associate
+  B12.HRG | Talent Acquisition Sr. Associate
+  B13.HRG | Talent Acquisition Specialist
+  B14.HRG | Talent Acquisition Sr. Specialist
+  DE00676 | Talent Acquisition Partner DACH
+  M14.HRG | Supervisor I, Talent Acquisition
+  M15.HRG | Supervisor II, Talent Acquisition
+  M16.HRG | Manager I, Talent Acquisition
+  M17.HRG | Manager II, Talent Acquisition
+  M18.HRG | Director I, Talent Acquisition
+  P14.HRG | Talent Recruiter I
+  P15.HRG | Talent Recruiter II
+  P16.HRG | Talent Acquisition Manager I
+
+Talent Development
+  E20.HRG | Vice President, Talent Development
+  E21.HRG | Vice President, Talent Development
+  E22.HRG | SVP, Talent Management
+  M16.HRG | Manager I, Talent Development
+  M17.HRG | Manager II, Talent Development
+  M18.HRG | Director I, Talent Development
+  M19.HRG | Director II, Diversity, Equity & Inclusion
+  M19.HRG | Director II, Talent Development
+  P14.HRG | Talent Development Specialist
+  P15.HRG | Talent Development Sr. Specialist
+  P16.HRG | Talent Development Manager I
+  P17.HRG | Talent Development Manager II
+
+Total Rewards
+  B11.HRG | Total Rewards Associate
+  B12.HRG | Total Rewards Sr. Associate
+  B13.HRG | Total Rewards Specialist
+  B14.HRG | Total Rewards Sr. Specialist
+  E20.HRG | Vice President, Total Rewards
+  E21.HRG | Vice President, Total Rewards
+  E22.HRG | SVP, Total Rewards
+  M16.HRG | Manager I, Benefits
+  M16.HRG | Manager I, Compensation
+  M17.HRG | Manager II, Benefits
+  M17.HRG | Manager II, Compensation
+  M18.HRG | Director I, Benefits
+  M18.HRG | Director I, Compensation
+  M19.HRG | Director II, Benefits
+  M19.HRG | Director II, Compensation
+  P14.HRG | Benefits Analyst I
+  P14.HRG | Compensation Analyst I
+  P15.HRG | Benefits Analyst II
+  P15.HRG | Compensation Analyst II
+  P16.HRG | Benefits Manager I
+  P16.HRG | Compensation Manager I
+  P17.HRG | Benefits Manager II
+  P17.HRG | Compensation Manager II
+  P18.HRG | Benefits Director I
+  P18.HRG | Compensation Director I
+
+===========================================================================
+INFORMATION TECHNOLOGY GROUP
+===========================================================================
+
+Applications Development
+  B10.ITG | Applications Development Associate
+  B11.ITG | Applications Development Sr. Associate
+  B12.ITG | Applications Development Specialist
+  B13.ITG | Applications Development Sr. Specialist
+  B14.ITG | Associate Engineer, Applications Development
+  B15.ITG | Engineer, Applications Development
+  DE00156 | Director Digital Services – Marketing Services
+  E20.ITG | Vice President, Information Technology
+  E21.ITG | Vice President, Digital Commerce Platforms
+  E22.ITG | SVP, Chief Digital Officer
+  M14.ITG | Team Lead, Applications Development
+  M15.ITG | Team Lead, Applications Development
+  M16.ITG | Manager I, Applications Development
+  M17.ITG | Manager II, Applications Development
+  M18.ITG | Director I, Applications Development
+  M19.ITG | Director II, Applications Development
+  P14.ITG | Associate Engineer, Applications Development
+  P15.ITG | Engineer, Applications Development
+  P16.ITG | Sr. Engineer, Applications Development
+  P17.ITG | Principal Architect, Applications Development
+  P18.ITG | Sr. Principal Architect, Applications Development
+  P19.ITG | Fellow, Applications Development
+
+Applications Support
+  B10.ITG | Applications Support Associate
+  B11.ITG | Applications Support Sr. Associate
+  B12.ITG | Applications Support Specialist
+  B13.ITG | Applications Support Sr. Specialist
+  B14.ITG | Associate Engineer, Applications Support
+  B15.ITG | Engineer, Applications Support
+  DE00105 | Product Content Manager
+  DE00220 | Client Server Software Team
+  DE00280 | Project Manager Scientific Equipment and Service
+  DE00444 | Manager Digital Services - Marcom Solutions & Support
+  DE00654 | Manager Enterprise Collaboration
+  DE00712 | Technician 2nd Level Support
+  DE00714 | Trainer
+  M14.ITG | Team Lead, Applications Support
+  M15.ITG | Team Lead, Applications Support
+  M16.ITG | Manager I, Applications Support
+  M17.ITG | Manager II, Applications Support
+  M18.ITG | Director I, Applications Support
+  M19.ITG | Director II, Applications Support
+  P14.ITG | Associate Engineer, Applications Support
+  P15.ITG | Engineer, Applications Support
+  P16.ITG | Sr. Engineer, Applications Support
+  P17.ITG | Principal Engineer, Applications Support
+
+Business Relationship Management
+  B11.ITG | IT Business Relationship Associate
+  B12.ITG | IT Business Relationship Sr. Associate
+  B13.ITG | IT Business Relationship Specialist
+  B14.ITG | IT Business Relationship Sr. Specialist
+  E20.ITG | Vice President, Business Relationship Management
+  E21.ITG | Vice President, Business Relationship Management & PMO
+  M14.ITG | Team Lead, IT Business Relationship Management
+  M15.ITG | Team Lead, IT Business Relationship Management
+  M16.ITG | Manager I, IT Business Relationship Management
+  M17.ITG | Manager II, IT Business Relationship Management
+  M18.ITG | Director I, IT Business Relationship Management
+  M19.ITG | Director II, IT Business Relationship Management
+  P14.ITG | Associate IT Business Relationship Manager
+  P15.ITG | IT Business Relationship Manager
+  P16.ITG | Sr. IT Business Relationship Manager
+  P17.ITG | Principal, IT Business Relationship Manager
+  P18.ITG | Sr. Principal, IT Business Relationship Manager
+
+Enterprise Data Management & Analytics
+  B10.ITG | Data Steward
+  B11.ITG | Sr. Data Steward
+  B12.ITG | Data Custodian
+  B13.ITG | Sr. Data Custodian
+  DE00702 | Director Product Information Management Global
+  E20.ITG | Vice President, Data Management
+  E21.ITG | Vice President, Data Management
+  E22.ITG | SVP, Enterprise Solutions & Analytics
+  M14.ITG | Team Lead, Data Management & Analytics
+  M15.ITG | Team Lead, Data Management & Analytics
+  M16.ITG | Manager I, Data Management & Analytics
+  M17.ITG | Manager II, Data Management & Analytics
+  M18.ITG | Director I, Data Management & Analytics
+  M19.ITG | Director II, Data Management & Analytics
+  P14.ITG | Associate Engineer, Data Mgmt & Analytics
+  P15.ITG | Engineer, Data Mgmt & Analytics
+  P16.ITG | Sr. Engineer, Data Mgmt & Analytics
+  P17.ITG | Principal, Data Architect
+  P18.ITG | Sr. Principal Architect, Data Management
+  P19.ITG | Fellow, Data Management & Analytics
+
+Help Desk / Site Support
+  B10.ITG | IT Support Technician
+  B11.ITG | IT Support Sr. Technician
+  B12.ITG | IT Support Specialist
+  B13.ITG | IT Support Sr. Specialist
+  B14.ITG | IT Support Lead Specialist
+  DE00167 | Manager End User Computing
+  DE00273 | Applikationschemiker - HPLC 2nd Level Support
+  DE00550 | Teamleader IS
+  DE00716 | Technology Services Support Analyst (DE)
+  M14.ITG | Team Lead, Help Desk/Site Support
+  M15.ITG | Team Lead, Help Desk/Site Support
+  M16.ITG | Manager I, Help Desk/Site Support
+  M17.ITG | Manager II, Help Desk/Site Support
+  M18.ITG | Director I, Help Desk/Site Support
+  M19.ITG | Director II, End User Services
+  P14.ITG | Associate Engineer, Help Desk/Site Support
+  P15.ITG | Engineer, Help Desk/Site Support
+  P16.ITG | Sr. Engineer, Help Desk/Site Support
+  P17.ITG | Principal Engineer, Help Desk/Site Support
+
+Information Security
+  DE00670 | Regional Information Security Officer
+  E20.ITG | Vice President, Information Security
+  E21.ITG | Vice President, Information Security
+  M14.ITG | Team Lead, Information Security
+  M15.ITG | Team Lead, Information Security
+  M16.ITG | Manager I, Information Security
+  M17.ITG | Manager II, Information Security
+  M18.ITG | Director I, Information Security
+  M19.ITG | Director II, Information Security
+  P14.ITG | Associate Engineer, Information Security
+  P15.ITG | Engineer, Information Security
+  P16.ITG | Sr. Engineer, Information Security
+  P17.ITG | Principal Architect, Information Security
+  P18.ITG | Sr. Principal Architect, Information Security
+
+IT Engineering
+  B11.ITG | IT Engineering Associate
+  B12.ITG | IT Engineering Sr. Associate
+  B13.ITG | IT Engineering Specialist
+  B14.ITG | IT Engineering Sr. Specialist
+  B15.ITG | Engineer, IT Engineering
+  DE00423 | Information Services Infrastructure Support
+  DE00555 | Manager Engineering IAM & Coll. Services
+  DE00668 | Systems Engineer
+  DE10077 | Engineering Architect
+  DE10078 | Team Lead – Operations Services
+  E20.ITG | Vice President, IT Engineering
+  E21.ITG | Vice President, IT Engineering & Operations
+  M14.ITG | Team Lead, IT Engineering
+  M15.ITG | Team Lead, IT Engineering
+  M16.ITG | Manager I, IT Engineering
+  M17.ITG | Manager II, IT Engineering
+  M18.ITG | Director I, IT Engineering
+  M19.ITG | Director II, IT Engineering
+  P14.ITG | Associate Engineer, IT Engineering
+  P15.ITG | Engineer, IT Engineering
+  P16.ITG | Sr. Engineer, IT Engineering
+  P17.ITG | Principal Architect, IT Engineering
+  P18.ITG | Sr. Principal Architect, IT Engineering
+  P19.ITG | Fellow, IT Engineering
+
+IT Project & Vendor Management
+  DE00104 | B2B Support Coordinator
+  DE00404 | Europe E-Business Katalog Manager
+  M14.ITG | Team Lead, IT Project/Vendor Management
+  M15.ITG | Team Lead, IT Project/Vendor Management
+  M16.ITG | Manager I, IT Project/Vendor Management
+  M17.ITG | Manager II, IT Project/Vendor Management
+  M18.ITG | Director I, IT Project/Vendor Management
+  M19.ITG | Director II, IT Project/Vendor Management
+  P14.ITG | Associate IT Project/Vendor Manager
+  P15.ITG | IT Project/Vendor Manager
+  P16.ITG | Sr. IT Project/Vendor Manager
+  P17.ITG | Principal, IT Project/Vendor Manager
+  P18.ITG | Sr. Principal, IT Project/Vendor Manager
+
+Information Technology Group
+  DE00729 | Senior Manager Workspace Management
+  DE00730 | Sr Mgr Digital Collaboration and Productivity Services
+
+===========================================================================
+LEGAL GROUP
+===========================================================================
+
+Contracts & Legal Support
+  B11.LGL | Legal Assistant
+  B12.LGL | Legal Sr. Assistant
+  B13.LGL | Legal Specialist
+  B14.LGL | Legal Sr. Specialist
+  DE00611 | Assistant Legal
+  M14.LGL | Supervisor I, Legal
+  M15.LGL | Supervisor II, Legal
+  P14.LGL | Contracts Specialist
+  P15.LGL | Contracts Sr. Specialist
+  P16.LGL | Contracts Manager I
+
+Corporate Counsel
+  E20.LGL | Vice President, Corporate Counsel
+  E21.LGL | Vice President, Assistant General Counsel
+  E22.LGL | SVP, Assistant General Counsel
+  M16.LGL | Manager I, Legal
+  M17.LGL | Manager II, Legal
+  M18.LGL | Director I, Corporate Counsel
+  M19.LGL | Director II, Corporate Counsel
+  P16.LGL | Associate Counsel
+  P17.LGL | Counsel
+  P18.LGL | Corporate Counsel
+  P19.LGL | Sr. Corporate Counsel
+
+===========================================================================
+MARKETING & STRATEGY GROUP
+===========================================================================
+
+Business Development, Strategy & Planning
+  DE00314 | Business Development Manager
+  DE00319 | Business Development Manager Sales
+  E20.MKG | Vice President, Business Development
+  E21.MKG | Vice President, Business Development
+  E22.MKG | SVP, Business Development
+  M16.MKG | Manager I, Business Development
+  M17.MKG | Manager II, Business Development
+  M18.MKG | Director I, Business Development
+  M19.MKG | Director II, Market Strategy
+  P14.MKG | Business Development Specialist I
+  P15.MKG | Business Development Specialist II
+  P16.MKG | Business Development Manager I
+  P17.MKG | Business Development Manager II
+  P18.MKG | Business Development Director I
+
+Market/Segment Development
+  M16.MKG | Manager I, Market/Segment Development
+  M17.MKG | Manager II, Market/Segment Development
+  M18.MKG | Director I, Market/Segment Development
+  P14.MKG | Market/Segment Analyst I
+  P15.MKG | Market/Segment Analyst II
+  P16.MKG | Market/Segment Manager I
+  P17.MKG | Market/Segment Manager II
+
+Marketing
+  B10.MKG | Marketing Coordinator
+  B11.MKG | Marketing Associate
+  B12.MKG | Marketing Sr. Associate
+  B13.MKG | Marketing Specialist
+  B14.MKG | Marketing Sr. Specialist
+  DE00728 | Supplier Relationship mgr
+  E20.MKG | Vice President, Marketing
+  E21.MKG | Vice President, Marketing
+  M14.MKG | Supervisor I, Marketing
+  M15.MKG | Supervisor II, Marketing
+  M16.MKG | Manager I, Marketing
+  M17.MKG | Manager II, Marketing
+  M18.MKG | Director I, Marketing
+  M19.MKG | Director II, Marketing
+  P14.MKG | Marketing Analyst I
+  P15.MKG | Marketing Analyst II
+  P16.MKG | Marketing Manager I
+  P17.MKG | Marketing Manager II
+  P18.MKG | Marketing Director I
+
+Product & Portfolio Management
+  DE00183 | Marketing Manager Supplier
+  DE00272 | Category Mgr Equipment Labs
+  DE00276 | Category Mgr Inst.Spectro.Phy.
+  DE00700 | Portfolio Manager
+  DE00725 | Portfolio Analyst II
+  E20.MKG | Vice President, Portfolio Management
+  E21.MKG | Vice President, Portfolio Management
+  E22.MKG | SVP, Portfolio Management
+  M16.MKG | Manager I, Portfolio Management
+  M17.MKG | Manager II, Portfolio Management
+  M18.MKG | Director I, Portfolio Management
+  M19.MKG | Director II, Portfolio Management
+  P14.MKG | Portfolio Analyst I
+  P14.MKG | Product Analyst I
+  P15.MKG | Portfolio Analyst II
+  P15.MKG | Product Analyst II
+  P16.MKG | Portfolio Manager I
+  P16.MKG | Product Manager I
+  P17.MKG | Portfolio Manager II
+  P17.MKG | Product Manager II
+  P18.MKG | Portfolio Director I
+  P18.MKG | Product Director I
+
+===========================================================================
+CUSTOMER SERVICE GROUP
+===========================================================================
+
+Customer Service
+  B10.CSG | Customer Service Coordinator
+  B11.CSG | Customer Service Representative
+  B12.CSG | Customer Service Sr. Representative
+  B13.CSG | Customer Service Lead Representative
+  B13.CSG | Customer Service Specialist
+  B14.CSG | Customer Service Sr. Specialist
+  DE00122 | Customer Service
+  DE00205 | Sales Service Manager
+  DE00224 | Teamleader Customer Service Key Account
+  DE00225 | Teamleader Customer Service
+  E20.CSG | Vice President, Customer Service
+  M14.CSG | Supervisor I, Customer Service
+  M15.CSG | Supervisor II, Customer Service
+  M16.CSG | Manager I, Customer Service
+  M17.CSG | Director, Customer Service
+  M18.CSG | Director I, Customer Service
+  M19.CSG | Director II, Customer Service
+  [code not supplied] | Manager II, Customer Service
+  P14.CSG | Customer Service Analyst I
+  P14.CSG | Customer Service Trainer
+  P15.CSG | Customer Service Analyst II
+
+Customer Support & Operations
+  B10.CSG | Customer Support Associate
+  B11.CSG | Customer Support Sr. Associate
+  B12.CSG | Customer Support Specialist
+  B13.CSG | Customer Support Sr. Specialist
+  B14.CSG | Customer Support Lead Specialist
+  DE00125 | Customer Support
+  DE00222 | Teamleader Quotations & TechnProdSupport
+  DE00302 | Customer Service Special Function
+  M14.CSG | Supervisor I, Customer Support Operations
+  M15.CSG | Supervisor II, Customer Support Operations
+  M16.CSG | Manager I, Customer Support Operations
+  M17.CSG | Director, Customer Support Operations
+  M18.CSG | Director I, Customer Support Operations
+  M19.CSG | Director II, Customer Support Operations
+  P14.CSG | Customer Support Analyst I
+  P15.CSG | Customer Support Analyst II
+  P16.CSG | Customer Operations Manager I
+  P17.CSG | Customer Operations Manager II
+
+===========================================================================
+SERVICES GROUP
+===========================================================================
+
+Equipment & Instrument Services
+  B10.SVS | Onsite E&IS Associate Technician
+  B11.SVS | Onsite Associate, E&IS
+  B11.SVS | Onsite Coordinator, E&I Services
+  B11.SVS | Onsite E&IS Technician
+  B12.SVS | Onsite E&IS Sr. Technician
+  B12.SVS | Onsite Sr. Associate, E&IS
+  B12.SVS | Onsite Sr. Coordinator, E&I Services
+  B13.SVS | Onsite E&IS Lead Technician
+  DE00160 | HPLC Field Technician
+  DE00401 | Service-Administration – 1st Level Support
+  DE00551 | Manager Instruments Service Germany
+  DE00622 | Team Leader Equipment Service Administration
+  DE00662 | Sr Inhouse Specialist Technical Service
+  M14.SVS | Supervisor I, E&I Services
+  M15.SVS | Supervisor II, E&I Services
+  M16.SVS | Manager I, E&I Services
+  M17.SVS | Manager II, E&I Services
+  M18.SVS | Director I, E&I Services
+  P14.SVS | E&I Services Specialist
+  P15.SVS | E&I Services Sr. Specialist
+  P16.SVS | E&I Services Onsite Manager I
+  P17.SVS | E&I Services Onsite Manager II
+
+Inventory Management Services
+  B10.SVS | Onsite Associate, Inventory Services
+  B10.SVS | Onsite Garment Technician
+  B11.SVS | Onsite Coordinator, Inventory Services
+  B11.SVS | Onsite Fabrication Technician
+  B11.SVS | Onsite Sr. Associate, Inventory Services
+  B11.SVS | Onsite Technician, Inventory Services
+  B11.SVS | Onsite VMI Technician
+  B12.SVS | Onsite Fabrication Sr. Technician
+  B12.SVS | Onsite Inventory Support Specialist
+  B12.SVS | Onsite Sr. Coordinator, Inventory Services
+  B12.SVS | Onsite Sr. Technician, Inventory
+  B12.SVS | Onsite VMI Sr. Technician
+  B13.SVS | Coverage Specialist, Inventory Services
+  B13.SVS | Onsite Fabrication Lead Technician
+  B13.SVS | Onsite Lead Technician, Inventory Services
+  M14.SVS | Supervisor I, Inventory Services
+  M15.SVS | Supervisor II, Inventory Services
+  M16.SVS | Manager I, Inventory Services
+  M17.SVS | Manager II, Inventory Services
+  M18.SVS | Director I, Inventory Services
+  P14.SVS | Inventory Services Specialist
+  P15.SVS | Inventory Services Sr. Specialist
+  P16.SVS | Inventory Services Onsite Manager I
+  P17.SVS | Inventory Services Onsite Manager II
+
+Lab Furniture Services
+  B11.SVS | Lab Furniture Project Coordinator
+  B12.SVS | Lab Furniture Sr. Project Coordinator
+  B13.SVS | Lab Furniture Designer
+  B13.SVS | Lab Project Estimator
+  B14.SVS | Lab Furniture Sr. Designer
+  B14.SVS | Lab Project Sr. Estimator
+  DE00409 | Mitarbeiter HPLC Germany
+  DE00422 | Sales Support Lab Concept
+  DE00432 | Teamleader LabConcept
+  DE00499 | Sales Specialist Lab Concept - Furniture
+  E20.SVS | Vice President, Lab Furniture Services
+  E21.SVS | Vice President, Lab Furniture Services
+  M14.SVS | Supervisor I, Lab Furniture Services
+  M15.SVS | Supervisor II, Lab Furniture Services
+  M16.SVS | Manager I, Lab Furniture Services
+  M17.SVS | Manager II, Lab Furniture Services
+  M18.SVS | Director I, Lab Furniture Services
+  M19.SVS | Director II, Lab Furniture Services
+
+General Lab & Scientific Services
+  B10.SVS | General Lab Support Associate
+  B10.SVS | Glasswash Technician
+  B11.SVS | General Lab Support Sr. Associate
+  B11.SVS | Onsite Associate, Lab Services
+  B11.SVS | Onsite Associate, Production Sanitation
+  B11.SVS | Onsite Associate, Room Sanitation
+  B11.SVS | Onsite Coordinator, General Lab Services
+  B11.SVS | Onsite Laboratory Technician
+  B12.SVS | Coverage Specialist, Lab/Scientific Services
+  B12.SVS | General Lab Support Specialist
+  B12.SVS | Onsite Associate, Research Services
+  B12.SVS | Onsite Sr. Associate, Lab Services
+  B12.SVS | Onsite Sr. Associate, Production Sanitation
+  B12.SVS | Onsite Sr. Associate, Room Sanitation
+  B12.SVS | Onsite Sr. Coordinator, General Lab Services
+  B12.SVS | Onsite Sr. Lab Technician
+  B13.SVS | Onsite Lab Lead Technician
+  B13.SVS | Onsite Laboratory Specialist
+  B13.SVS | Onsite Sr. Associate, Research Services
+  B14.SVS | Onsite Laboratory Sr. Specialist
+  M14.SVS | Supervisor I, Onsite Lab Services
+  M15.SVS | Supervisor II, Scientific Services
+  M16.SVS | Manager I, Onsite Lab Services
+  M17.SVS | Manager II, Scientific Services
+  M18.SVS | Director I, Scientific Services
+  P14.SVS | Lab/Scientific Services Specialist
+  P14.SVS | Onsite Associate Scientist
+  P15.SVS | Lab/Scientific Services Sr. Specialist
+  P15.SVS | Onsite Scientist
+  P16.SVS | Lab/Scientific Services Onsite Manager I
+  P16.SVS | Onsite Sr. Scientist
+  P17.SVS | Lab/Scientific Services Onsite Manager II
+
+Services Management
+  E20.SVS | Vice President, Services
+  E21.SVS | Vice President, Services
+  M14.SVS | Supervisor I, Onsite Services
+  M15.SVS | Supervisor II, Onsite Services
+  M15.SVS | Supervisor II, Territory Management
+  M16.SVS | Manager I, Onsite Services
+  M17.SVS | Manager II, Onsite Services
+  M18.SVS | Director I, Onsite Services
+  M19.SVS | Director II, Onsite Services
+  P16.SVS | Onsite Services Manager I
+  P17.SVS | Onsite Services Manager II
+  P18.SVS | Onsite Services Director I
+
+Technical Services
+  B10.SVS | Associate Service Technician
+  B11.SVS | Instrument Technician
+  B11.SVS | Service Technician
+  B12.SVS | Onsite Coordinator, Technical Services
+  B12.SVS | Sr. Instrument Technician
+  B12.SVS | Sr. Service Technician
+  B13.SVS | Lead Instrument Technician
+  B13.SVS | Lead Service Technician
+  B13.SVS | Onsite Sr. Coordinator, Technical Services
+  B14.SVS | Service Engineer
+  B15.SVS | Sr. Service Engineer
+  DE00188 | HPLC Calibration Technician
+  DE00636 | Technical Services Sales Specialist
+  DE00726 | Techn. Services Specialist
+  DE00746 | Teamleader I Technical Services
+  DE00747 | Teamleader II Technical Services
+  M14.SVS | Supervisor I, Technical Services
+  M15.SVS | Supervisor II, Technical Services
+  M16.SVS | Manager I, Technical Services
+  M17.SVS | Manager II, Technical Services
+  M18.SVS | Director I, Technical Services
+  M19.SVS | Director II, Technical Services
+  P14.SVS | Technical Services Specialist
+  P15.SVS | Technical Services Sr. Specialist
+  P16.SVS | Technical Services Onsite Manager I
+  P17.SVS | Technical Services Onsite Manager II
+
+===========================================================================
+TEMPORARY / LIMITED SERVICES
+===========================================================================
+
+Acquisition
+  T.TLS | New Avantor Associate
+
+USA Intern - Temporary
+  T.TLS | USA Intern - Temporary
+
+Intern - Temporary
+  T.TLS | Flex Associate
+  T.TLS | Intern - Temporary
+
+Trainee
+  DE00238 | Trainee
+  DE00413 | Trainee Warehouse
+  T.TLS | Trainee
+
+Apprentice
+  T.TLS | Apprentice
+
+===========================================================================
+OPERATIONS GROUP
+===========================================================================
+
+Cleanroom Operations
+  B10.OPS | Cleanroom Associate
+  B11.OPS | Cleanroom Sr. Associate
+  B11.OPS | Cleanroom Technician
+  B12.OPS | Cleanroom Sr. Technician
+  B13.OPS | Cleanroom Lead Technician
+  M14.OPS | Supervisor I, Cleanroom Operations
+  M15.OPS | Supervisor II, Cleanroom Operations
+
+Clinical Operations
+  B10.OPS | Kitting Assembler
+  B10.OPS | Kitting Operator
+  B11.OPS | Archives Technician
+  B11.OPS | Biorepository Technician
+  B11.OPS | Clinical Operations Support Associate
+  B11.OPS | Sr. Kitting Assembler
+  B11.OPS | Sr. Kitting Operator
+  B12.OPS | Archives Sr. Technician
+  B12.OPS | Biorepository Sr. Technician
+  B12.OPS | Clinical Operations Support Sr. Associate
+  B13.OPS | Archives Lead Technician
+  B13.OPS | Biorepository Lead Technician
+  E20.OPS | Vice President, Clinical & Biorepository Services
+  E21.OPS | Vice President, Clinical & Biorepository Services
+  E22.OPS | SVP, Clinical Services
+  M14.OPS | Supervisor I, Clinical Operations
+  M14.OPS | Supervisor I, Kitting Services
+  M15.OPS | Supervisor II, Clinical Operations
+  M15.OPS | Supervisor II, Kitting Services
+  M16.OPS | Manager I, Clinical Operations
+  M17.OPS | Manager II, Clinical Operations
+  M18.OPS | Director I, Clinical Operations
+  M19.OPS | Director II, Clinical Project Management
+  P14.OPS | Associate Clinical Project Manager
+  P14.OPS | Project Specialist, Kitting Services
+  P15.OPS | Clinical Project Manager I
+  P16.OPS | Clinical Project Manager II
+
+Contract Manufacturing
+  M14.OPS | Supervisor I, Contract Manufacturing
+  M15.OPS | Supervisor II, Contract Manufacturing
+  M16.OPS | Manager I, Contract Manufacturing
+  M17.OPS | Manager II, Contract Manufacturing
+  M18.OPS | Director I, Contract Manufacturing
+  M19.OPS | Director II, Contract Manufacturing
+  P14.OPS | Contract Manufacturing Specialist
+  P15.OPS | Contract Manufacturing Sr. Specialist
+
+Distribution & Warehouse Operations
+  B10.OPS | Distribution Associate
+  B10.OPS | Warehouse Associate
+  B11.OPS | Distribution Sr. Associate
+  B11.OPS | Forklift Operator
+  B11.OPS | Material Handler
+  B11.OPS | Warehouse Sr. Associate
+  B11.OPS | Warehouse Technician
+  B12.OPS | Distribution Lead Associate
+  B12.OPS | Sr. Material Handler
+  B12.OPS | Warehouse Sr. Technician
+  B13.OPS | Warehouse Lead Technician
+  DE00303 | LDC Manager Central & East Europe und EU Integrations Manager
+  DE00625 | LDC Manager Germany and Warehouse Integration
+  DE00731 | Sr Mgr Distribution
+  E20.OPS | Vice President, Distribution
+  E20.OPS | Vice President, Warehouse Operations
+  E21.OPS | Vice President, Distribution
+  E21.OPS | Vice President, Warehouse Operations
+  M14.OPS | Supervisor I, Distribution
+  M14.OPS | Supervisor I, Warehouse Operations
+  M15.OPS | Supervisor II, Distribution
+  M15.OPS | Supervisor II, Warehouse Operations
+  M16.OPS | Manager I, Distribution
+  M16.OPS | Manager I, Warehouse Operations
+  M17.OPS | Manager II, Distribution
+  M17.OPS | Manager II, Warehouse Operations
+  M18.OPS | Director I, Distribution
+  M18.OPS | Director I, Warehouse Operations
+  M19.OPS | Director II, Distribution
+  M19.OPS | Director II, Warehouse Operations
+  P14.OPS | Distribution Specialist
+  P14.OPS | Warehouse Operations Specialist
+  P15.OPS | Distribution Sr. Specialist
+  P15.OPS | Warehouse Operations Sr. Specialist
+  P16.OPS | Distribution Manager I
+  P17.OPS | Distribution Manager II
+  P18.OPS | Warehouse Operations Director I
+  P19.OPS | Operations Director II
+
+Facilities Management
+  B10.OPS | Facilities Associate
+  B11.OPS | Facilities Sr. Associate
+  B12.OPS | Facilities Specialist
+  B13.OPS | Facilities Sr. Specialist
+  DE00666 | Maintenance Haustechniker
+  M14.OPS | Supervisor I, Facilities
+  M15.OPS | Supervisor II, Facilities
+  M16.OPS | Manager I, Facilities
+  M17.OPS | Manager II, Facilities
+  P14.OPS | Facilities Analyst I
+  P15.OPS | Facilities Analyst II
+  P16.OPS | Facilities Manager I
+  P17.OPS | Facilities Manager II
+
+Maintenance & Reliability
+  B11.OPS | Maintenance Associate Technician
+  B12.OPS | Maintenance Technician
+  B13.OPS | Maintenance Sr. Technician
+  B13.OPS | Mechanic
+  B14.OPS | Maintenance Lead Technician
+  B14.OPS | Sr. Mechanic
+  M14.OPS | Supervisor I, Maintenance & Reliability
+  M15.OPS | Supervisor II, Maintenance & Reliability
+  M16.OPS | Manager I, Maintenance & Reliability
+
+Manufacturing Operations
+  B10.OPS | Production Associate
+  B10.OPS | Production Associate Lab Technician
+  B11.OPS | Chemical Handler
+  B11.OPS | Drafting Technician
+  B11.OPS | Operator
+  B11.OPS | Production Lab Technician
+  B11.OPS | Production Sr. Associate
+  B12.OPS | Production Sr. Lab Technician
+  B12.OPS | Sr. Chemical Handler
+  B12.OPS | Sr. Drafting Technician
+  B12.OPS | Sr. Operator
+  B13.OPS | Lead Drafting Technician
+  B13.OPS | Lead Operator
+  B14.OPS | Manufacturing Operations Trainer
+  B14.OPS | Production Chemist
+  B15.OPS | Production Sr. Chemist
+  DE00151 | Handling
+  DE00250 | Warehouse Admin
+  DE00429 | Teamleader Logistics
+  DE00430 | Operation Supervisor Logistics
+  DE00431 | Operation Manager Logistics
+  E20.OPS | Vice President, Manufacturing Operations
+  E21.OPS | Vice President, Manufacturing Operations
+  E22.OPS | SVP, Manufacturing Operations
+  M14.OPS | Supervisor I, Manufacturing Operations
+  M15.OPS | Supervisor II, Manufacturing Operations
+  M16.OPS | Manager I, Manufacturing Operations
+  M17.OPS | Manager II, Site Operations
+  M18.OPS | Director I, Site Operations
+  M19.OPS | Director II, Site Operations
+  P14.OPS | Manufacturing Operations Specialist
+  P15.OPS | Manufacturing Operations Sr. Specialist
+  P17.OPS | Manufacturing Operations Manager II
+  P18.OPS | Manufacturing Operations Director I
+  P19.OPS | Manufacturing Operations Director II
+
+Transportation & Logistics
+  B10.OPS | Transportation & Logistics Coordinator
+  B11.OPS | Transportation & Logistics Associate
+  B12.OPS | Transportation & Logistics Sr. Associate
+  B13.OPS | Transportation & Logistics Specialist
+  B14.OPS | Transportation & Logistics Sr. Specialist
+  DE00293 | Process Engineer Logistics
+  DE00439 | Transport Manager Europe
+  E20.OPS | Vice President, Transportation & Logistics
+  E21.OPS | Vice President, Transportation & Logistics
+  M14.OPS | Supervisor I, Transportation & Logistics
+  M15.OPS | Supervisor II, Transportation & Logistics
+  M16.OPS | Manager I, Transportation & Logistics
+  M17.OPS | Manager II, Transportation & Logistics
+  M18.OPS | Director I, Transportation & Logistics
+  M19.OPS | Director II, Transportation & Logistics
+  P14.OPS | Transportation & Logistics Analyst I
+  P15.OPS | Transportation & Logistics Analyst II
+  P16.OPS | Transportation & Logistics Manager I
+  P17.OPS | Transportation & Logistics Manager II
+  P18.OPS | Transportation & Logistics Director I
+
+===========================================================================
+PROGRAM MANAGEMENT GROUP
+===========================================================================
+
+Program Management
+  M16.PMG | Manager I, Program Management
+  M17.PMG | Manager II, Program Management
+  M18.PMG | Director I, Program Management
+  M19.PMG | Director II, Program Management
+  P15.PMG | Associate Program Manager
+  P16.PMG | Program Manager
+  P17.PMG | Sr. Program Manager
+  P18.PMG | Principal Program Manager
+
+Project Management
+  B12.PMG | Project Coordinator
+  B13.PMG | Project Sr. Coordinator
+  DE00287 | Project Manager Post Merger Integrations
+  M16.PMG | Manager I, Project Management
+  M17.PMG | Manager II, Project Management
+  M18.PMG | Director I, Project Management
+  M19.PMG | Director II, Project Management
+  P14.PMG | Associate Project Manager
+  P15.PMG | Project Manager
+  P16.PMG | Sr. Project Manager
+
+===========================================================================
+RESEARCH & DEVELOPMENT GROUP
+===========================================================================
+
+R&D Engineering
+  B12.RDG | Associate R&D Engineer
+  B13.RDG | Sr. Associate R&D Engineer
+  M16.RDG | Manager I, R&D Engineering
+  M17.RDG | Manager II, R&D Engineering
+  M18.RDG | Director I, R&D Engineering
+  M19.RDG | Director II, R&D Engineering
+  P14.RDG | R&D Engineer I
+  P15.RDG | R&D Engineer II
+  P16.RDG | Sr. R&D Engineer
+  P17.RDG | R&D Principal Engineer
+  P18.RDG | R&D Sr. Principal Engineer
+
+R&D Projects & Portfolio
+  M16.RDG | Manager I, R&D Projects & Portfolio
+  M17.RDG | Manager II, R&D Projects & Portfolio
+  M18.RDG | Director I, R&D Projects & Portfolio
+  M19.RDG | Director II, R&D Projects & Portfolio
+  P14.RDG | R&D Associate Project Manager
+  P15.RDG | R&D Project Manager
+  P16.RDG | R&D Sr. Project Manager
+  P17.RDG | R&D Principal Portfolio Manager
+  P18.RDG | R&D Sr. Principal Portfolio Manager
+
+Research Applications & Development
+  M14.RDG | Supervisor I, R&D Applications
+  M15.RDG | Supervisor II, R&D Applications
+  M16.RDG | Manager I, R&D Applications
+  M17.RDG | Manager II, R&D Applications
+  M18.RDG | Director I, R&D Applications
+  M19.RDG | Director II, R&D Applications
+  P14.RDG | R&D Applications Associate Scientist
+  P15.RDG | R&D Applications Scientist
+  P16.RDG | R&D Applications Sr. Scientist
+  P17.RDG | R&D Applications Principal Scientist
+  P18.RDG | R&D Applications Sr. Principal Scientist
+
+Research Science
+  B12.RDG | R&D Associate Chemist
+  B13.RDG | R&D Sr. Associate Chemist
+  B14.RDG | R&D Chemist
+  B15.RDG | R&D Sr. Chemist
+  E20.RDG | Vice President, Research & Development
+  E21.RDG | Vice President, Research & Development
+  E22.RDG | SVP, Research & Development
+  M14.RDG | Supervisor I, Research & Development
+  M15.RDG | Supervisor II, Research & Development
+  M16.RDG | Manager I, Research & Development
+  M17.RDG | Manager II, Research & Development
+  M18.RDG | Director I, Research & Development
+  M19.RDG | Director II, Research & Development
+  P14.RDG | R&D Chemist
+  P15.RDG | R&D Sr. Chemist
+  P16.RDG | R&D Scientist
+  P17.RDG | R&D Sr. Scientist
+  P18.RDG | R&D Fellow
+  P19.RDG | R&D Technical Fellow
+
+Research Science Support
+  B10.RDG | R&D Associate Lab Technician
+  B11.RDG | R&D Lab Technician
+  B11.RDG | R&D Support Associate Chemist
+  B12.RDG | R&D Lab Sr. Technician
+  B12.RDG | R&D Support Sr. Associate Chemist
+  B13.RDG | R&D Lab Lead Technician
+  B13.RDG | R&D Support Lead Chemist
+  M14.RDG | Supervisor I, R&D Lab
+  M15.RDG | Supervisor II, R&D Lab
+  M16.RDG | Manager I, R&D Lab
+
+===========================================================================
+COMMERCIAL EXCELLENCE GROUP
+===========================================================================
+
+Commercial Ops & Enablement
+  B10.CEG | Commercial Operations Associate
+  B11.CEG | Commercial Operations Sr. Associate
+  B12.CEG | Commercial Operations Specialist
+  B12.CEG | Sales Compensation Specialist
+  B13.CEG | Commercial Operations Sr. Specialist
+  B13.CEG | Sales Compensation Sr. Specialist
+  E20.CEG | Vice President, Commercial Excellence
+  E20.CEG | Vice President, Commercial Operations
+  E21.CEG | Vice President, Commercial Excellence
+  E21.CEG | Vice President, Commercial Operations
+  M14.CEG | Supervisor I, Commercial Operations
+  M15.CEG | Supervisor II, Commercial Excellence
+  M15.CEG | Supervisor II, Commercial Operations
+  M16.CEG | Manager I, Commercial Excellence
+  M16.CEG | Manager I, Commercial Operations
+  M16.CEG | Manager I, Sales Compensation
+  M17.CEG | Manager II, Commercial Excellence
+  M17.CEG | Manager II, Commercial Operations
+  M17.CEG | Manager II, Sales Compensation
+  M18.CEG | Director I, Commercial Excellence
+  M18.CEG | Director I, Commercial Operations
+  M18.CEG | Director I, Sales Compensation
+  M19.CEG | Director II, Commercial Excellence
+  M19.CEG | Director II, Commercial Operations
+  M19.CEG | Director II, Sales Compensation
+  P14.CEG | Commercial Operations Analyst I
+  P14.CEG | Sales Compensation Analyst I
+  P15.CEG | Commercial Operations Analyst II
+  P15.CEG | Sales Compensation Analyst II
+  P16.CEG | Commercial Operations Manager I
+  P16.CEG | Sales Compensation Manager I
+  P17.CEG | Commercial Operations Manager II
+  P17.CEG | Sales Compensation Manager II
+  P18.CEG | Commercial Excellence Director I
+
+Pricing & Quotes
+  B10.CEG | Pricing & Quotes Coordinator
+  B11.CEG | Pricing & Quotes Associate
+  B12.CEG | Pricing & Quotes Sr. Associate
+  B13.CEG | Pricing & Quotes Specialist
+  B14.CEG | Pricing & Quotes Sr. Specialist
+  DE00189 | Pricing Specialist Strategic List Pricing
+  DE00299 | Pricing Manager and Team Leader
+  DE00316 | Special Purchase Price Manager Europe
+  DE00419 | Quotations & techn. Product Support
+  DE00629 | Tender & techn. Product Support
+  DE00651 | Pricing Manager
+  DE00727 | Pricing Analyst
+  DE00733 | Manager Strategic List Pricing EU & NA
+  E20.CEG | Vice President, Pricing
+  E21.CEG | Vice President, Commercial Pricing
+  M14.CEG | Supervisor I, Pricing & Quotes
+  M15.CEG | Supervisor II, Pricing & Quotes
+  M16.CEG | Manager I, Pricing & Quotes
+  M17.CEG | Manager II, Pricing & Quotes
+  M18.CEG | Director I, Pricing & Quotes
+  M19.CEG | Director II, Pricing & Quotes
+  P14.CEG | Pricing & Quotes Analyst I
+  P15.CEG | Pricing & Quotes Analyst II
+  P16.CEG | Pricing & Quotes Manager I
+  P17.CEG | Pricing & Quotes Manager II
+
+Technical Support
+  B11.CEG | Technical Support Associate
+  B12.CEG | Technical Support Sr. Associate
+  B13.CEG | Technical Support Specialist
+  B14.CEG | Technical Support Sr. Specialist
+  DE00129 | E-Business Supporter
+  DE00158 | Inhouse technical Product Support
+  DE00231 | Teamleiter Tech.Service Sup
+  DE00605 | Technical Support
+  M14.CEG | Supervisor I, Technical Support
+  M15.CEG | Supervisor II, Technical Support
+  M16.CEG | Manager I, Technical Support
+  M17.CEG | Manager II, Technical Support
+  M18.CEG | Director I, Technical Support
+  M19.CEG | Director II, Technical Support
+  P14.CEG | Technical Support Analyst I
+  P15.CEG | Technical Support Analyst II
+  P16.CEG | Technical Support Manager I
+  P17.CEG | Technical Support Manager II
+
+===========================================================================
+SALES GROUP
+===========================================================================
+
+Account Management
+  B11.SLS | Inside Sales Associate Account Rep
+  B12.SLS | Inside Sales Account Representative
+  B13.SLS | Inside Sales Account Sr. Representative
+  DE00100 | Account Manager
+  DE00168 | Key Account Manager
+  DE00237 | Inside Sales Account Manager
+  DE00254 | Sales Manager
+  E20.SLS | Vice President, Account Management
+  E21.SLS | Vice President, Account Management
+  M14.SLS | Supervisor I, Account Management
+  M15.SLS | Supervisor II, Account Management
+  M16.SLS | Manager I, Account Management
+  M17.SLS | Manager II, Account Management
+  M18.SLS | Director I, Account Management
+  M19.SLS | Director II, Account Management
+  P14.SLS | Associate Account Representative
+  P15.SLS | Account Representative
+  P16.SLS | Sr. Account Representative
+  P17.SLS | Key Account Manager
+  P18.SLS | Account Director
+
+Channel Sales
+  B11.SLS | Channel Sales Associate
+  B12.SLS | Channel Sales Sr. Associate
+  B13.SLS | Channel Sales Specialist
+  B14.SLS | Channel Sales Sr. Specialist
+  M14.SLS | Supervisor I, Channel Sales
+  M15.SLS | Supervisor II, Channel Sales
+  M16.SLS | Manager I, Channel Sales
+  M17.SLS | Manager II, Channel Sales
+  M18.SLS | Director I, Channel Sales
+  M19.SLS | Director II, Channel Sales
+  P14.SLS | Channel Sales Sr. Associate Representative
+  P15.SLS | Channel Sales Representative
+  P16.SLS | Channel Sales Sr. Representative
+  P17.SLS | Channel Relationship Manager
+  P18.SLS | Channel Sales Director
+
+Export Sales
+  B10.SLS | Export Sales Associate
+  B11.SLS | Export Sales Sr. Associate
+  B12.SLS | Export Sales Specialist
+  B13.SLS | Export Sales Sr. Specialist
+  DE00420 | Customer Service Export
+  M14.SLS | Supervisor I, Export Sales
+  M15.SLS | Supervisor II, Export Sales
+  M16.SLS | Manager I, Export Sales
+  M17.SLS | Manager II, Export Sales
+  M18.SLS | Director I, Export Sales
+  M19.SLS | Director II, Export Sales
+  P14.SLS | Export Sales Representative
+  P15.SLS | Export Sales Sr. Representative
+  P16.SLS | Export Sales Manager I
+  P17.SLS | Export Sales Manager II
+
+Sales
+  B11.SLS | Inside Sales Associate Representative
+  B12.SLS | Inside Sales Representative
+  B13.SLS | Inside Sales Sr. Representative
+  B14.SLS | Inside Sales Lead Representative
+  DE00146 | Sales Specialist DE
+  E20.SLS | Vice President, Sales
+  E21.SLS | Vice President, Sales
+  E22.SLS | SVP, Sales
+  M14.SLS | Supervisor I, Sales
+  M15.SLS | Supervisor II, Sales
+  M16.SLS | Manager I, Sales
+  M17.SLS | Manager II, Sales
+  M17.SLS | Regional Director, Sales
+  M18.SLS | Director I, Sales
+  M19.SLS | Director II, Sales
+  P14.SLS | Sales Associate
+  P15.SLS | Sales Representative
+  P16.SLS | Sr. Sales Representative
+  P17.SLS | Sales Manager II
+  P18.SLS | Sales Director
+
+Sales - Application & Technical
+  B10.SLS | Sales Application Support Associate
+  B11.SLS | Sales Application Support Sr. Associate
+  B12.SLS | Sales Application Support Specialist
+  B13.SLS | Sales Application Support Sr. Specialist
+  B14.SLS | Internal Product Specialist
+  DE00142 | Sales Application & Solution Specialist (SASS)
+  DE00200 | LabConcept Projects
+  DE00332 | DE - Technical Applications Mgr
+  DE00436 | Sales Specialist - Microbiology
+  DE00494 | Sales Specialist - Chemical
+  DE00495 | Sales Specialist Chromatography Systems
+  DE00496 | Sales Specialist - Life Science
+  DE00497 | Sales Specialist - Production
+  DE00498 | Sales Specialist Lab Concept - Equip & Instr
+  DE00630 | Sales Specialist - Production Chemicals
+  DE00647 | Biopharma Relationship Manager
+  DE00648 | Technical Application Manager
+  DE00671 | Senior Accountant
+  E20.SLS | Vice President, Sales Application & Technical
+  E21.SLS | Vice President, Sales Application & Technical
+  M14.SLS | Supervisor I, Sales Specialist
+  M15.SLS | Supervisor II, Sales Specialist
+  M16.SLS | Manager I, Sales Specialist
+  M17.SLS | Manager II, Sales Specialist
+  M18.SLS | Director I, Sales Specialist
+  M19.SLS | Director II, Business Relationship Management
+  P14.SLS | Associate Sales Specialist
+  P15.SLS | External Product Specialist
+  P15.SLS | Sales Specialist
+  P16.SLS | Sr. Sales Specialist
+  P16.SLS | Technical Applications Manager I
+  P17.SLS | Business Relationship Manager
+  P17.SLS | Technical Applications Manager II
+  P18.SLS | Business Relationship Director
+  P19.SLS | Business Relationship Director II
+
+Strategic Partners
+  E20.SLS | Vice President, Strategic Partners
+  E21.SLS | Vice President, Strategic Partners
+  E22.SLS | SVP, Strategic Partners
+  M16.SLS | Manager I, Strategic Partners
+  M17.SLS | Director, Strategic Partners
+  M18.SLS | Director I, Strategic Partners
+  M19.SLS | Director II, Strategic Partners
+  P14.SLS | Strategic Partners Analyst I
+  P15.SLS | Strategic Partners Analyst II
+  P16.SLS | Strategic Partners Manager I
+  P17.SLS | Strategic Partners Director
+
+Sales - General
+  DE00653 | Inside Sales Manager
+
+===========================================================================
+EHS, SECURITY & SUSTAINABILITY GROUP
+===========================================================================
+
+Environmental, Health & Safety
+  B10.EHS | EHSS&S Associate
+  B11.EHS | EHSS&S Sr. Associate
+  B12.EHS | EHSS&S Specialist
+  B13.EHS | EHSS&S Sr. Specialist
+  DE00407 | Manager Quality, REGA & Masterdata
+  E20.EHS | Vice President, EHSS&S
+  E21.EHS | Vice President, EHSS&S
+  M14.EHS | Supervisor I, EHSS&S
+  M15.EHS | Supervisor II, EHSS&S
+  M16.EHS | Manager I, EHSS&S
+  M17.EHS | Manager II, EHSS&S
+  M18.EHS | Director I, EHSS&S
+  M19.EHS | Director II, EHSS&S
+  P14.EHS | EHSS&S Analyst I
+  P15.EHS | EHSS&S Analyst II
+  P16.EHS | EHSS&S Manager I
+  P17.EHS | EHSS&S Manager II
+
+===========================================================================
+ENGINEERING GROUP
+===========================================================================
+
+Automation & Process Control Engineering
+  M14.ENG | Supervisor I, Auto. & Process Cnrl Engineering
+  M15.ENG | Supervisor II, Auto. & Process Cnrl Engineering
+  M16.ENG | Manager I, Auto. & Process Cnrl Engineering
+  M17.ENG | Manager II, Auto. & Process Cnrl Engineering
+  M18.ENG | Director I, Auto. & Process Cnrl Engineering
+  P14.ENG | Automation & Process Cnrl Engineer I
+  P15.ENG | Automation & Process Cnrl Engineer II
+  P16.ENG | Sr. Automation & Process Cnrl Engineer
+
+Chemical Engineering
+  M16.ENG | Manager I, Chemical Engineering
+  M17.ENG | Manager II, Chemical Engineering
+  P14.ENG | Chemical Engineer I
+  P15.ENG | Chemical Engineer II
+  P16.ENG | Sr. Chemical Engineer
+
+Facilities Engineering
+  P14.ENG | Facilities Engineer I
+  P15.ENG | Facilities Engineer II
+  P16.ENG | Sr. Facilities Engineer
+
+Mechanical Engineering
+  M14.ENG | Supervisor I, Mechanical Engineering
+  M15.ENG | Supervisor II, Mechanical Engineering
+  M16.ENG | Manager I, Mechanical Engineering
+  P14.ENG | Mechanical Engineer I
+  P15.ENG | Mechanical Engineer II
+  P16.ENG | Sr. Mechanical Engineer
+
+Process Engineering
+  B11.ENG | Associate Design Engineer
+  B12.ENG | Design Engineer
+  B13.ENG | Sr. Design Engineer
+  B14.ENG | Lead Design Engineer
+  M14.ENG | Supervisor I, Process Engineering
+  M15.ENG | Supervisor II, Process Engineering
+  M16.ENG | Manager I, Process Engineering
+  M17.ENG | Manager II, Process Engineering
+  M18.ENG | Director I, Process Engineering
+  P14.ENG | Process Engineer I
+  P15.ENG | Process Engineer II
+  P16.ENG | Sr. Process Engineer
+
+Project Engineering
+  M14.ENG | Supervisor I, Project Engineering
+  M15.ENG | Supervisor II, Project Engineering
+  M16.ENG | Manager I, Project Engineering
+  M17.ENG | Manager II, Project Engineering
+  M18.ENG | Director I, Project Engineering
+  P14.ENG | Project Engineer I
+  P15.ENG | Project Engineer II
+  P16.ENG | Sr. Project Engineer
+  P17.ENG | Principal Project Engineer
+
+Quality Engineering
+  M14.ENG | Supervisor I, Quality Engineer I
+  M15.ENG | Supervisor II, Quality Engineer II
+  M16.ENG | Manager I, Quality Engineering
+  P14.ENG | Quality Engineer I
+  P15.ENG | Quality Engineer II
+  P16.ENG | Sr. Quality Engineer
+
+Reliability & Equipment Engineering
+  M14.ENG | Supervisor I, Reliability Engineering
+  M15.ENG | Supervisor II, Reliability Engineering
+  M16.ENG | Manager I, Reliability Engineering
+  M17.ENG | Manager II, Reliability Engineering
+  P14.ENG | Reliability Engineer I
+  P15.ENG | Reliability Engineer II
+  P16.ENG | Sr. Reliability Engineer
+
+===========================================================================
+QUALITY GROUP
+===========================================================================
+
+Quality Assurance & Quality Systems
+  B10.QYG | Quality Assurance Associate
+  B11.QYG | Quality Assurance Sr. Associate
+  B11.QYG | Quality Assurance Technician
+  B12.QYG | Associate QA Chemist
+  B12.QYG | Quality Assurance Sr. Technician
+  B12.QYG | Quality Inspector
+  B13.QYG | Quality Assurance Lead Technician
+  B13.QYG | Quality Assurance Specialist
+  B13.QYG | Sr. Associate QA Chemist
+  B13.QYG | Sr. Quality Inspector
+  B14.QYG | Quality Assurance Sr. Specialist
+  DE00800 | DE - Quality Assurance Manager II
+  E20.QYG | Vice President, Quality
+  E21.QYG | Vice President, Quality
+  E22.QYG | SVP, Quality
+  M14.QYG | Supervisor I, Quality Assurance
+  M15.QYG | Supervisor II, Quality Process Improvement
+  M16.QYG | Manager I, Quality Assurance
+  M17.QYG | Manager II, Quality Assurance
+  M18.QYG | Director I, Quality Assurance
+  M19.QYG | Director II, Quality Assurance
+  P14.QYG | QA Analyst I
+  P14.QYG | QA Chemist
+  P15.QYG | QA Analyst II
+  P15.QYG | QA Sr. Chemist
+  P16.QYG | Quality Assurance Manager I
+  P17.QYG | Quality Assurance Manager II
+  P18.QYG | Quality Assurance Director I
+  P19.QYG | Quality Assurance Director II
+
+Quality Control & Validation
+  B10.QYG | Quality Control Associate
+  B10.QYG | Quality Control Coordinator
+  B11.QYG | Kitting Quality Inspector
+  B11.QYG | Quality Control Lab Technician
+  B11.QYG | Quality Control Sr. Associate
+  B11.QYG | Quality Control Technician
+  B12.QYG | Kitting Quality Sr. Inspector
+  B12.QYG | Quality Control Lab Analyst
+  B12.QYG | Quality Control Sr. Technician
+  B13.QYG | Quality Control Lab Sr. Analyst
+  B13.QYG | Quality Control Lead Technician
+  B13.QYG | Quality Control Specialist
+  B14.QYG | Quality Control Lab Team Lead
+  B14.QYG | Quality Control Sr. Specialist
+  M14.QYG | Supervisor I, Quality Control
+  M15.QYG | Supervisor II, Quality Control
+  M16.QYG | Manager I, Quality Control
+  M17.QYG | Manager II, Quality Control
+  M18.QYG | Director I, Quality Control
+  M19.QYG | Director II, Quality Control
+  P14.QYG | Validation Specialist
+  P15.QYG | Validation Sr. Specialist
+  P16.QYG | Quality Control Manager I
+  P17.QYG | Quality Control Manager II
+
+===========================================================================
+REGULATORY AFFAIRS GROUP
+===========================================================================
+
+Product Compliance
+  B10.RGA | Product Compliance Coordinator
+  B11.RGA | Product Compliance Associate
+  B12.RGA | Product Compliance Sr. Associate
+  B13.RGA | Product Compliance Specialist
+  B14.RGA | Product Compliance Sr. Specialist
+  DE00257 | Product Information Analyst
+  DE00399 | Regulatory Affairs Product Compliance Specialist
+  DE00637 | Data Compliance
+  DE00693 | Product Data Analytics - Technical Analyst
+  DE00694 | Product Data Analytics - Sr Operational Specialist
+  M14.RGA | Supervisor I, Product Compliance
+  M15.RGA | Supervisor II, Product Compliance
+  M16.RGA | Manager I, Product Compliance
+  M17.RGA | Manager II, Product Compliance
+  M18.RGA | Director I, Product Compliance
+  P14.RGA | Product Compliance Analyst I
+  P15.RGA | Product Compliance Analyst II
+  P16.RGA | Product Compliance Manager I
+  P17.RGA | Product Compliance Manager II
+
+Regulatory Operations
+  B10.RGA | Regulatory Affairs Coordinator
+  B11.RGA | Regulatory Affairs Associate
+  B11.RGA | Regulatory Affairs Sr. Coordinator
+  B11.RGA | Regulatory Operations Associate
+  B12.RGA | Regulatory Affairs Sr. Associate
+  B12.RGA | Regulatory Operations Sr. Associate
+  B13.RGA | Regulatory Affairs Specialist
+  B13.RGA | Regulatory Operations Specialist
+  B14.RGA | Regulatory Affairs Sr. Specialist
+  B14.RGA | Regulatory Operations Sr. Specialist
+  DE00442 | Regulatory Affairs Officer
+  DE00722 | Team Leader, Regulatory Affairs MD (Supervisor)
+  E20.RGA | Vice President, Regulatory Affairs
+  E21.RGA | Vice President, Regulatory Affairs
+  E22.RGA | SVP, Regulatory Affairs
+  M14.RGA | Supervisor I, Regulatory Operations
+  M15.RGA | Supervisor II, Regulatory Operations
+  M16.RGA | Manager I, Regulatory Operations
+  M17.RGA | Manager II, Regulatory Operations
+  M18.RGA | Director I, Regulatory Affairs
+  M19.RGA | Director II, Regulatory Affairs
+  P14.RGA | Regulatory Operations Analyst I
+  P15.RGA | Regulatory Operations Analyst II
+  P16.RGA | Regulatory Operations Manager I
+  P17.RGA | Regulatory Operations Manager II
+
+Trade Compliance
+  B10.RGA | Trade Compliance Associate
+  B11.RGA | Trade Compliance Sr. Associate
+  B12.RGA | Trade Compliance Specialist
+  B13.RGA | Trade Compliance Sr. Specialist
+  DE00665 | Regulatory Affairs Export Compliance Supervisor
+  M14.RGA | Supervisor I, Trade Compliance
+  M15.RGA | Supervisor II, Trade Compliance
+  M16.RGA | Manager I, Trade Compliance
+  M17.RGA | Manager II, Trade Compliance
+  P14.RGA | Trade Compliance Analyst I
+  P15.RGA | Trade Compliance Analyst II
+  P16.RGA | Trade Compliance Manager I
+  P17.RGA | Trade Compliance Manager II
+
+===========================================================================
+CONTINGENT
+===========================================================================
+
+Contingent Workers
+  C.CW | CW Agency Employee
+  C.CW | CW Independent Contractor
+  C.CW | CW Student/Intern
+  C.CW | CW Vendor/Service Provider
+
+===========================================================================
+PLANNING & SOURCING GROUP
+===========================================================================
+
+Inventory Management
+  B10.PSG | Inventory Control Coordinator
+  B10.PSG | Inventory Management Coordinator
+  B11.PSG | Inventory Control Associate
+  B11.PSG | Inventory Management Associate
+  B12.PSG | Inventory Control Sr. Associate
+  B12.PSG | Inventory Management Sr. Associate
+  B13.PSG | Inventory Control Lead Associate
+  B13.PSG | Inventory Management Lead Associate
+  DE00540 | Procurement Teamleader Deutschland
+  M14.PSG | Supervisor I, Inventory Management
+  M15.PSG | Supervisor II, Inventory Management
+  M16.PSG | Manager I, Inventory Management
+  M17.PSG | Manager II, Inventory Management
+  M18.PSG | Director I, Inventory Management
+  M19.PSG | Director II, Inventory Management
+  P14.PSG | Inventory Control Specialist
+  P14.PSG | Inventory Management Specialist
+  P15.PSG | Inventory Management Sr. Specialist
+
+Planning
+  B10.PSG | Planning Coordinator
+  B11.PSG | Planning Associate
+  B12.PSG | Planning Sr. Associate
+  B13.PSG | Planning Specialist
+  B14.PSG | Planning Sr. Specialist
+  E20.PSG | Vice President, Procurement
+  E20.PSG | Vice President, Supply Chain
+  E21.PSG | Vice President, Planning
+  E22.PSG | SVP, Planning
+  M14.PSG | Supervisor I, Planning
+  M15.PSG | Supervisor II, Planning
+  M16.PSG | Manager I, Planning
+  M17.PSG | Manager II, Planning
+  M18.PSG | Director I, Planning
+  M19.PSG | Director II, Planning
+  P14.PSG | Planner
+  P15.PSG | Sr. Planner
+  P16.PSG | Master Planner
+
+Scheduling
+  B11.PSG | Production Scheduler
+  B12.PSG | Sr. Production Scheduler
+  B13.PSG | Scheduler
+  B14.PSG | Sr. Scheduler
+  M14.PSG | Supervisor I, Scheduling
+  M15.PSG | Supervisor II, Scheduling
+  P14.PSG | Sr. Scheduler
+  P15.PSG | Master Scheduler
+
+Sourcing
+  B10.PSG | Sourcing Coordinator
+  B11.PSG | Sourcing Associate
+  B12.PSG | Sourcing Sr. Associate
+  B13.PSG | Associate Buyer
+  B13.PSG | Sourcing Specialist
+  B14.PSG | Sourcing Sr. Specialist
+  DE00202 | Purchasing
+  DE00278 | Strategic Sourcing Mgr - EU
+  DE00294 | Strategic Sourcing Manger Lab Supply
+  DE00402 | Procurement Manager
+  E20.PSG | Vice President, Sourcing
+  E21.PSG | Vice President, Sourcing
+  E22.PSG | SVP, Sourcing
+  M14.PSG | Supervisor I, Sourcing
+  M15.PSG | Supervisor II, Sourcing
+  M16.PSG | Manager I, Sourcing
+  M17.PSG | Manager II, Sourcing
+  M18.PSG | Director I, Sourcing
+  M19.PSG | Director II, Sourcing
+  P14.PSG | Buyer
+  P15.PSG | Sr. Buyer
+  P16.PSG | Sourcing Manager I
+  P17.PSG | Sourcing Manager II
+  P18.PSG | Sourcing Director I
+
+NEWER DOCUMENT EVIDENCE — SEPARATE FROM HISTORICAL COUNTS
+These are business titles appearing in newer documents. They have not been mapped to Workday profiles, and document dates do not certify current status as of October 2026.
+
+Org Chart_Customer Pricing Roster_NA.pptx
+SharePoint modified 2 September 2026
+https://avantorsciences-my.sharepoint.com/personal/camille_jones_avantorsciences_com/_layouts/15/Doc.aspx?sourcedoc=%7B2C8614EC-3776-43B3-959B-7E026ADD0530%7D&file=Org+Chart_Customer+Pricing+Roster_NA.pptx&action=edit&mobileredirect=true&web=1
+  Sr Director, Global Customer Pricing
+  Manager, Customer Pricing NA
+  Sr Manager, Customer Pricing NA
+  Sr Manager, Global Pricing Strategic Partners
+  Sr Analyst, Customer Pricing NA
+
+Global Distribution Leadership Team Org Chart.pptx
+SharePoint modified 27 March 2025
+https://avantorsciences.sharepoint.com/teams/brianmdirectreports/_layouts/15/Doc.aspx?sourcedoc=%7B75B6264D-20C3-4768-86D4-F78A80FE3801%7D&file=Global+Distribution+Leadership+Team+Org+Chart.pptx&action=edit&mobileredirect=true&web=1
+  SVP, Global Distribution
+  Sr. Director, Global Transportation & Logistics
+  Sr. Director, Distribution — East NA
+  Sr. Director, Distribution — West EU
+  Sr. Director Global Automation & Network Strategy
+  Sr. Director, Global Distribution Services
+  Sr. Director, Distribution — East EU
+  Sr. Director, Manufacturing Distribution
+  Sr. Administrative Assistant
+  Sr. Director, Distribution — West NA
+
+IT All Hands - 13 May 2026.pptx
+Meeting dated 13 May 2026
+https://avantorsciences.sharepoint.com/teams/AvantorIT/_layouts/15/Doc.aspx?sourcedoc=%7B70C9A93B-C487-426E-B54C-ED1A28C5FD51%7D&file=IT+All+Hands+-+13+May+2026.pptx&action=edit&mobileredirect=true&web=1
+  Chief Digital Officer
+
+VALIDATION STILL REQUIRED
+- Current Workday job-profile export with active/inactive status, job family/group, level and effective date.
+- Current business-title-to-profile mapping for regional and functional variants.
+- Current organizational hierarchy if reporting relationships are needed; profile levels alone do not establish management lines.
+- Review of renamed, retired and newly created profiles since November 2023.
+- Confirmation of source anomalies, including Senior Accountant under Sales - Application & Technical and an Associate Account Representative under Marketing Communications.
+- Distinguish temporary/contingent categories and New Avantor Associate acquisition placeholder from substantive job disciplines.
+
+No application design or implementation is included in this discovery report.
+

@@ -1,0 +1,44 @@
+COMPETITIVE LANDSCAPE — OCTOBER 5, 2026
+Researched from official public product pages during this conversation.
+Ranking is relevance to this product, not market share or an independent analyst
+ranking. Capabilities are vendor-described, not validated by a procurement PoC.
+
+1. Palantir Foundry + AIP — closest architectural benchmark: connected business
+objects/relationships/actions, AI agents and governed operational applications.
+https://www.palantir.com/explore/platforms/foundry/ontology/
+https://www.palantir.com/docs/foundry/architecture-center/aip-architecture
+
+2. SAP Business Data Cloud + Analytics Cloud + Joule — most relevant ecosystem
+comparison for SAP-heavy operations. Governed business context, analytics,
+planning and cross-domain AI. A portfolio, not one turnkey equivalent. ECC and
+S/4HANA deployment compatibility/licenses require specific assessment.
+https://www.sap.com/products/data-cloud.html
+
+3. Celonis Process Intelligence Platform — close to operational problem-solving:
+process context, delivery blocks, supplier reliability, stockouts/excess and
+coordinated improvement. Study cause/effect and business-impact evidence.
+https://www.celonis.com/solutions/supply-chain-transformation
+
+4. o9 Digital Brain + Supply Chain Control Tower — enterprise knowledge graph,
+order/inventory/shipment visibility, planning/execution collaboration and recovery
+alternatives. Study trade-off simulation and decision consequences.
+https://o9solutions.com/solutions/supply-chain-planning/supply-chain-control-tower-docs
+
+5. Blue Yonder Platform + Supply Chain Command Center — distribution/warehouse/
+transport/delivery and partner-network visibility, exceptions and coordination.
+https://blueyonder.com/solutions/blue-yonder-platform
+https://blueyonder.com/solutions/supply-chain-command-center
+
+Also considered Kinaxis Maestro: strong supply-chain planning/simulation and
+orchestration. Blue Yonder was ranked ahead for this app's distribution/warehouse
+and partner-fulfillment focus, not a claim of general product superiority.
+https://www.kinaxis.com/en/solutions/platform
+
+Product implication
+AI dashboards alone are weak differentiation: these vendors already describe
+connected intelligence and action. Potential positioning is a focused configurable
+application for heads of SAP-heavy distribution departments, with relevant evidence,
+understandable recommendations and coordinated human-approved responses.
+This remains a hypothesis. Open-source implementation gives design control, but
+no cost, speed or capability advantage has been established. No pricing comparison
+or claim about what Avantor currently licenses was researched or established.

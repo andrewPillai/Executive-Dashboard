@@ -1,0 +1,81 @@
+NORTHSTAR SCIENTIFIC — COMPLETE LOCAL DEMO HANDOFF
+Packaged 2026-10-05
+
+Read LLM_HANDOFF.txt first when handing this to another assistant.
+The application is in application/. Source, compiled frontend, generated business
+SQLite database, saved workflow snapshot, tests, dependency locks and original
+mockup are included. No live AI provider or SAP connection is configured.
+
+FASTEST WAY TO RUN (macOS/Linux)
+Prerequisite: Python 3.12, internet access for dependency installation.
+From the extracted bundle:
+  cd application
+  python3 -m venv .venv
+  .venv/bin/python -m pip install -r python-requirements.lock
+  .venv/bin/python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+Open http://127.0.0.1:8000/ . The compiled frontend is already included.
+If another process uses port 8000, choose another port in that command.
+After setup, you can also start with: sh run-demo.sh
+
+WINDOWS (PowerShell)
+  cd application
+  py -3.12 -m venv .venv
+  .\.venv\Scripts\python.exe -m pip install -r python-requirements.lock
+  .\.venv\Scripts\python.exe -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+Windows has not been exercised in this session; these are standard equivalent commands.
+
+REBUILD THE FRONTEND
+Prerequisites: Node.js 24 and pnpm 11.19.0. If pnpm is not installed, install the
+pinned version using your normal Node package-manager setup, for example:
+  npm install --global pnpm@11.19.0
+Then from application/:
+  cd frontend
+  pnpm install --frozen-lockfile
+  pnpm build
+  cd ..
+The approved dependency build policy is in pnpm-workspace.yaml (esbuild only).
+The original machine's bundled pnpm runtime required:
+  pnpm --config.verify-deps-before-run=false build
+Use that only for an already-installed dependency tree. Do not skip installation.
+Production FastAPI serves frontend/dist on the same origin. During frontend
+work, pnpm dev proxies /api to the backend on port 8000.
+
+VALIDATE
+From application/ using its Python environment:
+  .venv/bin/python -m pytest backend -q
+  .venv/bin/python tools/verify_delivery.py
+From bundle root with any Python 3:
+  python3 verify_bundle.py
+An isolated browser-review workflow is available with:
+  .venv/bin/python tools/serve_review.py
+It uses port 8001 and temporary workflow state; the business fixture is shared read-only.
+
+WHAT IS INCLUDED
+- application/frontend/src: React/TypeScript UI and CSS
+- application/frontend/dist: latest compiled runnable UI
+- application/backend: FastAPI APIs, workflow logic and tests
+- application/data/northstar.sqlite: complete synthetic business database
+- application/backend/workflow.sqlite: consistent snapshot of saved demo decisions
+- application/tools: deterministic generation and verification tools
+- application/mockup: original HTML/CSS/JS visual prototype
+- application/reviews: eight simulated end-user reviews and readiness assessment
+- research: competitor findings and available Avantor organization reference
+- verification: actual packaging-time tests and integrity results
+- FILE_MANIFEST.json: SHA-256 and byte count of every packaged payload file
+
+WHAT IS NOT INCLUDED
+Machine-specific virtual environments, node_modules, pnpm caches, credentials,
+Codex runtime binaries, the full chat transcript and external source documents
+linked by references. Dependency installation requires internet access. Research
+conclusions and product decisions are summarized; this is not a transcript export.
+No cloud deployment, identity provider, live LLM or SAP configuration is hidden in
+this package. A fresh-machine installation was not tested during this packaging;
+staged application tests were run with the already-installed locked environment.
+
+DATA AND STATE
+The business company is fictional. Warehouse sites are illustrative, not verified
+Avantor facilities. Organization-reference research is separately labeled historical.
+The saved workflow may include your in-progress draft. Do not reset it without
+intending to clear decisions. Reset does not change the business database.
+Do not run generate_data.py merely to start the app: the full dataset is included.
+Generation replaces the fixture and summaries and should be deliberate.

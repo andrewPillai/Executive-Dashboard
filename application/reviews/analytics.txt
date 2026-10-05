@@ -1,0 +1,43 @@
+BUSINESS OPERATIONS & ANALYTICS — SYNTHETIC END-USER REVIEW
+Review date: 2026-10-05
+Reviewer persona: department head responsible for explaining operating performance and coordinating improvement.
+Scope: source and data inspection of frontend App.tsx, BusinessDetails.tsx, backend/depth.py and dashboard.json; independent SQLite metric queries. No shared-browser interaction or real employee validation. Role needs below are informed product hypotheses, not verified Avantor operating practices.
+
+Verdict: Useful connected-data demonstration, but not yet sufficient for an analytics leader's daily performance review. It answers “what is in this snapshot?” better than “what changed, why, and who is fixing it?”
+
+Useful elements
+- Explicit definitions accompany department metrics. Delivery OTIF correctly includes overdue open lines and excludes lines due on/after the simulation day; SQL independently returns 268,986 qualifying successes / 295,900 eligible lines, or 90.9%.
+- Monthly invoiced sales have an accessible exact-value table and invoice-date basis.
+- Customer/product/manufacturer pages and linked orders provide a useful investigation path.
+- Fixed snapshot, synthetic data, scripted insights, modeled cost and direct-shipment limitations are disclosed. Seeded exceptions are correctly labeled as only six designed stories, not all detected problems.
+- Shared evidence and approval workflow provide a credible starting point for cross-department coordination.
+
+TOP FIVE GAPS, IN PRIORITY ORDER
+
+1. HIGH — The working queue hides the facts needed to explain delivery failure.
+Evidence: analytics department SQL selects fully delivered late lines, while the shared Queue component shows customer, product, fulfillment, unshipped value and scenario. A fully delivered late line normally has zero unshipped value. Requested date, actual delivered date, days late and ordered/delivered quantity are absent from this view. Queue is sorted by order date, not business severity.
+Need: analytics-specific columns with promised/requested and actual dates, days late, quantities, invoice value and known reason (or “unknown”). Rank by an explicit, inspectable severity rule. Do not equate financial exposure with confirmed lost sales.
+Acceptance: a late completed line immediately shows why it qualified, delivery delay and affected customer; a delivered late line is not presented as $0 business impact merely because it has no unshipped balance.
+
+2. HIGH — Investigation loses its filter and cannot access the complete analytics cohort.
+Evidence: department queue is limited to ten rows; BusinessDetails “Open order explorer” navigates to /orders with no analytics predicate. The displayed matching count is 26,674 late completed lines in this fixture, but the destination starts with all orders.
+Need: carry a named late-delivery cohort plus as-of/date/region filters into the explorer, preserve them through entity navigation, and paginate the full cohort.
+Acceptance: clicking the analytics late-delivery queue opens exactly 26,674 matching lines before additional filters; page two remains in the cohort and all rows satisfy the same definition.
+
+3. HIGH — No trend or segment analysis explains operating performance.
+Evidence: the only chart in App.tsx is monthly invoiced sales, shared by every audience. Analytics workbench contains three snapshot values (seeded exception lines, late completed lines and OTIF) without period comparison, target or segment breakdown.
+Need: time-selectable OTIF/backlog/service trends; compare previous period and an explicitly fictional target; drill into warehouse, customer segment, product category, region and stock/direct fulfillment. Display both numerator and denominator, avoiding averages of percentages. Small cohorts need visible counts.
+Acceptance: department head selects September, sees August comparison, isolates direct fulfillment and identifies the largest contributors to the change using reconciled counts rather than an unsupported causal claim.
+
+4. HIGH — Metric reconciliation is possible in code but not sufficiently visible to the user.
+Evidence: dashboard JSON contains headline invoiced sales of 701,304,677,243 cents; twelve monthly entries sum to 699,074,432,857 cents. The 2,230,244,386-cent ($22,302,443.86) difference is simulation-day invoices, explicitly disclosed in dataset assumptions but not bridged beside the chart/headline. Header and chart use different scopes. OTIF definition is good but does not expose numerator/denominator or drill-through evidence. JSON aggregates and live SQL coexist without a surfaced reconciliation/run identifier.
+Need: metric details with time window, simulation as-of date, formula, numerator/denominator, source tables, refresh/generation time and reconciled scoped records. Provide a visible historical-period versus simulation-day bridge or align scopes. Internal “recognizedRevenue” naming should not imply accounting recognition beyond invoiced sales.
+Acceptance: every headline has a reproducible drill-down; twelve historical months plus separately labeled simulation-day invoices equal the all-data headline exactly.
+
+5. MEDIUM — Coordination tracks approval, not improvement outcomes; data variation limits explanation.
+Evidence: workflow ends at approved assignment; no completion/outcome/reopened state or baseline-versus-result exists. Cases are six fixed stories, not a computed queue of all exceptions. Dataset assumption sets deliveries two days after shipment and uses simplified replenishment, USD-only and modeled costs.
+Need: keep approval status separate from operational resolution; add accountable owner, next milestone, due/overdue status, linked departmental actions, outcome evidence and improvement measures. For convincing analytics stories, seed varied supplier/carrier delays and seasonality with documented causal construction. Clearly label invented drivers; do not infer real root causes from the current uniform transit rule.
+Acceptance: approving a recovery plan leaves its delivery exception unresolved; completing it requires evidence and shows an outcome against baseline. Analytics can distinguish open operational exceptions from pending approvals and from successfully recovered cases.
+
+END-TO-END ACCEPTANCE SCENARIO
+As the Business Operations & Analytics head, I review an OTIF decline for September, compare August, isolate direct shipments and drill into the affected supplier/customer cohort. I see numerator, denominator, requested/actual dates, delay and relevant monetary measure. The explorer preserves this cohort across paging and entity views. I inspect DIRECT-005 (68 ordered, 34 delivered, 34 outstanding), propose coordinated service/sourcing follow-up, and obtain human approval. The delivery remains unresolved until later evidence supports completion. Every total reconciles to its scoped records; historical sales and simulation-day invoices are separately explained. This is a proposed synthetic acceptance scenario, not a claim that the current app or Avantor already supports it.

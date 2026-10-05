@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "checks": {
+    "foreign_keys": true,
+    "integrity": true,
+    "quantity_bounds": true,
+    "invoice_reconciliation": true,
+    "booked_equals_recognized_plus_open": true,
+    "inventory_reconciliation": true,
+    "historical_nonnegative_stock": true,
+    "nonnegative_stock": true,
+    "all_audiences_100k": true,
+    "direct_no_warehouse_movements": true,
+    "service_after_order": true,
+    "delivery_quantity_bounds": true,
+    "direct_quantity_bounds": true,
+    "no_future_shipments": true
+  },
+  "counts": {
+    "customers": 100000,
+    "manufacturers": 500,
+    "suppliers": 3000,
+    "warehouses": 27,
+    "products": 100000,
+    "orders": 150000,
+    "order_lines": 300000,
+    "invoice_lines": 298793,
+    "purchase_lines": 100000,
+    "inventory_movements": 369255,
+    "inventory_balances": 100006,
+    "quote_lines": 100000,
+    "service_events": 100000,
+    "pricing_records": 100000,
+    "direct_fulfillment": 30000
+  },
+  "seed": 417
+}

@@ -1,0 +1,24 @@
+REVIEW ARTIFACT VERIFICATION — 5 OCTOBER 2026
+
+Verified in the local browser:
+- All eight audience selections update the business briefing.
+- Six connected case cards are available, including three direct-shipment cases.
+- Direct-shipment evidence shows the fictional customer, manufacturer, supplier and PO reference.
+- Drafting does not assign work; a separate approval displays the simulated assignment.
+- Escape dismisses the native case dialog.
+- Reset clears approved assignment state.
+- Data foundation displays generated record counts and 27 facilities (20 USA, seven EU).
+- Initial rendered layout inspected visually; JavaScript syntax check passed.
+
+Verified independently against the read-only SQLite fixture:
+- 100,000 customers and 100,000 products.
+- Eight audiences each reference at least 100,000 relevant records.
+- Six seeded cases, three with direct fulfillment.
+- Twelve historical months.
+- Dashboard invoice total equals database invoice total.
+- Every monthly chart total equals invoices for that month.
+- No broken foreign keys or service events predating their order.
+
+The generator's validation.json contains additional quantity, inventory, direct-fulfillment and financial reconciliation results.
+
+This is functional review of a static interactive mockup and synthetic fixture. It is not production load testing, a full accessibility audit, real AI evaluation, or verification of live integrations. The approval workflow is simulated client-side state without persistence or production authorization.

@@ -1,0 +1,34 @@
+NORTHSTAR SCIENTIFIC — DEMO REVIEW
+
+This fictional laboratory-supply business is inspired by the researched workflows, not a copy of Avantor's customers, facilities or financial results.
+
+Review sequence
+1. Open mockup/index.html, or serve this directory locally and visit /mockup/.
+2. Begin with the executive view. Review the reporting period and synthetic-data label.
+3. Switch between the eight audiences to compare their priorities.
+4. Open a scenario and inspect its affected records and evidence.
+5. Review the proposed action plan, then explicitly approve the simulated assignments.
+6. Reset the demonstration to clear simulated workflow state.
+7. Compare the network view with the 20 US and seven EU fictional facilities.
+
+What is being reviewed
+- Visual hierarchy, departmental priorities, shared cases, evidence and approval interactions.
+- Real generated synthetic records and derived aggregates in a portable SQLite fixture.
+- A finalized target technology direction in technology-decision.txt.
+
+What the mockup does
+The HTML mockup loads a bounded summary derived from the dataset. It does not query the full SQLite database in the browser. AI narratives are scripted demonstration content. Assignments are local simulated interactions, not messages to employees or changes to business systems. Presentation steps do not constitute a live ERP feed.
+
+Target implementation
+React, TypeScript and Vite with client-side rendering; React Router; TanStack Query and Table; Radix Primitives; Apache ECharts; FastAPI/Pydantic; PostgreSQL. The portable fixture and HTML mockup are review deliverables before that application is implemented. Model provider and hosting remain open.
+
+Customers, manufacturers and direct shipments
+Manufacturers are distinct from suppliers and linked to products. Direct fulfillment travels from supplier/manufacturer to customer, bypassing warehouse picking and inventory deductions. Direct-shipment scenarios cover delayed confirmation, partial shipment, and a delivery/invoice discrepancy.
+
+Location scope
+20 USA locations and seven EU locations, one each in Germany, France, the Netherlands, Belgium, Ireland, Spain and Poland. All are fictional. Large customer/product masters and operational datasets provide scale without inventing 100,000 physical warehouses.
+
+Local preview
+From this directory, run: python3 -m http.server 8765 --bind 127.0.0.1
+Then open: http://127.0.0.1:8765/mockup/
+The server runs only while that command remains active.

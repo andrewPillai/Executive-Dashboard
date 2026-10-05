@@ -1,0 +1,41 @@
+Sales department end-user review — 2026-10-05
+
+Perspective: simulated Sales department head, not an actual Avantor stakeholder. Role needs below are inferred requirements to validate with business owners. Read-only review of delivered source and synthetic data; no visual/browser usability test and no claim of production validation.
+
+Verdict: Useful for demonstrating customer-impact investigation, but not yet sufficient for a sales leader's daily operating review. It answers “what records connect to this issue?” better than “which accounts must my team act on today, and how are we performing?”
+
+Useful elements
+- Sales-specific bookings, open quote-line count and customers awaiting shipment are relevant starting measures (backend/depth.py:40–44).
+- Customer, product and manufacturer links connect backlog to account context and all scoped order lines (BusinessDetails.tsx:13–19).
+- DIRECT-004 and DIRECT-005 contain requested versus committed dates, confirmation, shipped/delivered/remaining quantities and POD. These support a credible customer recovery conversation.
+- Human review before assignment, visible scripted-insight labeling, and separated invoiced sales versus order bookings avoid overstating AI authority or treating quotes as sales.
+
+Top five gaps, in priority order
+
+1. P1 — Customer commitments are not actionable from the working queue.
+   Evidence: Sales predicate selects any unshipped quantity; queue sorts descending order date and returns ten lines (depth.py:44,75). BusinessDetails Queue displays customer/product/fulfillment/unshipped value but no requested date, committed date, remaining quantity, days late or accountable seller. App Orders also omits these dates and quantities. Fully shipped but not delivered commitments disappear from this sales queue.
+   Need: overdue/at-risk delivery filters, requested and promised dates, shipped versus delivered remainder, recovery date or explicitly unknown, account owner, and priority reason. Preserve direct shipment context. Do not equate backlog with lost revenue.
+   Acceptance: DIRECT-005 shows 68 ordered, 34 delivered, 34 remaining, September 25 requested date, September 26 original commitment and missing recovery commitment, without opening raw JSON.
+
+2. P1 — No account/territory/period scope or target comparison.
+   Evidence: sales KPI SQL has no period or segment predicate; App RevenueChart and header totals are shared company aggregates. Customer schema has region and segment but no sales owner, territory or targets. Entity attributes expose region/segment only as individual facts.
+   Need: date range, geography/segment and accountable-team controls shared across metrics, trend and queue; bookings and invoiced sales versus prior comparable period and explicit synthetic targets. Include account-level exposure and concentration. Label all scope and period consistently.
+   Acceptance: selecting EU plus a segment and September updates totals, trend, backlog and customer list together; reset restores company scope and totals reconcile to underlying lines.
+
+3. P1 — Quote headline has no usable follow-up workflow; its unit is inconsistent.
+   Evidence: App.tsx:48 says “Open quotes”; depth.py:42 correctly counts quote_lines and says “Open quote lines.” No quote route or drill-down exists. quote_lines contains quote_date, customer/product, quantity, price and status, but no expiry, owner, opportunity linkage or outcome date.
+   Need: consistently label quote lines, provide quote drill-down with age/value/customer and follow-up priority. Add synthetic owner and expiry to support action; add lifecycle data before claiming win rates or forecasts.
+   Acceptance: clicking the quote-line count opens the exact matching population; an aging quote can open its customer context and draft a follow-up for human approval. Count and values reconcile.
+
+4. P2 — The working queue cannot be expanded with its scope intact.
+   Evidence: DepartmentWorkbench's “Open order explorer” goes to /orders with no backlog predicate (BusinessDetails.tsx:17); Orders supports only entity scopes and search (App.tsx:70–73). The department presents a total matching count but only ten items without scoped pagination. Case priority is membership ordering, not impact/urgency ranking (App.tsx:23); STOCK-003 lacks Sales membership despite customer commitment impact.
+   Need: carry the workbench filter into the explorer, allow urgency/value sorting, explain rank, and make related customer-impact cases discoverable regardless of departmental ownership.
+   Acceptance: expanding the sales backlog keeps the same total and only matching records across pages; a known overdue line beyond the first ten remains findable. Account-specific inventory imbalance is visible from the account's related cases.
+
+5. P2 — Recovery plans stop before sales can coordinate an account response.
+   Evidence: CaseDialog permits one accountable department and due date, then saves a scripted plan and approved assignment. It does not expose an editable customer communication, individual sales owner, revised commitment rationale, task dependencies, follow-up status or resolution evidence (App.tsx:58–65).
+   Need: draft an account-specific response, distinguish proposed from manufacturer-confirmed dates, assign accountable roles and dependent tasks, track next update due and customer communication status. Preserve explicit human approval and no external sends in the demo.
+   Acceptance: for DIRECT-004, Sales drafts a customer update stating confirmation is pending; Planning owns manufacturer follow-up, Customer Service owns next customer update, and approval creates trackable demo tasks without marking the delivery issue resolved.
+
+End-to-end sales acceptance scenario
+As the sales head on the fixed October 1, 2026 snapshot, I filter my account segment, identify the overdue direct shipment for Fictional Research Customer 049986, inspect both DIRECT-004 and DIRECT-005, distinguish 60 unconfirmed units from the separate 34-unit delivery remainder, and see the account's total exposure without double counting the order. I review who owns supplier follow-up and the next customer update, draft a coordinated response, and approve assignments. Returning to the account preserves scope and shows assigned work still unresolved. In the same session I can inspect my oldest open quote lines and compare September bookings to a labeled synthetic target. Current implementation supports linked evidence and assignment approval but not this complete scenario.

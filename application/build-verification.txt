@@ -1,0 +1,24 @@
+FIRST APPLICATION BUILD — verified October 5, 2026
+
+TypeScript compilation and Vite production build pass. Five backend tests pass,
+including persisted workflow state, stale request rejection, idempotent approvals,
+order queries, and direct shipment quantities/invoice evidence.
+
+Browser checks against http://127.0.0.1:8000:
+- All eight audience selections display their contextual briefings.
+- Order search 149986 returns two linked direct-shipment lines.
+- Clearing search returns 300,000 lines; next page shows records 26–50.
+- DIRECT-005 shows 68 ordered, 34 delivered and 34 outstanding.
+- Draft creation exposes the saved owner, due date, summary and response steps.
+- Explicit approval creates an assignment that survives browser refresh.
+- Escape from a case dialog returns keyboard focus to its originating button.
+- Pending-approval navigation badge stays zero when no draft awaits approval.
+- EU filter displays the seven fictional European facilities.
+- Dataset counts include 100,000 customers/products and 500 manufacturers.
+- Reset confirmation clears the verification-only assignment, restores focus,
+  and leaves a clean workflow. Final chart visually renders after modular imports.
+
+Scope: local demo, no live LLM, enterprise authentication or SAP connectivity.
+SQLite fixture/workflow store used for this increment; PostgreSQL migration pending.
+Vite reports a large bundle warning (908 KB minified, 297 KB gzip); modular chart
+imports reduced it from 1,545 KB. Further lazy loading is a future optimization.

@@ -1,0 +1,226 @@
+[
+  {
+    "audience": "Executive / VP",
+    "scenario": "Cross-functional customer exposure",
+    "seededCaseId": "SUPPLY-001",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Executive / VP",
+    "scenario": "Profitability exception",
+    "seededCaseId": "MARGIN-002",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Executive / VP",
+    "scenario": "Working-capital recovery",
+    "seededCaseId": "STOCK-003",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Executive / VP",
+    "scenario": "Regional performance divergence",
+    "seededCaseId": null,
+    "status": "Designed only; additional data required",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Sales",
+    "scenario": "Customer commitment recovery",
+    "seededCaseId": "SUPPLY-001",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Sales",
+    "scenario": "Discount exception",
+    "seededCaseId": "MARGIN-002",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Sales",
+    "scenario": "Partial direct order communication",
+    "seededCaseId": "DIRECT-005",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Sales",
+    "scenario": "Key-account revenue decline",
+    "seededCaseId": null,
+    "status": "Designed only; additional data required",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Commercial Excellence",
+    "scenario": "Below-target price review",
+    "seededCaseId": "MARGIN-002",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Commercial Excellence",
+    "scenario": "Price floor compliance",
+    "seededCaseId": "MARGIN-002",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Commercial Excellence",
+    "scenario": "Discount value analysis",
+    "seededCaseId": "MARGIN-002",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Commercial Excellence",
+    "scenario": "Freight margin leakage",
+    "seededCaseId": null,
+    "status": "Designed only; additional data required",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Customer Service",
+    "scenario": "Late order escalation",
+    "seededCaseId": "SUPPLY-001",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Customer Service",
+    "scenario": "Partial delivery follow-up",
+    "seededCaseId": "DIRECT-005",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Customer Service",
+    "scenario": "Manufacturer confirmation chase",
+    "seededCaseId": "DIRECT-004",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Customer Service",
+    "scenario": "Complaint recurrence",
+    "seededCaseId": null,
+    "status": "Designed only; additional data required",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Operations",
+    "scenario": "Transfer opportunity",
+    "seededCaseId": "STOCK-003",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Operations",
+    "scenario": "Stock discrepancy review",
+    "seededCaseId": "STOCK-003",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Operations",
+    "scenario": "Overdue fulfillment recovery",
+    "seededCaseId": "SUPPLY-001",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Operations",
+    "scenario": "Warehouse capacity constraint",
+    "seededCaseId": null,
+    "status": "Designed only; additional data required",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Planning & Sourcing",
+    "scenario": "Supplier overdue receipt",
+    "seededCaseId": "SUPPLY-001",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Planning & Sourcing",
+    "scenario": "Direct supplier confirmation",
+    "seededCaseId": "DIRECT-004",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Planning & Sourcing",
+    "scenario": "Interwarehouse replenishment",
+    "seededCaseId": "STOCK-003",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Planning & Sourcing",
+    "scenario": "Demand forecast error",
+    "seededCaseId": null,
+    "status": "Designed only; additional data required",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Finance",
+    "scenario": "Discount impact on gross profit",
+    "seededCaseId": "MARGIN-002",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Finance",
+    "scenario": "Supplier invoice versus delivery",
+    "seededCaseId": "DIRECT-006",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Finance",
+    "scenario": "Open order revenue exposure",
+    "seededCaseId": "SUPPLY-001",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Finance",
+    "scenario": "Overdue receivables",
+    "seededCaseId": null,
+    "status": "Designed only; additional data required",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Business Operations & Analytics",
+    "scenario": "OTIF root-cause review",
+    "seededCaseId": "SUPPLY-001",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Business Operations & Analytics",
+    "scenario": "Inventory imbalance pattern",
+    "seededCaseId": "STOCK-003",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Business Operations & Analytics",
+    "scenario": "Direct fulfillment exception",
+    "seededCaseId": "DIRECT-005",
+    "status": "Seeded perspective",
+    "humanApproval": "Required before assignment"
+  },
+  {
+    "audience": "Business Operations & Analytics",
+    "scenario": "Repeated process bottleneck",
+    "seededCaseId": null,
+    "status": "Designed only; additional data required",
+    "humanApproval": "Required before assignment"
+  }
+]

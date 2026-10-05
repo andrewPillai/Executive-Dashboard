@@ -1,0 +1,110 @@
+NORTHSTAR DEMO READINESS — UX AND BUSINESS CLAIMS
+Review date: October 5, 2026
+
+Method
+Read-only review of frontend App.tsx, BusinessDetails.tsx, OperationalViews.tsx,
+DraftEditor.tsx, WorkflowPanel.tsx and their backend contracts, compared with the
+eight simulated department reviews. No application code changed in this review.
+Root performs build, API tests and browser checks separately. This document is
+not evidence of actual Avantor stakeholder approval, production readiness, or
+WCAG conformance. The seven requested UX principles are design heuristics;
+they do not establish measured adoption, comprehension or productivity gains.
+
+Readiness judgment
+Suitable direction for a guided synthetic demonstration of connected evidence,
+role-specific investigation and human-controlled coordination. Do not present it
+as a complete daily operating system for eight departments. The narrower demo
+has improved; several original business requirements remain deferred below.
+
+Resolved or materially improved in this increment (source review)
+- Department workbenches link to a complete named order cohort. Orders retain
+  department, entity, search and page scope in URL parameters. The cohort uses
+  shared backend definitions rather than a different frontend predicate.
+- Workbench columns now vary by audience: pricing inputs, service age/category,
+  facility and quantities, candidate purchase dates, delivery delay, or supplier
+  invoice quantity differences. Definitions accompany grouped measures.
+- Quotes, service events and purchase lines have separate paginated source
+  record views. These are actual generated records, not implied CRM or ERP access.
+- Invoice reporting has period and customer-region controls. Monthly figures
+  and measures share that scope. The interface explicitly limits these controls
+  to the report; headline/workbench/entity totals are not globally filtered.
+- Delivery reliability has a requested-month table with OTIF numerator and
+  denominator; its distinct date basis is stated. Partial-period invoice
+  comparisons identify their coverage, and missing margin is unavailable.
+- Priorities use a disclosed heuristic including assignment, role relevance,
+  severity and scenario value. This is not a calibrated business-risk score.
+- Drafts can be revised or discarded. Approved work has dependent tasks,
+  progress updates and a separate simulated resolution review. Reviewer-entered
+  evidence notes are not independently validated and do not change source facts.
+- Earlier source review found and confirmed fixes for dialog focus restoration,
+  changing badge semantics, broken supplier links and nested entity-return state.
+
+Eight-audience disposition
+Executive/VP — Partial: connected exceptions and visible ranking now support a
+  presentation story. Targets, forecast, global scope and overdue-decision
+  prioritization remain absent; scenario value types are not interchangeable.
+Sales — Partial: quote records and scoped commitments are available. The queue
+  still means unshipped quantity, so fully shipped/undelivered commitments need
+  another view. Account ownership, territory, quota and recovery promises remain
+  unmodeled. Do not claim comprehensive customer commitment protection.
+Commercial Excellence — Improved: unit price/list/floor/cost/margin evidence is
+  visible. Pricing approval rationale, effective policy history and full
+  price/volume/mix explanations remain deferred.
+Customer Service — Improved: event/category/age and requested/commitment dates
+  aid investigation. Named case ownership, next customer contact, SLA escalation
+  and a complete customer-resolution workflow remain deferred.
+Operations — Partial: facility, ordered/shipped/delivered units and dates help
+  backlog triage. On-hand is not available-to-promise stock. Reservations,
+  capacity, transfer feasibility and execution controls remain unmodeled.
+Planning & Sourcing — Partial: same-product/site purchase candidates and source
+  records improve supply investigation. Candidate supply is explicitly not an
+  allocation. No validated demand pegging, safety-stock policy, reorder engine,
+  alternate-supply feasibility or confirmed recovery date is demonstrated.
+Finance — Partial: invoice reporting and quantity discrepancy evidence improve
+  review. Cash, AR/AP aging, payments, GL, close controls and revenue-recognition
+  policy are absent. Modeled gross profit excludes freight/returns/overhead.
+Business Operations & Analytics — Partial: preserved cohorts, delay columns,
+  reconciled invoice reporting and monthly OTIF counts improve investigation.
+  Service/backlog trends, multidimensional driver analysis and independently
+  measured recovery outcomes remain deferred. Uniform fixture assumptions limit
+  causal explanations.
+
+Review findings corrected before handoff
+The draft editor now blocks approval until Save or Cancel, preventing visible
+unsaved edits from being silently ignored. Report comparisons display their
+backend coverage basis, and nullable margin displays Unavailable. These fixes
+were checked in source; root's browser verification remains the execution gate.
+
+Acceptance walkthroughs for root's browser verification
+1. For each audience, expand its queue: count and population must match; page two
+   and an added customer/product filter retain the department predicate.
+2. Search orders, change page, open customer then product, and Back twice:
+   restore the same search/page. Case-to-entity Back restores the same case.
+3. Select September/Europe and October/United States in the invoice report:
+   visible totals equal monthly figures; partial-period comparison basis is
+   explicit. Other panels must not imply that these report filters apply to them.
+4. Inspect source status filters, empty results and entity links. Returning from
+   an entity preserves the record page and filter. Unsupported links stay plain.
+5. Edit a saved draft, then attempt approval without saving: approval must be
+   blocked or require an explicit save/discard choice. Approve only the version
+   the reviewer has inspected. Saving a draft does not assign work.
+6. Approve tasks, record progress and complete prerequisites. Resolution remains
+   a separate human step with a synthetic-evidence caveat; original financial,
+   stock and delivery records remain unchanged. Failures retain useful context.
+7. Complete these paths with keyboard and readable zoom. Check focus restoration,
+   labels, 44px targets, readable grouped tables, contrast, and no silent focus
+   jumps. Loading/error states must not be mistaken for zero business activity.
+
+Seven-principle evidence to retain
+Fitts: generous adjacent actions and entity links. Hick: stage-specific controls
+and progressive detail. Zeigarnik: honest unfinished drafts/tasks. Jakob:
+consistent tables, filters and return behavior. Goal-gradient: real completed
+tasks and distinct assignment/resolution. Von Restorff: restrained emphasis for
+important actions/status. Miller: grouped measures and visible definitions,
+without an arbitrary seven-item rule. Usability outcomes still require testing.
+
+Demonstration boundaries
+Fictional company and synthetic records; fixed scenario snapshot; scripted
+insights; local assignments and reviewer-recorded progress. No live AI, SAP
+connection, external notification, real inventory movement or financial posting.
+Describe what is implemented and show deferred capabilities as future scope.

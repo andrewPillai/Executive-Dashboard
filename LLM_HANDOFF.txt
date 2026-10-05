@@ -1,0 +1,158 @@
+LLM HANDOFF — READ BEFORE CONTINUING
+
+USER AND INTENT
+Build a general-purpose commercial business-operations application inspired by
+Palantir Foundry, initially demonstrated through a fictional Avantor-like scientific
+distribution business. Management audiences are executives (including SVP/EVP and
+C-suite), VPs and department heads. Purpose: find information, explain what is
+happening, connect customer/operational/financial impact, coordinate actions.
+User favors autonomous implementation and iterative refinement. Do not repeatedly
+ask for permission for authorized reversible local work. Do not send real messages
+or perform enterprise writes without appropriate user authorization.
+
+CONFIRMED BUSINESS CONTEXT (USER-SUPPLIED, NOT INDEPENDENTLY VERIFIED)
+Current SAP ECC; future S/4HANA; SAP Analytics. Salesforce is no longer in the stack.
+OpenText handles content and metadata; Stibo may remain in parts of the company.
+Do not assume legacy research proves current application deployment or licensing.
+The user asked to defer management sponsorship/pilot/funding discussion until the
+demo is rolling. Do not replace product work with a funding pitch.
+
+EIGHT AUDIENCES
+Executive / VP, Sales, Commercial Excellence, Customer Service, Operations,
+Planning & Sourcing, Finance, Business Operations & Analytics.
+Legal, Regulatory Affairs & Trade Compliance, Quality, Engineering, contingent
+workers, R&D, IT and HR were excluded from this initial business-user scope.
+The eight-agent reviews are simulated role perspectives, not actual Avantor
+interviews, usability studies, employee approval or verified process requirements.
+
+AUTHORITY AND CURRENT STOP BOUNDARY
+AI explains, recommends and drafts; a human approves assignments. Current insights
+are SCRIPTED. User authorized progress without waiting until Live AI and SAP
+integration, and work stopped at that connection boundary. Do not interpret that
+as credentials, approval to transmit enterprise data, or permission for SAP writes.
+Latest user request is packaging/handoff, not connecting any provider.
+
+LATEST USER DESIGN CHANGE — ALREADY IMPLEMENTED
+The Sales commitments table was too high on the page. All departmental briefings
+now order content as: business pulse/delivery health, summary KPIs, invoiced sales
+and product profit report alongside cross-department priorities, scenario prompt,
+then the detailed department workbench/queue at the BOTTOM. Preserve this ordering.
+Seven UX principles requested: Fitts, Hick, Zeigarnik, Jakob, goal gradient,
+Von Restorff, Miller. They are practical design guidance, not seven-item hard caps.
+Use large targets, focused choices, visible unfinished work, familiar navigation,
+truthful progress, restrained emphasis and meaningful grouping.
+
+CURRENT IMPLEMENTATION
+React + TypeScript + Vite CSR; React Router; TanStack Query and Table; Radix Dialog;
+Apache ECharts. FastAPI/Pydantic backend. Same-origin frontend/dist served by API.
+SQLite read-only business fixture; separate transactional workflow SQLite.
+PostgreSQL is the selected future target, NOT implemented. No enterprise auth:
+role selection is a perspective switch, not authorization. Bind to loopback only.
+No git repository was present in this workspace; do not assume commits/branches.
+
+SOURCE MAP
+frontend/src/App.tsx: app shell, roles, briefing layout, cases, order explorer,
+  draft/approval dialog; latest section reorder is here.
+BusinessDetails.tsx: department workbench, entity pages/links and return context.
+OperationalViews.tsx: specialized department tables, source record explorer,
+  invoice reporting and requested-date OTIF trend.
+DraftEditor.tsx (if present): saved plan revision/discard and dirty-state gating.
+WorkflowPanel.tsx: dependent tasks, progress/evidence entry, resolution review.
+backend/main.py: app factory, order joins/filtering, bootstrap, draft/approve/reset.
+backend/cohorts.py: shared department predicates.
+backend/depth.py: departmental metrics and scoped entity details.
+backend/reads.py: enriched evidence, source-record APIs and reports.
+backend/actions.py: proposed tasks, progress, dependencies, discard, resolution.
+backend/test_*.py: 13 backend tests at latest functional verification.
+
+API SUMMARY
+GET /api/health, /bootstrap, /orders, /cases, /cases/{id}
+GET /api/departments/{role}
+GET /api/entities/{customers|products|manufacturers}/{id}
+GET /api/records/{quotes|service|purchases}
+GET /api/reports?period=all|2026-09|2026-10&region=all|USA|EU
+POST /api/cases/{id}/draft, /approve, /discard, /progress, /resolve
+POST /api/reset
+/orders supports bound search, paging, allowlisted sorting, customer/product/
+manufacturer scopes and department cohort. Full cohort preserves specialized
+columns. Sources support applicable scopes/status, oldest/newest and purchase
+open_only. Read code for exact request/response fields; do not guess them.
+
+WORKFLOW INVARIANTS
+run_id + expected_version reject stale mutations. Approval uses idempotency keys.
+Drafting does not assign work. Proposed coordinated tasks are visible before
+approval. Saved draft can be revised/discarded. Unsaved edits block approval.
+Approved tasks have department owners, due dates and prerequisites. In progress,
+Waiting and Completed updates require notes; completion requires evidence text.
+All tasks must complete before separate human simulated-resolution review.
+Evidence is reviewer-recorded, not independently verified. Workflow completion
+never modifies business delivery/inventory/invoice facts or sends messages.
+Older saved drafts may predate proposed_tasks; approval falls back to the current
+case task template. Older approved assignments without tasks retain their approval
+and show a legacy tracking notice. Preserve user state and avoid broad reset.
+
+DATA
+Fixed as-of October 1, 2026; history October 2025–September 2026 plus simulation-day
+invoices. Seed 417. Approximately 1.85M rows; 100k customers, 100k products,
+500 manufacturers, 3,000 suppliers, 150k orders, 300k order lines; >=100k relevant
+records per audience. See dashboard.json and verification output for exact counts.
+20 illustrative US sites; seven EU countries: Germany, France, Netherlands,
+Belgium, Ireland, Spain, Poland. Manufacturer direct fulfillment bypasses warehouses.
+USD only; no modeled payments/AR/AP/GL, tax, returns, freight or enterprise budgets.
+
+SIX SEEDED CASES
+SUPPLY-001: eight overdue lines, zero local stock, overdue unreceived supply.
+MARGIN-002: six fulfilled below-floor pricing lines, ~2.91% modeled margin;
+  $44,439.26 vs list and $7,406.18 vs floor are distinct concepts, not recovered loss.
+STOCK-003: six shortage lines, 255 units, $130,596.22 unshipped value;
+  product 99995 has Houston0/Miami500 on hand, not confirmed transferable stock.
+DIRECT-004: manufacturer confirmation pending, customer49986/product99971.
+DIRECT-005: 68 ordered/34 delivered/34 remaining, customer49986/product99972/
+  manufacturer472. Remaining delivery date is unknown absent new confirmation.
+DIRECT-006: supplier invoice78 vs POD76 at modeled cost, $1,043.74 discrepancy.
+32 scenario perspectives in data/scenario-perspectives.json are design material,
+not 32 independently seeded and fully executable cases. Do not overclaim breadth.
+
+BUSINESS REVIEW FIXES DELIVERED
+- Role-specific queue evidence and matching full-cohort exploration.
+- Sales includes undelivered, including in-transit; quantity/date distinctions.
+- Commercial prices/floor/cost/margin/below-floor value; Finance invoice-POD excess.
+- Service event category/status/date/age; oldest/open source-event exploration.
+- Product warehouse stock and same-product+facility PO CANDIDATES, not allocation.
+- Customer/source links, quote/service/purchase explorers and pagination.
+- Financial selected-period totals equal invoice-month series; comparable prior
+  periods. October partial month compares same elapsed days of September.
+- Requested-month OTIF numerator/denominator, distinct from invoice-date reporting.
+- Transparent priority ranking: unassigned, role relevance, severity, scenario
+  value. Values are not additive. This is a demo rule, not optimized prioritization.
+- Editable proposals, dependent coordinated work and separate simulated resolution.
+
+REPORTING CAUTIONS
+Report filters affect the report only, not the fixed-snapshot headline/workbench.
+All invoices includes $22,302,443.86 on simulation day beyond the original 12-month
+historical chart. The new reconciled report includes that month in All scope.
+OTIF is line-level full delivery by requested date, requested date strictly before
+as-of. All-scope baseline 268,986/295,900 =>90.9%. Empty cohort is unavailable,
+not0%. Open order value uses unshipped units; it is not undelivered value/lost sales.
+
+REMAINING GAPS / DO NOT CLAIM PRODUCTION READINESS
+Live AI and SAP integrations; identity/authorization; production audit/monitoring;
+PostgreSQL migration/deployment; forecasts and targets; available-to-promise,
+reservations, detailed transfer capacity/timing; actual AR/AP/GL; real notifications;
+true enterprise process validation. Need broader independently seeded scenarios
+for each role and actual department-user validation before rollout.
+Review reviews/demo-readiness.txt and REVIEW-SUMMARY.txt; earlier reviews describe
+pre-fix gaps and must be read with the later implemented-change notes.
+Vite reports ~938KB minified JS (~304KB gzip), a non-blocking bundle-size warning.
+Tests show an httpx/Starlette deprecation warning. No claim of WCAG certification.
+
+VERIFICATION AND RESUME
+See verification/ for packaging-time extracted-app checks. Browser checks already
+covered connected entities/back context, scoped search/paging, financial evidence,
+report filters/OTIF, source filters, dirty-edit gate, draft revision and the full
+three-task simulated-resolution sequence with isolated workflow state.
+First run verify_bundle.py. Run the included build as described in START_HERE.txt.
+Do not regenerate data or discard saved workflow just to launch. Review files and
+user's next request before editing. No tools/state from this Codex session are
+required to run the extracted app. Next integration choices are recorded in
+application/integration-boundary.txt. The latest competitor research is in research/.

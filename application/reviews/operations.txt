@@ -1,0 +1,42 @@
+OPERATIONS DEPARTMENT HEAD — SYNTHETIC END-USER REVIEW
+Review date: 2026-10-05
+Basis: source inspection of frontend/src/App.tsx, BusinessDetails.tsx, backend/depth.py and main.py, plus read-only queries of data/northstar.sqlite and dashboard.json. No shared browser interaction. These are role hypotheses, not validated Avantor requirements or interviews.
+
+VERDICT
+Useful for explaining a warehouse exception and following a proposed response. Not yet sufficient to run the daily warehouse management meeting: the default working queue cannot tell me which facility must do what today, by when, or whether it can deliver.
+
+WHAT IS RELEVANT
+- Operations metrics deliberately exclude direct fulfillment from stock backlog. On-hand inventory value and zero-stock positions have honest definitions.
+- Product detail connects inventory at named facilities to customer orders. STOCK-003 is a credible imbalance story: local zero stock and 500 units elsewhere.
+- The case ties Operations, Planning & Sourcing, Customer Service and Finance together; customer/product/manufacturer links support investigation.
+- Explicit human approval and the distinction between assignment and resolution are appropriate. The demo does not pretend to execute SAP movements.
+
+TOP FIVE GAPS, IN PRIORITY ORDER
+1. P1 — No actionable daily facility queue.
+Evidence: depth.py operations queue selects all STOCK lines with unshipped quantity and sorts the latest order date first, limited to 10. BusinessDetails Queue shows order/customer/product/fulfillment/value/scenario, but not warehouse, open units, requested date, committed date or days overdue. App.tsx Orders omits these columns too. Latest order is not necessarily most urgent.
+Need: facility and due/overdue filters; outstanding units; promised/requested dates; overdue age; explicit priority logic such as overdue first, then due today. Keep monetary exposure as secondary context.
+Acceptance: a manager selects Houston, sees STOCK-003 line 299995 with 90 units outstanding and requested date 2026-09-25, and can inspect why it outranks future-due work as of 2026-10-01.
+
+2. P1 — Queue drill-through loses its operating scope.
+Evidence: DepartmentWorkbench's Open order explorer link is always /orders. Orders supports customer/product/manufacturer scope, but no warehouse, fulfillment-mode or backlog predicate. Ten selected warehouse backlog records therefore lead into every order line, including direct shipments.
+Need: preserve STOCK plus unshipped filters when opening the complete queue; carry site/date filters in the URL and show scope/count clearly. Direct shipments can be a separately labeled coordination view.
+Acceptance: workbench and full explorer show the same backlog total and predicate; pagination never introduces delivered or DIRECT lines into the stock backlog.
+
+3. P1 — Available stock and transfer feasibility are not established.
+Evidence: product inventory displays on_hand_qty only; inventory_balances contains opening and on-hand quantities but no allocation, reservations or transfer commitments. No transit time, shipment cutoffs or transfer cost are modeled. STOCK-003 recommendation correctly says check feasibility, but 500 on hand cannot be treated as 500 available.
+Need: show unallocated/available units, source commitments, proposed transfer units and earliest delivery date; seed these explicitly, or mark feasibility unknown and require verification. Never automatically promise a transfer from on-hand alone.
+Acceptance: Houston's 90-unit shortfall links to Miami's 500 on hand, with a clear availability/ETA check before approving a transfer proposal.
+
+4. P2 — No facility performance or capacity view.
+Evidence: Operations inherits the shared invoiced-sales trend and overall delivery OTIF. Network page lists facility names/countries only. No site-level backlog age, warehouse OTIF, pick/pack throughput, labor/dock capacity or carrier cutoff exists in the inspected model.
+Need: start with derivable warehouse-specific backlog/late shipment trends; add explicitly synthetic capacity facts only when modeled. Separate DIRECT delivery performance from warehouse accountability. Do not infer warehouse performance from company-wide OTIF.
+Acceptance: compare Houston and Miami on overdue stock units and warehouse delivery performance; identify capacity as modeled data or an explicit unknown.
+
+5. P2 — Assignment cannot yet become coordinated execution.
+Evidence: main.py draft has a single accountable department and three generic text steps. UI accepts department and due date; workflow ends at Assigned. There are no individual task owners, transfer proposal details, dependencies, progress updates or resolution evidence.
+Need: an editable action plan with warehouse transfer check, Planning availability confirmation and Customer Service revised commitment; each has owner/due/status/dependency. Preserve human approval and do not call assignment issue resolution.
+Acceptance: STOCK-003 can be assigned with source/destination/product/quantity references and required checks; the issue stays open until transfer/delivery evidence is recorded.
+
+END-TO-END ACCEPTANCE STORY: STOCK-003
+Select Operations → identify six overdue stock lines totaling 255 outstanding units and $130,596.22 open order value → open the imbalance case → inspect product 99995: Houston has zero on hand, Miami has 500, order line 299995 needs 90 → evaluate available stock and transfer ETA (currently absent, must remain unknown) → draft coordinated plan → human approves assignment → return to facility backlog with unchanged physical quantities until actual execution evidence exists.
+Remaining five shortages: Miami 17, Charlotte 25, Nashville 33, Columbus 41, Philadelphia 49. Each has 500 units at the next named facility in the seed. Do not add this case value to overlapping metrics or imply those holdings are free stock.
