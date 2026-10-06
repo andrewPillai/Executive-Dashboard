@@ -7,6 +7,7 @@ from pathlib import Path
 from contextlib import contextmanager
 
 from fastapi import FastAPI, HTTPException, Query
+from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 from . import actions
@@ -226,13 +227,20 @@ def create_app(data_dir=None, workflow_path=None, frontend_dir=None):
 
     dist = Path(frontend_dir or ROOT / 'frontend' / 'dist')
     if dist.is_dir():
+        @app.get('/', include_in_schema=False)
+        def frontend_root():
+            return FileResponse(dist / 'index.html')
+
         class SPAFiles(StaticFiles):
             async def get_response(self, path, scope):
                 try:
-                    return await super().get_response(path, scope)
+                    response = await super().get_response(path, scope)
+                    if response.status_code == 404 and not path.startswith(('api/', 'assets/')) and '.' not in path:
+                        return FileResponse(dist / 'index.html')
+                    return response
                 except Exception as exc:
                     if getattr(exc, 'status_code', None) == 404 and not path.startswith(('api/', 'assets/')) and '.' not in path:
-                        return await super().get_response('index.html', scope)
+                        return FileResponse(dist / 'index.html')
                     raise
         app.mount('/', SPAFiles(directory=dist, html=True), name='frontend')
     return app
