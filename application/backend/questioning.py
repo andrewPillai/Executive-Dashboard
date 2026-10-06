@@ -207,7 +207,18 @@ def _model_sql(question: str) -> str:
 
 
 def advanced_answer(question: str, data_dir: Path) -> dict[str, Any]:
-    sql = _validated_select(_model_sql(question.strip()))
+    try:
+        sql = _validated_select(_model_sql(question.strip()))
+    except AIRateLimitError:
+        raise
+    except RuntimeError:
+        # A model outage must not block common operational questions that are
+        # already covered by the approved catalog.
+        fallback = _catalog_answer(question, data_dir)
+        fallback["advanced"] = False
+        fallback["ai_provider"] = None
+        fallback["ai_model"] = None
+        return fallback
     db, source = _connect(data_dir)
     try:
         rows = _query(db, sql)
@@ -234,6 +245,15 @@ def _catalog_answer(question: str, data_dir: Path) -> dict[str, Any]:
     db, source = _connect(data_dir)
     try:
         common = {"source": source, "freshness": datetime.now(timezone.utc).isoformat(), "question": q}
+        if ("highest" in lowered or "most" in lowered or "top" in lowered) and ("ordered" in lowered or "order" in lowered) and ("product" in lowered or "unit" in lowered or "quantity" in lowered):
+            rows = _query(db, """select cu.id customer_id, cu.name customer,
+                sum(l.ordered_qty) ordered_units, count(distinct l.product_id) distinct_products,
+                count(distinct o.id) orders
+                from order_lines l join orders o on o.id=l.order_id join customers cu on cu.id=o.customer_id
+                group by cu.id, cu.name order by ordered_units desc limit 20""")
+            leader = rows[0] if rows else None
+            lead_text = f"{leader['customer']} ordered the highest volume at {int(leader['ordered_units']):,} units across {leader['distinct_products']:,} products." if leader else "No ordered product volume was found in the current snapshot."
+            return {**common, "intent": "top_customer_volume", "answer": lead_text, "evidence": rows, "next_step": "Open the customer profile to review product mix, open commitments, and delivery status."}
         if any(word in lowered for word in ("commitment", "commitments", "at risk", "customer order")):
             rows = _query(db, """select cu.id customer_id, cu.name customer, count(*) open_lines,
                 round(sum((l.ordered_qty-l.delivered_qty)*l.unit_price_cents)/100.0,2) exposure_usd
