@@ -226,7 +226,9 @@ def create_app(data_dir=None, workflow_path=None, frontend_dir=None):
     if dist.is_dir():
         @app.get('/', include_in_schema=False)
         def frontend_root():
-            return FileResponse(dist / 'index.html')
+            # The entrypoint must be revalidated after a deployment so the browser
+            # does not keep an older hashed JavaScript bundle.
+            return FileResponse(dist / 'index.html', headers={'Cache-Control': 'no-store, max-age=0'})
 
         class SPAFiles(StaticFiles):
             async def get_response(self, path, scope):
