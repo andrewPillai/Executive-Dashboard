@@ -3,7 +3,7 @@ import sqlite3
 from contextlib import contextmanager
 
 from fastapi import HTTPException
-import cohorts
+from . import cohorts
 
 
 def register_depth(app, data_dir, seed, order_query, records_query):
