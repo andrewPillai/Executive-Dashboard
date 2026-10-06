@@ -6,8 +6,11 @@ Set DATABASE_URL to PostgreSQL for the same read-only query catalog in productio
 """
 from __future__ import annotations
 
+import json
 import os
 import sqlite3
+import urllib.error
+import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -35,7 +38,73 @@ def _query(db, sql: str):
     return [dict(zip(names, row)) for row in cur.fetchall()]
 
 
-def answer(question: str, data_dir: Path) -> dict[str, Any]:
+def _model_answer(question: str, result: dict[str, Any]) -> str | None:
+    """Ask an OpenAI-compatible provider to explain approved evidence.
+
+    The model receives the deterministic answer and evidence rows only. It cannot
+    issue SQL, select other records, or perform an operational write.
+    """
+    if result.get("intent") == "unsupported":
+        return None
+    base_url = os.getenv("AI_BASE_URL", "").strip().rstrip("/")
+    model = os.getenv("AI_MODEL", "").strip()
+    api_key = os.getenv("AI_API_KEY", "").strip()
+    if not (base_url and model and api_key):
+        return None
+    payload = {
+        "model": model,
+        "temperature": 0.2,
+        "max_tokens": 500,
+        "messages": [
+            {
+                "role": "system",
+                "content": (
+                    "You are the executive operations assistant for a fictional company. "
+                    "Explain only the approved evidence supplied by the application. "
+                    "Do not invent facts, dates, causes, or totals. Do not claim to have "
+                    "changed a system or assigned work. Write one concise management-ready "
+                    "answer in plain text, with the conclusion first and a brief explanation."
+                ),
+            },
+            {
+                "role": "user",
+                "content": json.dumps(
+                    {
+                        "question": question,
+                        "approved_analysis": result.get("answer", ""),
+                        "intent": result.get("intent", ""),
+                        "evidence": result.get("evidence", []),
+                    },
+                    ensure_ascii=False,
+                ),
+            },
+        ],
+    }
+    request = urllib.request.Request(
+        f"{base_url}/chat/completions",
+        data=json.dumps(payload).encode("utf-8"),
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        },
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            body = json.loads(response.read().decode("utf-8"))
+        content = body.get("choices", [{}])[0].get("message", {}).get("content")
+        if isinstance(content, list):
+            content = " ".join(str(part.get("text", "")) for part in content if isinstance(part, dict))
+        if isinstance(content, str) and content.strip():
+            return content.strip()
+    except (urllib.error.URLError, TimeoutError, ValueError, KeyError, IndexError, json.JSONDecodeError):
+        # The deterministic answer remains available if the optional provider is
+        # unavailable, rate-limited, or returns an unsupported response shape.
+        return None
+    return None
+
+def _catalog_answer(question: str, data_dir: Path) -> dict[str, Any]:
     q = question.strip()
     if not q:
         raise ValueError("Ask a question about customers, orders, delivery, inventory, margin, or revenue.")
@@ -81,3 +150,13 @@ def answer(question: str, data_dir: Path) -> dict[str, Any]:
         return {**common, "intent": "unsupported", "answer": "I can analyze the connected synthetic data, but this question needs a defined business metric or source field before I can answer it reliably.", "evidence": [], "next_step": "Try asking about revenue, commitments, delivery, inventory, margin, suppliers, or coordination."}
     finally:
         db.close()
+
+
+def answer(question: str, data_dir: Path) -> dict[str, Any]:
+    result = _catalog_answer(question, data_dir)
+    model_text = _model_answer(question.strip(), result)
+    if model_text:
+        result = {**result, "answer": model_text, "ai_provider": os.getenv("AI_BASE_URL", "").strip(), "ai_model": os.getenv("AI_MODEL", "").strip()}
+    else:
+        result = {**result, "ai_provider": None, "ai_model": None}
+    return result
