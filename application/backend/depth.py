@@ -34,7 +34,7 @@ def register_depth(app, data_dir, seed, order_query, records_query):
                 add('customers_open', 'Customers awaiting complete delivery', 'SELECT count(DISTINCT o.customer_id) FROM orders o JOIN order_lines l ON l.order_id=o.id WHERE l.delivered_qty<l.ordered_qty', definition='Distinct customers with at least one incompletely delivered line, including in-transit shipments.')
             elif role == 'commercial':
                 add('below_floor', 'Lines below pricing floor', 'SELECT count(*) FROM order_lines l JOIN pricing_records pr ON pr.product_id=l.product_id WHERE l.unit_price_cents<pr.floor_price_cents', definition='Line net price below the single effective demo pricing floor.')
-                add('discount', 'Discount versus list', 'SELECT sum(l.ordered_qty*max(0,p.list_price_cents-l.unit_price_cents)) FROM order_lines l JOIN products p ON p.id=l.product_id', 'cents', 'Positive ordered-price difference versus list; not lost profit or realized revenue.')
+                add('discount', 'Discount versus list', 'SELECT sum(l.ordered_qty*CASE WHEN p.list_price_cents>l.unit_price_cents THEN p.list_price_cents-l.unit_price_cents ELSE 0 END) FROM order_lines l JOIN products p ON p.id=l.product_id', 'cents', 'Positive ordered-price difference versus list; not lost profit or realized revenue.')
                 add('gross_margin', 'Invoiced gross margin', 'SELECT 100.0*sum(revenue_cents-cost_cents)/nullif(sum(revenue_cents),0) FROM invoice_lines', 'percent', 'Invoiced sales less modeled product cost, divided by invoiced sales; excludes freight and overhead.')
             elif role == 'service':
                 add('open_events', 'Open service events', "SELECT count(*) FROM service_events WHERE status='Open'", definition='Events, not unique cases or customers, with Open status.')
@@ -51,7 +51,7 @@ def register_depth(app, data_dir, seed, order_query, records_query):
             elif role == 'finance':
                 add('invoiced_sales', 'Invoiced sales', 'SELECT sum(revenue_cents) FROM invoice_lines', 'cents', 'Invoiced shipment value; payment, returns, tax and recognition policy are not modeled.')
                 add('gross_profit', 'Modeled gross profit', 'SELECT sum(revenue_cents-cost_cents) FROM invoice_lines', 'cents', 'Invoiced sales less modeled product cost; excludes freight and overhead.')
-                add('invoice_discrepancy', 'Direct invoice excess at cost', 'SELECT sum(max(0,d.supplier_invoice_qty-d.delivered_qty)*l.unit_cost_cents) FROM direct_fulfillment d JOIN order_lines l ON l.id=d.order_line_id', 'cents', 'Positive supplier invoice quantity above delivered quantity, valued at modeled unit cost.')
+                add('invoice_discrepancy', 'Direct invoice excess at cost', 'SELECT sum(CASE WHEN d.supplier_invoice_qty>d.delivered_qty THEN d.supplier_invoice_qty-d.delivered_qty ELSE 0 END*l.unit_cost_cents) FROM direct_fulfillment d JOIN order_lines l ON l.id=d.order_line_id', 'cents', 'Positive supplier invoice quantity above delivered quantity, valued at modeled unit cost.')
             else:
                 add('scenario_lines', 'Seeded exception lines', 'SELECT count(*) FROM order_lines WHERE scenario_id IS NOT NULL', definition='Tagged lines in the six seeded scenarios; not all operational exceptions.')
                 add('late_deliveries', 'Late completed delivery lines', 'SELECT count(*) FROM order_lines WHERE delivered_qty=ordered_qty AND delivered_date>requested_date', definition='Fully delivered lines whose actual delivery was after the requested date.')
