@@ -92,6 +92,7 @@ def _model_answer(question: str, result: dict[str, Any]) -> str | None:
                 "content": json.dumps(
                     {
                         "question": question,
+                        "audience": result.get("audience", "executive"),
                         "approved_analysis": result.get("answer", ""),
                         "intent": result.get("intent", ""),
                         "evidence": result.get("evidence", []),
@@ -241,7 +242,7 @@ def advanced_answer(question: str, data_dir: Path, audience: str = "executive") 
         result = {
             "source": source, "freshness": datetime.now(timezone.utc).isoformat(), "question": question.strip(),
             "intent": "advanced_read_only", "answer": f"The read-only analysis returned {len(rows):,} evidence rows.",
-            "evidence": rows, "next_step": "Review the evidence and open the related records before drafting any human-approved action.",
+            "evidence": rows, "audience": audience, "next_step": "Review the evidence and open the related records before drafting any human-approved action.",
             "sql": sql,
         }
         result["next_step"] = _audience_next_step("advanced_read_only", audience, result["next_step"])
