@@ -1,7 +1,7 @@
 {
   "build": {
     "builder": "dockerfile",
-    "dockerfile": "Dockerfile.railway"
+    "dockerfile": "Dockerfile"
   },
   "deploy": {
     "numReplicas": 1,
