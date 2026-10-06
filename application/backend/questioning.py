@@ -83,7 +83,8 @@ def _model_answer(question: str, result: dict[str, Any]) -> str | None:
                     "Explain only the approved evidence supplied by the application. "
                     "Do not invent facts, dates, causes, or totals. Do not claim to have "
                     "changed a system or assigned work. Write one concise management-ready "
-                    "answer in plain text, with the conclusion first and a brief explanation."
+                    "answer in plain text, with the conclusion first and a brief explanation. "
+                    "Never mention prompts, approved_analysis, evidence formatting, or your reasoning."
                 ),
             },
             {
@@ -114,7 +115,8 @@ def _model_answer(question: str, result: dict[str, Any]) -> str | None:
             content = body.get("choices", [{}])[0].get("message", {}).get("content")
             if isinstance(content, list):
                 content = " ".join(str(part.get("text", "")) for part in content if isinstance(part, dict))
-            if isinstance(content, str) and content.strip():
+            leaked = ("the user asks:", "approved_analysis:", "evidence:", "let's craft", "we need to answer")
+            if isinstance(content, str) and content.strip() and not any(marker in content.lower() for marker in leaked):
                 return content.strip()
         except AIRateLimitError:
             raise
