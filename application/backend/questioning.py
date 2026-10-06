@@ -128,10 +128,12 @@ def _model_answer(question: str, result: dict[str, Any]) -> str | None:
 def _provider_candidates() -> list[tuple[str, str, str]]:
     """Return primary then optional backup OpenAI-compatible providers."""
     candidates = []
+    primary_base = os.getenv("AI_BASE_URL", "").strip().rstrip("/")
+    primary_key = os.getenv("AI_API_KEY", "").strip()
     for prefix in ("AI", "AI_FALLBACK"):
-        base_url = os.getenv(f"{prefix}_BASE_URL", "").strip().rstrip("/")
+        base_url = os.getenv(f"{prefix}_BASE_URL", "").strip().rstrip("/") or (primary_base if prefix == "AI_FALLBACK" else "")
         model = os.getenv(f"{prefix}_MODEL", "").strip()
-        api_key = os.getenv(f"{prefix}_API_KEY", "").strip()
+        api_key = os.getenv(f"{prefix}_API_KEY", "").strip() or (primary_key if prefix == "AI_FALLBACK" else "")
         if base_url and model and api_key and (base_url, model, api_key) not in candidates:
             candidates.append((base_url, model, api_key))
     return candidates

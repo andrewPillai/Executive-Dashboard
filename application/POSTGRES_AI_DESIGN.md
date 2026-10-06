@@ -28,7 +28,8 @@ Use environment variables for a future model provider:
 AI_BASE_URL=
 AI_MODEL=
 AI_API_KEY=
-# Optional backup OpenAI-compatible provider. It is tried only if the primary fails.
+# Optional backup model. It is tried only if the primary fails; base URL/key inherit
+# from the primary when left blank.
 AI_FALLBACK_BASE_URL=
 AI_FALLBACK_MODEL=
 AI_FALLBACK_API_KEY=
