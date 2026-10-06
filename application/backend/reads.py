@@ -103,7 +103,7 @@ def register_reads(app, data_dir, seed):
             return ' WHERE '+' AND '.join(terms),args
         with business() as db:
             clause,args=filters(period)
-            rows=[dict(x) for x in db.execute('SELECT substr(i.invoice_date,1,7) month,sum(i.revenue_cents) invoiced_sales_cents,sum(i.revenue_cents-i.cost_cents) gross_profit_cents'+source+clause+' GROUP BY 1 ORDER BY 1',args)]
+            rows=[dict(x) for x in db.execute('SELECT substr(i.invoice_date,1,7) AS "month",sum(i.revenue_cents) invoiced_sales_cents,sum(i.revenue_cents-i.cost_cents) gross_profit_cents'+source+clause+' GROUP BY 1 ORDER BY 1',args)]
             sales=sum(x['invoiced_sales_cents'] for x in rows);profit=sum(x['gross_profit_cents'] for x in rows)
             previous=None
             operational_terms,operational_args=['l.requested_date<?'],[as_of]
@@ -111,7 +111,7 @@ def register_reads(app, data_dir, seed):
                 operational_terms.append('substr(l.requested_date,1,7)=?');operational_args.append(period)
             if region!='all':
                 operational_terms.append('o.region=?');operational_args.append(region)
-            operational=[dict(x) for x in db.execute('''SELECT substr(l.requested_date,1,7) month,count(*) eligible_lines,
+            operational=[dict(x) for x in db.execute('''SELECT substr(l.requested_date,1,7) AS "month",count(*) eligible_lines,
                 sum(CASE WHEN l.delivered_qty=l.ordered_qty AND l.delivered_date<=l.requested_date THEN 1 ELSE 0 END) otif_lines,
                 sum(CASE WHEN l.delivered_qty=l.ordered_qty AND l.delivered_date>l.requested_date THEN 1 ELSE 0 END) late_complete_lines
                 FROM order_lines l JOIN orders o ON o.id=l.order_id WHERE '''+' AND '.join(operational_terms)+' GROUP BY 1 ORDER BY 1',operational_args)]
