@@ -38,6 +38,7 @@ class ApprovalRequest(BaseModel):
 
 class QuestionRequest(BaseModel):
     question: str = Field(min_length=3, max_length=2000)
+    audience: str = Field(default='executive', min_length=1, max_length=40)
 
 
 def create_app(data_dir=None, workflow_path=None, frontend_dir=None):
@@ -137,7 +138,7 @@ def create_app(data_dir=None, workflow_path=None, frontend_dir=None):
     @app.post('/api/ask')
     def ask(request: QuestionRequest):
         try:
-            return questioning.answer(request.question, data_dir)
+            return questioning.answer(request.question, data_dir, request.audience)
         except ValueError as exc:
             raise HTTPException(422, str(exc))
         except questioning.AIRateLimitError as exc:
@@ -148,7 +149,7 @@ def create_app(data_dir=None, workflow_path=None, frontend_dir=None):
     @app.post('/api/ask/advanced')
     def ask_advanced(request: QuestionRequest):
         try:
-            return questioning.advanced_answer(request.question, data_dir)
+            return questioning.advanced_answer(request.question, data_dir, request.audience)
         except ValueError as exc:
             raise HTTPException(422, str(exc))
         except questioning.AIRateLimitError as exc:

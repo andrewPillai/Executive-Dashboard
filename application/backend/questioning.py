@@ -206,7 +206,20 @@ def _model_sql(question: str) -> str:
     raise RuntimeError("The AI provider could not produce a safe read-only analysis.")
 
 
-def advanced_answer(question: str, data_dir: Path) -> dict[str, Any]:
+def _audience_next_step(intent: str, audience: str, default: str) -> str:
+    focus = {
+        "sales": "Sales: review the affected customer commitments, requested dates, and recovery options with Operations.",
+        "commercial": "Commercial: review customer, product, and pricing impact before changing a commitment or price.",
+        "customer": "Customer: open the affected accounts and prepare the customer communication and service follow-up.",
+        "operations": "Operations: review stock, fulfillment capacity, and supplier dependencies before coordinating recovery.",
+        "planning": "Planning: compare supply, inventory, and replenishment options against the customer impact.",
+        "finance": "Finance: quantify the revenue, margin, and working-capital exposure before approving a response.",
+        "analytics": "Analytics: validate the evidence across source records and monitor the trend behind this exception.",
+    }
+    return focus.get(audience.lower(), default)
+
+
+def advanced_answer(question: str, data_dir: Path, audience: str = "executive") -> dict[str, Any]:
     try:
         sql = _validated_select(_model_sql(question.strip()))
     except AIRateLimitError:
@@ -214,7 +227,8 @@ def advanced_answer(question: str, data_dir: Path) -> dict[str, Any]:
     except (RuntimeError, ValueError):
         # A model outage must not block common operational questions that are
         # already covered by the approved catalog.
-        fallback = _catalog_answer(question, data_dir)
+        fallback = _catalog_answer(question, data_dir, audience)
+        fallback["next_step"] = _audience_next_step(fallback.get("intent", ""), audience, fallback.get("next_step", ""))
         fallback["advanced"] = False
         fallback["ai_provider"] = None
         fallback["ai_model"] = None
@@ -228,6 +242,7 @@ def advanced_answer(question: str, data_dir: Path) -> dict[str, Any]:
             "evidence": rows, "next_step": "Review the evidence and open the related records before drafting any human-approved action.",
             "sql": sql,
         }
+        result["next_step"] = _audience_next_step("advanced_read_only", audience, result["next_step"])
         model_text = _model_answer(question.strip(), result)
         if model_text:
             result["answer"] = model_text
@@ -237,14 +252,14 @@ def advanced_answer(question: str, data_dir: Path) -> dict[str, Any]:
     finally:
         db.close()
 
-def _catalog_answer(question: str, data_dir: Path) -> dict[str, Any]:
+def _catalog_answer(question: str, data_dir: Path, audience: str = "executive") -> dict[str, Any]:
     q = question.strip()
     if not q:
         raise ValueError("Ask a question about customers, orders, delivery, inventory, margin, or revenue.")
     lowered = q.lower()
     db, source = _connect(data_dir)
     try:
-        common = {"source": source, "freshness": datetime.now(timezone.utc).isoformat(), "question": q}
+        common = {"source": source, "freshness": datetime.now(timezone.utc).isoformat(), "question": q, "audience": audience}
         if ("highest" in lowered or "most" in lowered or "top" in lowered) and ("ordered" in lowered or "order" in lowered) and ("product" in lowered or "unit" in lowered or "quantity" in lowered):
             rows = _query(db, """select cu.id customer_id, cu.name customer,
                 sum(l.ordered_qty) ordered_units, count(distinct l.product_id) distinct_products,
@@ -294,8 +309,9 @@ def _catalog_answer(question: str, data_dir: Path) -> dict[str, Any]:
         db.close()
 
 
-def answer(question: str, data_dir: Path) -> dict[str, Any]:
-    result = _catalog_answer(question, data_dir)
+def answer(question: str, data_dir: Path, audience: str = "executive") -> dict[str, Any]:
+    result = _catalog_answer(question, data_dir, audience)
+    result["next_step"] = _audience_next_step(result.get("intent", ""), audience, result.get("next_step", ""))
     model_text = _model_answer(question.strip(), result)
     if model_text:
         result = {**result, "answer": model_text, "ai_provider": os.getenv("AI_BASE_URL", "").strip(), "ai_model": os.getenv("AI_MODEL", "").strip()}
