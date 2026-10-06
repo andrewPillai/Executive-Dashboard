@@ -9,11 +9,11 @@ from contextlib import contextmanager
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
-import actions
-import reads
-import depth
-import cohorts
-import questioning
+from . import actions
+from . import reads
+from . import depth
+from . import cohorts
+from . import questioning
 register_actions = actions.register_actions
 tasks_for = actions.tasks_for
 
