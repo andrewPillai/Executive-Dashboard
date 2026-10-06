@@ -290,7 +290,7 @@
         },
         {
           "label": "Source",
-          "value": "Synthetic SQLite order_lines; scenario_id = SUPPLY-001"
+          "value": "Synthetic PostgreSQL read model · order_lines; scenario_id = SUPPLY-001"
         }
       ],
       "recommendation": "Validate supplier recovery dates, review alternatives, and request approval to assign customer communication.",
@@ -324,7 +324,7 @@
         },
         {
           "label": "Source",
-          "value": "Synthetic SQLite order_lines; scenario_id = MARGIN-002"
+          "value": "Synthetic PostgreSQL read model · order_lines; scenario_id = MARGIN-002"
         }
       ],
       "recommendation": "Review discount authorization and draft a pricing correction for future quotes.",
@@ -357,7 +357,7 @@
         },
         {
           "label": "Source",
-          "value": "Synthetic SQLite order_lines; scenario_id = STOCK-003"
+          "value": "Synthetic PostgreSQL read model · order_lines; scenario_id = STOCK-003"
         }
       ],
       "recommendation": "Check transfer feasibility and draft coordinated warehouse and customer-service assignments.",
