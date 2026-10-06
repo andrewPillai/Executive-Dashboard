@@ -6,7 +6,6 @@ on:
     paths:
       - 'application/backend/**'
       - 'Procfile'
-      - 'Dockerfile.railway'
       - 'railway.json'
       - '.github/workflows/deploy-backend.yml'
 
