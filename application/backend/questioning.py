@@ -211,7 +211,7 @@ def advanced_answer(question: str, data_dir: Path) -> dict[str, Any]:
         sql = _validated_select(_model_sql(question.strip()))
     except AIRateLimitError:
         raise
-    except RuntimeError:
+    except (RuntimeError, ValueError):
         # A model outage must not block common operational questions that are
         # already covered by the approved catalog.
         fallback = _catalog_answer(question, data_dir)
