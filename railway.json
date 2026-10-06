@@ -1,0 +1,10 @@
+{
+  "build": {
+    "builder": "dockerfile",
+    "dockerfile": "Dockerfile.railway"
+  },
+  "deploy": {
+    "numReplicas": 1,
+    "restartPolicyMaxRetries": 10
+  }
+}
