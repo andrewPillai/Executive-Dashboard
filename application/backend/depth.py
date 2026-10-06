@@ -3,7 +3,7 @@ import sqlite3
 from contextlib import contextmanager
 
 from fastapi import HTTPException
-from .cohorts import COHORTS
+import cohorts
 
 
 def register_depth(app, data_dir, seed, order_query, records_query):
@@ -65,7 +65,7 @@ def register_depth(app, data_dir, seed, order_query, records_query):
                 add('scenario_lines', 'Seeded exception lines', 'SELECT count(*) FROM order_lines WHERE scenario_id IS NOT NULL', definition='Tagged lines in the six seeded scenarios; not all operational exceptions.')
                 add('late_deliveries', 'Late completed delivery lines', 'SELECT count(*) FROM order_lines WHERE delivered_qty=ordered_qty AND delivered_date>requested_date', definition='Fully delivered lines whose actual delivery was after the requested date.')
                 add('otif', 'Delivery OTIF', 'SELECT 100.0*sum(CASE WHEN delivered_qty=ordered_qty AND delivered_date<=requested_date THEN 1 ELSE 0 END)/nullif(count(*),0) FROM order_lines WHERE requested_date<?', 'percent', 'Line-level complete delivery by requested date; includes overdue open lines, excludes lines due on/after simulation day.', (as_of,))
-        predicate, label = COHORTS[role]
+        predicate, label = cohorts.COHORTS[role]
         queue = order_query(page_size=10, sort='order_date', direction='desc', internal_where=predicate)
         selected_cases = snapshot['cases'] if role in ('executive', 'analytics') else [x for x in snapshot['cases'] if audience['name'] in x['departments']]
         return dict(role=role, title=audience['name'], asOf=as_of, metrics=metrics, queue={**queue, 'label': label + ' (up to 10)', 'scope': {'department': role}}, cases=selected_cases, synthetic=True)
