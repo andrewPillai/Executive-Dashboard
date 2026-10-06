@@ -132,7 +132,7 @@ def create_app(data_dir=None, workflow_path=None, frontend_dir=None):
 
     @app.get('/api/health')
     def health():
-        return {'status': 'ok', 'synthetic': True, 'data_source': 'postgresql' if __import__('os').getenv('DATABASE_URL') else 'sqlite fallback', 'ai_mode': 'controlled query catalog', 'authentication': 'local demo only'}
+        return {'status': 'ok', 'synthetic': True, 'data_source': 'postgresql' if __import__('os').getenv('DATABASE_URL') else 'sqlite fallback', 'ai_mode': 'controlled query catalog', 'ai_rpm_limit': questioning.AI_RPM_LIMIT, 'authentication': 'local demo only'}
 
     @app.post('/api/ask')
     def ask(request: QuestionRequest):
@@ -140,6 +140,19 @@ def create_app(data_dir=None, workflow_path=None, frontend_dir=None):
             return questioning.answer(request.question, data_dir)
         except ValueError as exc:
             raise HTTPException(422, str(exc))
+        except questioning.AIRateLimitError as exc:
+            raise HTTPException(429, str(exc))
+        except RuntimeError as exc:
+            raise HTTPException(503, str(exc))
+
+    @app.post('/api/ask/advanced')
+    def ask_advanced(request: QuestionRequest):
+        try:
+            return questioning.advanced_answer(request.question, data_dir)
+        except ValueError as exc:
+            raise HTTPException(422, str(exc))
+        except questioning.AIRateLimitError as exc:
+            raise HTTPException(429, str(exc))
         except RuntimeError as exc:
             raise HTTPException(503, str(exc))
 

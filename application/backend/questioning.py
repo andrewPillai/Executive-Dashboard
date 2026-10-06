@@ -9,11 +9,33 @@ from __future__ import annotations
 import json
 import os
 import sqlite3
+import threading
+import time
+from collections import deque
 import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+
+AI_RPM_LIMIT = 40
+_ai_call_times: deque[float] = deque()
+_ai_call_lock = threading.Lock()
+
+
+class AIRateLimitError(RuntimeError):
+    pass
+
+
+def _consume_ai_slot() -> None:
+    now = time.monotonic()
+    with _ai_call_lock:
+        while _ai_call_times and now - _ai_call_times[0] >= 60:
+            _ai_call_times.popleft()
+        if len(_ai_call_times) >= AI_RPM_LIMIT:
+            raise AIRateLimitError("AI rate limit reached: maximum 40 provider calls per minute.")
+        _ai_call_times.append(now)
 
 
 def _connect(data_dir: Path):
@@ -51,6 +73,7 @@ def _model_answer(question: str, result: dict[str, Any]) -> str | None:
     api_key = os.getenv("AI_API_KEY", "").strip()
     if not (base_url and model and api_key):
         return None
+    _consume_ai_slot()
     payload = {
         "model": model,
         "temperature": 0.2,
@@ -103,6 +126,91 @@ def _model_answer(question: str, result: dict[str, Any]) -> str | None:
         # unavailable, rate-limited, or returns an unsupported response shape.
         return None
     return None
+
+_ALLOWED_TABLES = {
+    "customers", "manufacturers", "suppliers", "warehouses", "products", "orders",
+    "order_lines", "invoice_lines", "purchase_lines", "inventory_balances",
+    "inventory_movements", "service_events", "pricing_records", "direct_fulfillment",
+}
+_FORBIDDEN_SQL = ("insert", "update", "delete", "drop", "alter", "create", "replace", "truncate", "attach", "detach", "pragma", "copy", "vacuum")
+
+
+def _validated_select(sql: str) -> str:
+    sql = sql.strip().removeprefix("```sql").removeprefix("```").removesuffix("```").strip()
+    lowered = sql.lower()
+    if not (lowered.startswith("select ") or lowered.startswith("with ")):
+        raise ValueError("The advanced analysis did not produce a read-only query.")
+    if ";" in sql or "--" in sql or "/*" in sql or "*/" in sql:
+        raise ValueError("The advanced analysis query was rejected by the read-only guard.")
+    if any(__import__("re").search(rf"\b{word}\b", lowered) for word in _FORBIDDEN_SQL):
+        raise ValueError("The advanced analysis query was rejected by the read-only guard.")
+    import re
+    tables = set(re.findall(r"\b(?:from|join)\s+([a-z_][a-z0-9_]*)", lowered))
+    if not tables or not tables.issubset(_ALLOWED_TABLES):
+        raise ValueError("The advanced analysis referenced an unsupported business table.")
+    limits = re.findall(r"\blimit\s+(\d+)", lowered)
+    if limits and int(limits[-1]) > 100:
+        raise ValueError("The advanced analysis result is limited to 100 rows.")
+    return sql if limits else f"{sql} LIMIT 100"
+
+
+def _model_sql(question: str) -> str:
+    base_url = os.getenv("AI_BASE_URL", "").strip().rstrip("/")
+    model = os.getenv("AI_MODEL", "").strip()
+    api_key = os.getenv("AI_API_KEY", "").strip()
+    if not (base_url and model and api_key):
+        raise RuntimeError("Advanced analysis needs the configured AI provider.")
+    _consume_ai_slot()
+    schema = ", ".join(sorted(_ALLOWED_TABLES))
+    payload = {
+        "model": model,
+        "temperature": 0,
+        "max_tokens": 700,
+        "messages": [
+            {"role": "system", "content": (
+                "Generate one read-only SQL query for the fictional operations database. "
+                "Return JSON only with a single sql field. Use only these tables: " + schema + ". "
+                "Use SELECT or WITH, never writes, never comments, never multiple statements, "
+                "and return a useful aggregate or detail result. The server will validate the query."
+            )},
+            {"role": "user", "content": question},
+        ],
+    }
+    request = urllib.request.Request(
+        f"{base_url}/chat/completions", data=json.dumps(payload).encode("utf-8"),
+        headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json", "Accept": "application/json"}, method="POST",
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            body = json.loads(response.read().decode("utf-8"))
+        content = body.get("choices", [{}])[0].get("message", {}).get("content", "")
+        if isinstance(content, list):
+            content = "".join(str(part.get("text", "")) for part in content if isinstance(part, dict))
+        content = str(content).strip().removeprefix("```json").removesuffix("```").strip()
+        return str(json.loads(content)["sql"])
+    except (urllib.error.URLError, TimeoutError, ValueError, KeyError, IndexError, json.JSONDecodeError) as exc:
+        raise RuntimeError("The AI provider could not produce a safe read-only analysis.") from exc
+
+
+def advanced_answer(question: str, data_dir: Path) -> dict[str, Any]:
+    sql = _validated_select(_model_sql(question.strip()))
+    db, source = _connect(data_dir)
+    try:
+        rows = _query(db, sql)
+        result = {
+            "source": source, "freshness": datetime.now(timezone.utc).isoformat(), "question": question.strip(),
+            "intent": "advanced_read_only", "answer": f"The read-only analysis returned {len(rows):,} evidence rows.",
+            "evidence": rows, "next_step": "Review the evidence and open the related records before drafting any human-approved action.",
+            "sql": sql,
+        }
+        model_text = _model_answer(question.strip(), result)
+        if model_text:
+            result["answer"] = model_text
+        result["ai_model"] = os.getenv("AI_MODEL", "").strip()
+        result["advanced"] = True
+        return result
+    finally:
+        db.close()
 
 def _catalog_answer(question: str, data_dir: Path) -> dict[str, Any]:
     q = question.strip()

@@ -32,3 +32,5 @@ AI_API_KEY=
 
 Never commit credentials. The dashboard labels results synthetic and shows the data
 source and freshness with each answer.
+
+AI provider calls are capped at 40 per rolling minute by the API process. Advanced read-only analysis can consume two calls: one to propose a query and one to summarize the validated evidence.
