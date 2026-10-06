@@ -1,0 +1,28 @@
+name: Deploy Backend to Railway
+
+on:
+  push:
+    branches: [main, claude/gracious-bell-0wujfa]
+    paths:
+      - 'application/backend/**'
+      - 'Procfile'
+      - 'Dockerfile.railway'
+      - 'railway.json'
+      - '.github/workflows/deploy-backend.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Deploy to Railway
+        uses: railway-app/deploy-action@v1
+        with:
+          token: ${{ secrets.RAILWAY_TOKEN }}
+          service: executive-dashboard-api
+          requires: []
+        env:
+          RAILWAY_ENVIRONMENT: production
