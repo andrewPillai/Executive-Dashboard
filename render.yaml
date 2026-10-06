@@ -2,6 +2,7 @@ services:
   - type: web
     name: northstar-executive-dashboard
     runtime: python
+    plan: free
     rootDir: application
     buildCommand: pip install -r python-requirements.lock
     startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
