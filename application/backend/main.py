@@ -13,6 +13,7 @@ import actions
 import reads
 import depth
 import cohorts
+import questioning
 register_actions = actions.register_actions
 tasks_for = actions.tasks_for
 
@@ -31,6 +32,10 @@ class ApprovalRequest(BaseModel):
     run_id: str
     expected_version: int = Field(ge=0)
     idempotency_key: str = Field(min_length=1, max_length=160)
+
+
+class QuestionRequest(BaseModel):
+    question: str = Field(min_length=3, max_length=2000)
 
 
 def create_app(data_dir=None, workflow_path=None, frontend_dir=None):
@@ -129,7 +134,16 @@ def create_app(data_dir=None, workflow_path=None, frontend_dir=None):
 
     @app.get('/api/health')
     def health():
-        return {'status': 'ok', 'synthetic': True, 'ai_mode': 'scripted', 'authentication': 'local demo only'}
+        return {'status': 'ok', 'synthetic': True, 'data_source': 'postgresql' if __import__('os').getenv('DATABASE_URL') else 'sqlite fallback', 'ai_mode': 'controlled query catalog', 'authentication': 'local demo only'}
+
+    @app.post('/api/ask')
+    def ask(request: QuestionRequest):
+        try:
+            return questioning.answer(request.question, data_dir)
+        except ValueError as exc:
+            raise HTTPException(422, str(exc))
+        except RuntimeError as exc:
+            raise HTTPException(503, str(exc))
 
     @app.get('/api/bootstrap')
     def bootstrap():
