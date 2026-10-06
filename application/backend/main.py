@@ -15,6 +15,7 @@ from . import reads
 from . import depth
 from . import cohorts
 from . import questioning
+from .db import open_business
 register_actions = actions.register_actions
 tasks_for = actions.tasks_for
 
@@ -124,14 +125,10 @@ def create_app(data_dir=None, workflow_path=None, frontend_dir=None):
             l.original_committed_date,l.shipped_date,l.delivered_qty,l.delivered_date,l.scenario_id,
             df.po_reference,df.confirmation_status,df.proof_of_delivery,df.supplier_invoice_qty,
             (l.ordered_qty-l.shipped_qty)*l.unit_price_cents open_value_cents'''
-        db = sqlite3.connect((data_dir / 'northstar.sqlite').resolve().as_uri() + '?mode=ro', uri=True)
-        db.row_factory = sqlite3.Row
-        try:
+        with open_business(data_dir) as db:
             total = db.execute('SELECT count(*)' + joins + clause, args).fetchone()[0]
             rows = db.execute('SELECT ' + fields + joins + clause + f' ORDER BY {allowed[sort]} {direction}, l.id ASC LIMIT ? OFFSET ?', args + [page_size, (page - 1) * page_size]).fetchall()
             return dict(items=reads.enrich_orders(db, [dict(x) for x in rows], seed()['asOf']), total=total, page=page, page_size=page_size)
-        finally:
-            db.close()
 
     @app.get('/api/health')
     def health():

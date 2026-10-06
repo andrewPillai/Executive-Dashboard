@@ -1,9 +1,8 @@
 """Read-only source records, reporting, and bounded order enrichment."""
 import calendar
-import sqlite3
 from datetime import date
-from contextlib import contextmanager
 from fastapi import HTTPException, Query
+from .db import open_business
 
 
 def enrich_orders(db, items, as_of):
@@ -35,14 +34,7 @@ def enrich_orders(db, items, as_of):
 
 
 def register_reads(app, data_dir, seed):
-    @contextmanager
-    def business():
-        db = sqlite3.connect((data_dir / 'northstar.sqlite').resolve().as_uri() + '?mode=ro', uri=True)
-        db.row_factory = sqlite3.Row
-        try:
-            yield db
-        finally:
-            db.close()
+    business = lambda: open_business(data_dir)
 
     def records_query(kind, page=1, page_size=25, customer_id=None, product_id=None, order_line_id=None, status=None, sort='newest', open_only=False):
         if kind not in ('quotes','service','purchases'):

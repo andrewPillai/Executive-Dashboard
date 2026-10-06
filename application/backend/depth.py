@@ -1,20 +1,11 @@
 """Bounded, read-only department and entity perspectives over synthetic facts."""
-import sqlite3
-from contextlib import contextmanager
-
 from fastapi import HTTPException
 from . import cohorts
+from .db import open_business
 
 
 def register_depth(app, data_dir, seed, order_query, records_query):
-    @contextmanager
-    def business():
-        db = sqlite3.connect((data_dir / 'northstar.sqlite').resolve().as_uri() + '?mode=ro', uri=True)
-        db.row_factory = sqlite3.Row
-        try:
-            yield db
-        finally:
-            db.close()
+    business = lambda: open_business(data_dir)
 
     def metric(key, label, value, unit, definition):
         return dict(key=key, label=label, value=value or 0, unit=unit, definition=definition)
