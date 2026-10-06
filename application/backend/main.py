@@ -9,7 +9,12 @@ from contextlib import contextmanager
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
-from .actions import register_actions, tasks_for
+import actions
+import reads
+import depth
+import cohorts
+register_actions = actions.register_actions
+tasks_for = actions.tasks_for
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -118,8 +123,7 @@ def create_app(data_dir=None, workflow_path=None, frontend_dir=None):
         try:
             total = db.execute('SELECT count(*)' + joins + clause, args).fetchone()[0]
             rows = db.execute('SELECT ' + fields + joins + clause + f' ORDER BY {allowed[sort]} {direction}, l.id ASC LIMIT ? OFFSET ?', args + [page_size, (page - 1) * page_size]).fetchall()
-            from .reads import enrich_orders
-            return dict(items=enrich_orders(db, [dict(x) for x in rows], seed()['asOf']), total=total, page=page, page_size=page_size)
+            return dict(items=reads.enrich_orders(db, [dict(x) for x in rows], seed()['asOf']), total=total, page=page, page_size=page_size)
         finally:
             db.close()
 
@@ -136,15 +140,12 @@ def create_app(data_dir=None, workflow_path=None, frontend_dir=None):
 
     @app.get('/api/orders')
     def orders(q: str = Query('', max_length=200), page: int = Query(1, ge=1), page_size: int = Query(25, ge=1, le=100), case_id: str | None = None, sort: str = 'id', direction: str = 'asc', customer_id: int | None = Query(None, ge=1), product_id: int | None = Query(None, ge=1), manufacturer_id: int | None = Query(None, ge=1), department: str | None = None):
-        from .cohorts import COHORTS
-        if department is not None and department not in COHORTS:
+        if department is not None and department not in cohorts.COHORTS:
             raise HTTPException(422, 'Unknown department cohort')
-        return order_query(q, page, page_size, case_id, sort, direction, customer_id, product_id, manufacturer_id, COHORTS[department][0] if department else None)
+        return order_query(q, page, page_size, case_id, sort, direction, customer_id, product_id, manufacturer_id, cohorts.COHORTS[department][0] if department else None)
 
-    from .depth import register_depth
-    from .reads import register_reads
-    records_query = register_reads(app, data_dir, seed)
-    register_depth(app, data_dir, seed, order_query, records_query)
+    records_query = reads.register_reads(app, data_dir, seed)
+    depth.register_depth(app, data_dir, seed, order_query, records_query)
 
     @app.get('/api/cases')
     def cases():
