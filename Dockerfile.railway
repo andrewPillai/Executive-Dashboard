@@ -5,9 +5,10 @@ WORKDIR /app
 COPY application/backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY application/backend/ /app/
+COPY application/backend/ /app/backend/
+COPY application/data/ /app/data/
 
 ENV PORT=8000
 EXPOSE 8000
 
-CMD ["python", "-m", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["python", "-m", "uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
