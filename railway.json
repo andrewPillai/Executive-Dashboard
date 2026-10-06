@@ -1,7 +1,7 @@
 {
   "build": {
     "builder": "dockerfile",
-    "dockerfile": "Dockerfile"
+    "dockerfile": "application/backend/Dockerfile"
   },
   "deploy": {
     "numReplicas": 1,
