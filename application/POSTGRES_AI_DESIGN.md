@@ -28,6 +28,10 @@ Use environment variables for a future model provider:
 AI_BASE_URL=
 AI_MODEL=
 AI_API_KEY=
+# Optional backup OpenAI-compatible provider. It is tried only if the primary fails.
+AI_FALLBACK_BASE_URL=
+AI_FALLBACK_MODEL=
+AI_FALLBACK_API_KEY=
 ```
 
 Never commit credentials. The dashboard labels results synthetic and shows the data

@@ -68,14 +68,11 @@ def _model_answer(question: str, result: dict[str, Any]) -> str | None:
     """
     if result.get("intent") == "unsupported":
         return None
-    base_url = os.getenv("AI_BASE_URL", "").strip().rstrip("/")
-    model = os.getenv("AI_MODEL", "").strip()
-    api_key = os.getenv("AI_API_KEY", "").strip()
-    if not (base_url and model and api_key):
+    providers = _provider_candidates()
+    if not providers:
         return None
-    _consume_ai_slot()
     payload = {
-        "model": model,
+        "model": providers[0][1],
         "temperature": 0.2,
         "max_tokens": 500,
         "messages": [
@@ -99,33 +96,45 @@ def _model_answer(question: str, result: dict[str, Any]) -> str | None:
                         "evidence": result.get("evidence", []),
                     },
                     ensure_ascii=False,
+                    default=str,
                 ),
             },
         ],
     }
-    request = urllib.request.Request(
-        f"{base_url}/chat/completions",
-        data=json.dumps(payload).encode("utf-8"),
-        headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-        },
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(request, timeout=30) as response:
-            body = json.loads(response.read().decode("utf-8"))
-        content = body.get("choices", [{}])[0].get("message", {}).get("content")
-        if isinstance(content, list):
-            content = " ".join(str(part.get("text", "")) for part in content if isinstance(part, dict))
-        if isinstance(content, str) and content.strip():
-            return content.strip()
-    except (urllib.error.URLError, TimeoutError, ValueError, KeyError, IndexError, json.JSONDecodeError):
-        # The deterministic answer remains available if the optional provider is
-        # unavailable, rate-limited, or returns an unsupported response shape.
-        return None
+    for base_url, model, api_key in providers:
+        try:
+            _consume_ai_slot()
+            payload["model"] = model
+            request = urllib.request.Request(
+                f"{base_url}/chat/completions", data=json.dumps(payload, default=str).encode("utf-8"),
+                headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json", "Accept": "application/json"}, method="POST",
+            )
+            with urllib.request.urlopen(request, timeout=30) as response:
+                body = json.loads(response.read().decode("utf-8"))
+            content = body.get("choices", [{}])[0].get("message", {}).get("content")
+            if isinstance(content, list):
+                content = " ".join(str(part.get("text", "")) for part in content if isinstance(part, dict))
+            if isinstance(content, str) and content.strip():
+                return content.strip()
+        except AIRateLimitError:
+            raise
+        except (Exception,):
+            # Provider failure is intentionally non-fatal. The deterministic,
+            # database-backed answer remains the product fallback.
+            continue
     return None
+
+
+def _provider_candidates() -> list[tuple[str, str, str]]:
+    """Return primary then optional backup OpenAI-compatible providers."""
+    candidates = []
+    for prefix in ("AI", "AI_FALLBACK"):
+        base_url = os.getenv(f"{prefix}_BASE_URL", "").strip().rstrip("/")
+        model = os.getenv(f"{prefix}_MODEL", "").strip()
+        api_key = os.getenv(f"{prefix}_API_KEY", "").strip()
+        if base_url and model and api_key and (base_url, model, api_key) not in candidates:
+            candidates.append((base_url, model, api_key))
+    return candidates
 
 _ALLOWED_TABLES = {
     "customers", "manufacturers", "suppliers", "warehouses", "products", "orders",
@@ -155,15 +164,12 @@ def _validated_select(sql: str) -> str:
 
 
 def _model_sql(question: str) -> str:
-    base_url = os.getenv("AI_BASE_URL", "").strip().rstrip("/")
-    model = os.getenv("AI_MODEL", "").strip()
-    api_key = os.getenv("AI_API_KEY", "").strip()
-    if not (base_url and model and api_key):
+    providers = _provider_candidates()
+    if not providers:
         raise RuntimeError("Advanced analysis needs the configured AI provider.")
-    _consume_ai_slot()
     schema = ", ".join(sorted(_ALLOWED_TABLES))
     payload = {
-        "model": model,
+        "model": providers[0][1],
         "temperature": 0,
         "max_tokens": 700,
         "messages": [
@@ -176,20 +182,26 @@ def _model_sql(question: str) -> str:
             {"role": "user", "content": question},
         ],
     }
-    request = urllib.request.Request(
-        f"{base_url}/chat/completions", data=json.dumps(payload).encode("utf-8"),
-        headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json", "Accept": "application/json"}, method="POST",
-    )
-    try:
-        with urllib.request.urlopen(request, timeout=30) as response:
-            body = json.loads(response.read().decode("utf-8"))
-        content = body.get("choices", [{}])[0].get("message", {}).get("content", "")
-        if isinstance(content, list):
-            content = "".join(str(part.get("text", "")) for part in content if isinstance(part, dict))
-        content = str(content).strip().removeprefix("```json").removesuffix("```").strip()
-        return str(json.loads(content)["sql"])
-    except (urllib.error.URLError, TimeoutError, ValueError, KeyError, IndexError, json.JSONDecodeError) as exc:
-        raise RuntimeError("The AI provider could not produce a safe read-only analysis.") from exc
+    for base_url, model, api_key in providers:
+        try:
+            _consume_ai_slot()
+            payload["model"] = model
+            request = urllib.request.Request(
+                f"{base_url}/chat/completions", data=json.dumps(payload).encode("utf-8"),
+                headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json", "Accept": "application/json"}, method="POST",
+            )
+            with urllib.request.urlopen(request, timeout=30) as response:
+                body = json.loads(response.read().decode("utf-8"))
+            content = body.get("choices", [{}])[0].get("message", {}).get("content", "")
+            if isinstance(content, list):
+                content = "".join(str(part.get("text", "")) for part in content if isinstance(part, dict))
+            content = str(content).strip().removeprefix("```json").removesuffix("```").strip()
+            return str(json.loads(content)["sql"])
+        except AIRateLimitError:
+            raise
+        except (Exception,):
+            continue
+    raise RuntimeError("The AI provider could not produce a safe read-only analysis.")
 
 
 def advanced_answer(question: str, data_dir: Path) -> dict[str, Any]:
