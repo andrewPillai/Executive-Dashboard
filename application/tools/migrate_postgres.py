@@ -26,6 +26,12 @@ TABLES = [
     "inventory_movements", "invoice_lines", "quote_lines", "service_events",
     "pricing_records", "direct_fulfillment",
 ]
+SCHEMA_ORDER = [
+    "customers", "suppliers", "warehouses", "manufacturers", "products",
+    "orders", "order_lines", "purchase_lines", "inventory_balances",
+    "inventory_movements", "invoice_lines", "quote_lines", "service_events",
+    "pricing_records", "direct_fulfillment",
+]
 
 
 def main() -> None:
@@ -40,7 +46,11 @@ def main() -> None:
         with target.cursor() as cur:
             cur.execute("DROP SCHEMA public CASCADE; CREATE SCHEMA public;")
             statements = [part.strip() for part in SCHEMA_PATH.read_text().split(";") if part.strip()]
-            tables = [part for part in statements if part.upper().startswith("CREATE TABLE")]
+            table_statements = {
+                part.split("CREATE TABLE", 1)[1].split("(", 1)[0].strip().split()[0]: part
+                for part in statements if part.upper().startswith("CREATE TABLE")
+            }
+            tables = [table_statements[name] for name in SCHEMA_ORDER]
             indexes = [part for part in statements if part.upper().startswith("CREATE INDEX")]
             cur.execute(";".join(tables) + ";")
             for table in TABLES:
